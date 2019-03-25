@@ -1,19 +1,19 @@
 # Introduction
 
- Thank you for considering contributing to AGS Manual wiki. The AGS Manual is 
+Thank you for considering contributing to AGS Manual wiki. The AGS Manual is 
 made better by people like you.
 
- Since the manual is made by multiple contributions, reading the guidelines
+Since the manual is made by multiple contributions, reading the guidelines
 ensure we can provide a cohesive document for the game developers using AGS.
 We also assume you are also a game developer using AGS which means the future
 you will also be thanking yourself later.
 
- *If instead you have questions about building the manual and website help 
+*If instead you have questions about building the manual and website help 
 template, create an issue on GitHub so we can discuss that!*
 
- ## About opening issues
+## About opening issues
 
- - Be respectful when writing issues
+- Be respectful when writing issues
 - If you want to discuss a topic already on the manual, link it in the wiki.
 - If you want to discuss a new entry, not in the manual, suggest it's name and
 where it would reside
@@ -21,17 +21,33 @@ where it would reside
 writing too much, just be aware that it will take more time to think about the 
 more is written.
 
- ## About writing in the wiki
+## About writing in the wiki
 
- - Ensure all pages have at least one other page that leads to it, do not break
+- Ensure all pages have at least one other page that leads to it, do not break
 or have orphanated pages.
 
- ### How to add screenshots to the documentation
+### Headings and Indexing
 
- Screenshots should be avoided, but they make sense in tutorials or when
+Index directives are added automatically, based on heading styles.
+
+Markdown | Indexed as
+--- | ---
+\#\# Heading | Single entry: 'Heading'
+\#\#\# Sub-heading | Paired entry: 'Heading' <-> 'Sub-heading'
+
+To create an H2 style heading without an index entry, use the alternate H2 markup:
+
+    Heading
+    -------
+    
+H1 headings are not checked, effectively reserving their use for the primary title on the contents page.
+
+### How to add screenshots to the documentation
+
+Screenshots should be avoided, but they make sense in tutorials or when
 describing how AGS Editor user interface works.
 
- - Do not overuse screenshots. 
+- Do not overuse screenshots. 
 - Screenshots should be saved as PNG or JPG, with a width of at least 400 px. 
 - Try to keep file size less than 220KB.
 - Do not rely on images to provide information or context.
