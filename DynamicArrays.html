@@ -6,65 +6,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Dynamic Arrays</title>
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/milligram.min.css" />
   <link rel="stylesheet" href="css/main.css" />
+  <link href="static/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
 
 
   <div class="container">
-    <nav class="navigation">
-      <section class="container">
-        <div class="float-left">
-          <a class="navigation-title" href="index.html">
-            <img src="static/logo.png" alt="AGS Manual">
-            <h1 class="title">AGS Manual</h1>
-          </a>
-        </div>
-        <div class="float-right">
-          <ul class="navigation-list float-right">
-            <li class="navigation-item">
-              <input type="search" id="search_input">
-            </li>
-          </ul>
-        </div>
-      </section>
-    </nav>
-
     <header>
-      <ul id="search_results">
-      </ul>
+      <label for="search_input">Search:</label>
+      <input type="search" id="search_input">
+      <ul id="search_results"></ul>
     </header>
 
-    <section>
-      <div class="row">
-        <div class="column">
-          <nav id="TOC">
-            <ul>
-              <li><a href="genindex.html">Index</a></li>
-            </ul>
+  <nav>
+    <a href="index.html">
+      <svg id="cup" width="72" height="48" viewBox="0 0 12 8" preserveAspectRatio="xMidYMid meet">
+        <g shape-rendering="crispEdges">
+          <rect width="10" height="7" fill="#ffffff" />
+          <svg y="1">
+            <rect width="12" height="5" fill="#ffffff" />
+          </svg>
+          <svg x="1">
+            <rect width="8" height="8" fill="#ffffff" />
+          </svg>
+          <svg x="1" y="1">
+            <rect width="8" height="5" fill="#2a7fff" />
+          </svg>
+          <svg x="2" y="6">
+            <rect width="6" height="1" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="2">
+            <rect width="2" height="3" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="3">
+            <rect width="1" height="1" fill="#ffffff" />
+          </svg>
+          <svg x="2" y="2">
+            <rect width="6" height="3" fill="#0000d4" />
+          </svg>
+          <svg x="3" y="5">
+            <rect width="4" height="1" fill="#0000d4" />
+          </svg>
+          <svg x="2" y="1">
+            <rect width="6" height="1" fill="#ffffff" />
+          </svg>
+        </g>
+      </svg>
+    </a>
+    <h1>
+      <a href="index.html">AGS Manual</a>
+    </h1>
+    <ul>
+      <li><a href="genindex.html">Index</a></li>
+    </ul>
 <ul>
-<li><a href="#dynamic-arrays">Dynamic Arrays</a></li>
+<li><a href="#dynamic-arrays"><span>Dynamic Arrays</span></a></li>
 </ul>
-          </nav>
-        </div>
-        <div class="column column-75">
+  </nav>
+
+  <main>
 <section id="dynamic-arrays" class="level2">
-<h2>Dynamic Arrays</h2>
+<h2><a href="#dynamic-arrays">Dynamic Arrays</a></h2>
 <p>Suppose that you're writing a script that you want people to be able to use in their games. You need to store the Health for every character in the game, but you don't know how many characters there will be. What do you do?</p>
 <p>Dynamic Arrays are designed for just this purpose. You can declare an array like this:</p>
 <p><code>int characterHealth[];</code></p>
 <p>in your script file. This special notation tells AGS that you don't yet know how large you want the array to be. Now, before you use the array (so probably in game_start), you can do this:</p>
 <p><code>characterHealth = new int[Game.CharacterCount];</code></p>
 <p>If you forget to do this <code>new</code> command, you'll get a Null Pointer Error if you try to access the array. You can change the size of an array by simply using another <code>new</code> command with a different size; but this will erase the contents of the array in the process.</p>
-<p>Currently dynamic arrays are supported as global and local variables, or members of normal (not managed) structs. Also, at present you can create arrays of basic types (int, char, etc) and of built-in types (String, Character, etc) but not of custom structs.</p>
+<p>You may create dynamic arrays of basic types (int, char, etc), built-in types (String, Character, etc), and custom structs declared as <code>managed</code>. But currently you cannot have dynamic arrays of regular (non-managed) custom structs.</p>
+<p>On another hand, you cannot have dynamic arrays inside "managed" structs as their members, but can have them anywhere else.</p>
+<p>See Also: <a href="ScriptKeywords.html#arrays">Arrays</a>, <a href="ScriptKeywords.html#struct">Structs</a></p>
 </section>
-        </div>
-      </div>
-    </section>
+  </main>
+
+
+  <footer>
+    <p>Build: 05/25/21 22:29:30</p>
+  </footer>
+
+  <script src="js/search.js"></script>
   </div>
-
-
-  <script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>

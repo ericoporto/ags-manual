@@ -6,51 +6,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Upgrading to AGS 2.7</title>
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/milligram.min.css" />
   <link rel="stylesheet" href="css/main.css" />
+  <link href="static/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
 
 
   <div class="container">
-    <nav class="navigation">
-      <section class="container">
-        <div class="float-left">
-          <a class="navigation-title" href="index.html">
-            <img src="static/logo.png" alt="AGS Manual">
-            <h1 class="title">AGS Manual</h1>
-          </a>
-        </div>
-        <div class="float-right">
-          <ul class="navigation-list float-right">
-            <li class="navigation-item">
-              <input type="search" id="search_input">
-            </li>
-          </ul>
-        </div>
-      </section>
-    </nav>
-
     <header>
-      <ul id="search_results">
-      </ul>
+      <label for="search_input">Search:</label>
+      <input type="search" id="search_input">
+      <ul id="search_results"></ul>
     </header>
 
-    <section>
-      <div class="row">
-        <div class="column">
-          <nav id="TOC">
-            <ul>
-              <li><a href="genindex.html">Index</a></li>
-            </ul>
+  <nav>
+    <a href="index.html">
+      <svg id="cup" width="72" height="48" viewBox="0 0 12 8" preserveAspectRatio="xMidYMid meet">
+        <g shape-rendering="crispEdges">
+          <rect width="10" height="7" fill="#ffffff" />
+          <svg y="1">
+            <rect width="12" height="5" fill="#ffffff" />
+          </svg>
+          <svg x="1">
+            <rect width="8" height="8" fill="#ffffff" />
+          </svg>
+          <svg x="1" y="1">
+            <rect width="8" height="5" fill="#2a7fff" />
+          </svg>
+          <svg x="2" y="6">
+            <rect width="6" height="1" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="2">
+            <rect width="2" height="3" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="3">
+            <rect width="1" height="1" fill="#ffffff" />
+          </svg>
+          <svg x="2" y="2">
+            <rect width="6" height="3" fill="#0000d4" />
+          </svg>
+          <svg x="3" y="5">
+            <rect width="4" height="1" fill="#0000d4" />
+          </svg>
+          <svg x="2" y="1">
+            <rect width="6" height="1" fill="#ffffff" />
+          </svg>
+        </g>
+      </svg>
+    </a>
+    <h1>
+      <a href="index.html">AGS Manual</a>
+    </h1>
+    <ul>
+      <li><a href="genindex.html">Index</a></li>
+    </ul>
 <ul>
-<li><a href="#upgrading-to-ags-27">Upgrading to AGS 2.7</a></li>
+<li><a href="#upgrading-to-ags-27"><span>Upgrading to AGS 2.7</span></a></li>
 </ul>
-          </nav>
-        </div>
-        <div class="column column-75">
+  </nav>
+
+  <main>
 <section id="upgrading-to-ags-27" class="level2">
-<h2>Upgrading to AGS 2.7</h2>
+<h2><a href="#upgrading-to-ags-27">Upgrading to AGS 2.7</a></h2>
 <p>The script language in AGS 2.7 has changed quite significantly from previous versions. Many of the script commands have become <em>object-based</em>, which has several advantages over the previous approach. This page will attempt to introduce you to the new method and explain its benefits.</p>
 <p>Firstly, so that you can get an idea of the changes, here's an example of some old-style script commands and their new equivalents:</p>
 <pre><code>AnimateObjectEx(0,2,0,0,0,1);
@@ -64,7 +81,7 @@ lstTest.AddItem(&quot;New item&quot;);
 <p>The script editor's autocomplete functionality has been significantly enhanced to aid in all this as well. You'll see as you start to experiment that autocomplete pops up more often and lists only the relevant commands thanks to object-based scripting.</p>
 <p><strong>So does this mean I have to throw out all my scripts?</strong></p>
 <p>No, certainly not! The new version is fully backwards compatible, so all your existing scripts will continue to work just fine. However, for any new scripts that you write, it's strongly recommended that you use the new object-based commands.</p>
-<p><strong>Ok, so uh... what's changed exactly?</strong></p>
+<p><strong>OK, so uh... what's changed exactly?</strong></p>
 <p>The script language syntax hasn't changed at all (that's the way you use semicolons, brackets, and so on). It's still just like it was before, but with some new additions. Most significantly, most commands are now called <strong>on something</strong>. For example, the old command:</p>
 <p><code>StopMoving(EGO);</code></p>
 <p>Just from looking at that, it's not at all obvious what StopMoving does. Does it stop a character moving, an object moving, or does it stop the screen moving? It's not intuitive. So now, rather than supplying the character as a parameter to the function, you actually call the function <strong>on</strong> the character. So:</p>
@@ -79,7 +96,7 @@ lstTest.AddItem(&quot;New item&quot;);
 <p><code>StopMoving(GetPlayerCharacter());</code></p>
 <p>can now be done like this:</p>
 <p><code>player.StopMoving();</code></p>
-<p><strong>Hmm, I see... so what exactly has been object-ised?</strong></p>
+<p><strong>Hmm, I see... so what exactly has been object-ized?</strong></p>
 <p>Currently, the following object-based things are available:</p>
 <table>
 <thead>
@@ -126,7 +143,7 @@ lstTest.AddItem(&quot;New item&quot;);
 <p>This lead to lots of 1's and 0's in function calls, which are hard to read. Now, instead of this each number is represented by an easy-to-remember word (such as <em>eBlock</em> and <em>eNoBlock</em>). Even better, when you call a function that uses an enum parameter, auto-complete automatically pops up the list of options for you to choose from.</p>
 <p>See the <a href="ScriptKeywords.html">enum keyword</a> description for information on how to create your own.</p>
 <p><strong>So do I have to pass all these things like eBlock every time I call the function?</strong></p>
-<p>Nope! Many functions now support <strong>optional parameters</strong>, where the most common options are selected automatically. If you look at the help for a function such as the <a href="Character.html#animate">Animate character command</a>, you'll see some of the parameters are defined as "optional". This means that you don't have to supply them; if you don't, the default option that will be chosen is described in the help for that command.</p>
+<p>Nope! Many functions now support <strong>optional parameters</strong>, where the most common options are selected automatically. If you look at the help for a function such as the <a href="Character.html#characteranimate">Animate character command</a>, you'll see some of the parameters are defined as "optional". This means that you don't have to supply them; if you don't, the default option that will be chosen is described in the help for that command.</p>
 <p><strong>So what else is new?</strong></p>
 <p>Well, 2.7 introduces the <em>float</em> data type, so AGS now finally supports floating-point arithmetic in your scripts. Also, for more advanced scripters, you can create your own member functions (including protected and static ones) to write cleaner script than just having a bunch of global functions.</p>
 <p>Also, the script editor is now much better at checking your script for errors. You may well find that a script which compiled fine before no longer works on 2.7. Hopefully the error message should direct you towards fixing any problems.</p>
@@ -139,12 +156,14 @@ lstTest.AddItem(&quot;New item&quot;);
 <p>As always, if there's something you really can't get your head round, post on the AGS Forums and we'll help you out as best we can!</p>
 <p>Have fun,<br> CJ</p>
 </section>
-        </div>
-      </div>
-    </section>
+  </main>
+
+
+  <footer>
+    <p>Build: 05/25/21 22:29:22</p>
+  </footer>
+
+  <script src="js/search.js"></script>
   </div>
-
-
-  <script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>

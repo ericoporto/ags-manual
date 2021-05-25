@@ -6,58 +6,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Sprite Manager</title>
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/milligram.min.css" />
   <link rel="stylesheet" href="css/main.css" />
+  <link href="static/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
 
 
   <div class="container">
-    <nav class="navigation">
-      <section class="container">
-        <div class="float-left">
-          <a class="navigation-title" href="index.html">
-            <img src="static/logo.png" alt="AGS Manual">
-            <h1 class="title">AGS Manual</h1>
-          </a>
-        </div>
-        <div class="float-right">
-          <ul class="navigation-list float-right">
-            <li class="navigation-item">
-              <input type="search" id="search_input">
-            </li>
-          </ul>
-        </div>
-      </section>
-    </nav>
-
     <header>
-      <ul id="search_results">
-      </ul>
+      <label for="search_input">Search:</label>
+      <input type="search" id="search_input">
+      <ul id="search_results"></ul>
     </header>
 
-    <section>
-      <div class="row">
-        <div class="column">
-          <nav id="TOC">
-            <ul>
-              <li><a href="genindex.html">Index</a></li>
-            </ul>
+  <nav>
+    <a href="index.html">
+      <svg id="cup" width="72" height="48" viewBox="0 0 12 8" preserveAspectRatio="xMidYMid meet">
+        <g shape-rendering="crispEdges">
+          <rect width="10" height="7" fill="#ffffff" />
+          <svg y="1">
+            <rect width="12" height="5" fill="#ffffff" />
+          </svg>
+          <svg x="1">
+            <rect width="8" height="8" fill="#ffffff" />
+          </svg>
+          <svg x="1" y="1">
+            <rect width="8" height="5" fill="#2a7fff" />
+          </svg>
+          <svg x="2" y="6">
+            <rect width="6" height="1" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="2">
+            <rect width="2" height="3" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="3">
+            <rect width="1" height="1" fill="#ffffff" />
+          </svg>
+          <svg x="2" y="2">
+            <rect width="6" height="3" fill="#0000d4" />
+          </svg>
+          <svg x="3" y="5">
+            <rect width="4" height="1" fill="#0000d4" />
+          </svg>
+          <svg x="2" y="1">
+            <rect width="6" height="1" fill="#ffffff" />
+          </svg>
+        </g>
+      </svg>
+    </a>
+    <h1>
+      <a href="index.html">AGS Manual</a>
+    </h1>
+    <ul>
+      <li><a href="genindex.html">Index</a></li>
+    </ul>
 <ul>
-<li><a href="#sprite-manager">Sprite Manager</a></li>
+<li><a href="#sprite-manager"><span>Sprite Manager</span></a>
+<ul>
+<li><a href="#import-sprite"><span>Import Sprite</span></a></li>
+</ul></li>
 </ul>
-          </nav>
-        </div>
-        <div class="column column-75">
+  </nav>
+
+  <main>
 <section id="sprite-manager" class="level2">
-<h2>Sprite Manager</h2>
+<h2><a href="#sprite-manager">Sprite Manager</a></h2>
+<p>The sprite manager is where you can import sprites and organize them into folders. Each sprite that is imported will be assigned a sprite number which is used as its unique identifier.</p>
+<p><img src="images/EditorSprite_1.png" /></p>
+<p>The sprite manager has two panes, on the left are the sprite folders. Right click here to create a subfolder, rename an existing subfolder, or delete a subfolder (losing all of its contents).</p>
+<p><img src="images/EditorSprite_2.png" /></p>
+<p>The pane on the right, is where imported sprites are displayed. Right clicking on an empty area will give you the possibility to "import new sprite(s) from files...". This allows you to import one or more compatible image files into your game project.</p>
+<p><strong>NOTE:</strong> Unlike other game development tools, once a sprite is imported using AGS it is added to the sprite data inside your game project's directory and the source file isn't read again unless you choose to re-import it. This is done by right clicking a sprite and choosing the "Replace sprite(s) from source..." option.</p>
+<p><strong>NOTE:</strong> You can quickly select all files in a folder by selecting the first file and then pressing Shift+End.</p>
+<section id="import-sprite" class="level3">
+<h3><a href="#import-sprite">Import Sprite</a></h3>
+<p>Once a file or files are selected, AGS will bring up the Import Sprite window.</p>
+<p><img src="images/EditorSprite_3.png" /></p>
+<p>In this window, AGS will offer you controls which determine exactly how the images files will be used. The most crucial choice is usually to choose how transparency will be determined for the imported sprite, as well as whether to import the entire sprite or use a tiled selection.</p>
+<p>If multiple files are being imported they can be processed individually by using the 'Import' button, or all in one go by using the 'Import All' button. The combobox near the bottom left corner of the screen will allow you to change which source image file is currently being displayed.</p>
+<p><strong>NOTE:</strong> if using the 'Import All' button all remaining images will be imported using the currently selected import options</p>
+<p><strong>NOTE:</strong> animated GIF frames are treated as separate images, so a 5 frame GIF imported as 2 tiles will result in 10 new sprites being created.</p>
 </section>
-        </div>
-      </div>
-    </section>
+</section>
+  </main>
+
+
+  <footer>
+    <p>Build: 05/25/21 22:29:28</p>
+  </footer>
+
+  <script src="js/search.js"></script>
   </div>
-
-
-  <script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>

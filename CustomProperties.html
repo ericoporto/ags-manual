@@ -6,53 +6,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Custom Properties</title>
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/milligram.min.css" />
   <link rel="stylesheet" href="css/main.css" />
+  <link href="static/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
 
 
   <div class="container">
-    <nav class="navigation">
-      <section class="container">
-        <div class="float-left">
-          <a class="navigation-title" href="index.html">
-            <img src="static/logo.png" alt="AGS Manual">
-            <h1 class="title">AGS Manual</h1>
-          </a>
-        </div>
-        <div class="float-right">
-          <ul class="navigation-list float-right">
-            <li class="navigation-item">
-              <input type="search" id="search_input">
-            </li>
-          </ul>
-        </div>
-      </section>
-    </nav>
-
     <header>
-      <ul id="search_results">
-      </ul>
+      <label for="search_input">Search:</label>
+      <input type="search" id="search_input">
+      <ul id="search_results"></ul>
     </header>
 
-    <section>
-      <div class="row">
-        <div class="column">
-          <nav id="TOC">
-            <ul>
-              <li><a href="genindex.html">Index</a></li>
-            </ul>
+  <nav>
+    <a href="index.html">
+      <svg id="cup" width="72" height="48" viewBox="0 0 12 8" preserveAspectRatio="xMidYMid meet">
+        <g shape-rendering="crispEdges">
+          <rect width="10" height="7" fill="#ffffff" />
+          <svg y="1">
+            <rect width="12" height="5" fill="#ffffff" />
+          </svg>
+          <svg x="1">
+            <rect width="8" height="8" fill="#ffffff" />
+          </svg>
+          <svg x="1" y="1">
+            <rect width="8" height="5" fill="#2a7fff" />
+          </svg>
+          <svg x="2" y="6">
+            <rect width="6" height="1" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="2">
+            <rect width="2" height="3" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="3">
+            <rect width="1" height="1" fill="#ffffff" />
+          </svg>
+          <svg x="2" y="2">
+            <rect width="6" height="3" fill="#0000d4" />
+          </svg>
+          <svg x="3" y="5">
+            <rect width="4" height="1" fill="#0000d4" />
+          </svg>
+          <svg x="2" y="1">
+            <rect width="6" height="1" fill="#ffffff" />
+          </svg>
+        </g>
+      </svg>
+    </a>
+    <h1>
+      <a href="index.html">AGS Manual</a>
+    </h1>
+    <ul>
+      <li><a href="genindex.html">Index</a></li>
+    </ul>
 <ul>
-<li><a href="#custom-properties">Custom Properties</a></li>
+<li><a href="#custom-properties"><span>Custom Properties</span></a></li>
 </ul>
-          </nav>
-        </div>
-        <div class="column column-75">
+  </nav>
+
+  <main>
 <section id="custom-properties" class="level2">
-<h2>Custom Properties</h2>
+<h2><a href="#custom-properties">Custom Properties</a></h2>
 <p><strong>What are custom properties?</strong></p>
-<p>Suppose you're making a Lucasarts-style game, and you want all your hotspots to have a default event (so if the player right-clicks a window, for example, "Open" will be the default, but if they click on a pen, "Pick up" will be the default).</p>
+<p>Suppose you're making a LucasArts-style game, and you want all your hotspots to have a default event (so if the player right-clicks a window, for example, "Open" will be the default, but if they click on a pen, "Pick up" will be the default).</p>
 <p>To do that, surely you would have to script in lots of code to change the default mode over each different object?</p>
 <p>This is where Custom Properties come to the rescue. You can create a custom property for "Default event", for example, and then have some simple code in the global script to use the setting accordingly.</p>
 <p><strong>How do I use them?</strong></p>
@@ -69,15 +86,17 @@
 <p>All types of game item share the same schema. That is, if you create a "Jibble" property in the schema editor for a hotspot, it will also appear in the properties window for characters, objects, and so on.</p>
 <p><strong>Getting and setting values in the script</strong></p>
 <p>To access the properties from the script, there are various script functions. See their descriptions for how they work:</p>
-<p><a href="Character.html#getproperty">Character.GetProperty</a><br> <a href="Character.html#gettextproperty">Character.GetTextProperty</a><br> <a href="Character.html#setproperty">Character.SetProperty</a><br> <a href="Character.html#settextproperty">Character.SetTextProperty</a><br> <a href="Hotspot.html#getproperty">Hotspot.GetProperty</a><br> <a href="Hotspot.html#gettextproperty">Hotspot.GetTextProperty</a><br> <a href="Hotspot.html#setproperty">Hotspot.SetProperty</a><br> <a href="Hotspot.html#settextproperty">Hotspot.SetTextProperty</a><br> <a href="InventoryItem.html#getproperty">InventoryItem.GetProperty</a><br> <a href="InventoryItem.html#gettextproperty">InventoryItem.GetTextProperty</a><br> <a href="InventoryItem.html#setproperty">InventoryItem.SetProperty</a><br> <a href="InventoryItem.html#settextproperty">InventoryItem.SetTextProperty</a><br> <a href="Object.html#getproperty">Object.GetProperty</a><br> <a href="Object.html#gettextproperty">Object.GetTextProperty</a><br> <a href="Object.html#setproperty">Object.SetProperty</a><br> <a href="Object.html#settextproperty">Object.SetTextProperty</a><br> <a href="Room.html#getproperty">Room.GetProperty</a><br> <a href="Room.html#gettextproperty">Room.GetTextProperty</a><br> <a href="Room.html#setproperty">Room.SetProperty</a><br> <a href="Room.html#settextproperty">Room.SetTextProperty</a></p>
-<p><strong>NOTE:</strong> Calling <a href="Room.html#resetroom">ResetRoom</a> will reset that room's properties to default values, as well as that room's hotspot and object properties.</p>
+<p><a href="Character.html#charactergetproperty">Character.GetProperty</a><br> <a href="Character.html#charactergettextproperty">Character.GetTextProperty</a><br> <a href="Character.html#charactersetproperty">Character.SetProperty</a><br> <a href="Character.html#charactersettextproperty">Character.SetTextProperty</a><br> <a href="Hotspot.html#hotspotgetproperty">Hotspot.GetProperty</a><br> <a href="Hotspot.html#hotspotgettextproperty">Hotspot.GetTextProperty</a><br> <a href="Hotspot.html#hotspotsetproperty">Hotspot.SetProperty</a><br> <a href="Hotspot.html#hotspotsettextproperty">Hotspot.SetTextProperty</a><br> <a href="InventoryItem.html#inventoryitemgetproperty">InventoryItem.GetProperty</a><br> <a href="InventoryItem.html#inventoryitemgettextproperty">InventoryItem.GetTextProperty</a><br> <a href="InventoryItem.html#inventoryitemsetproperty">InventoryItem.SetProperty</a><br> <a href="InventoryItem.html#inventoryitemsettextproperty">InventoryItem.SetTextProperty</a><br> <a href="Object.html#objectgetproperty">Object.GetProperty</a><br> <a href="Object.html#objectgettextproperty">Object.GetTextProperty</a><br> <a href="Object.html#objectsetproperty">Object.SetProperty</a><br> <a href="Object.html#objectsettextproperty">Object.SetTextProperty</a><br> <a href="Room.html#roomgetproperty">Room.GetProperty</a><br> <a href="Room.html#roomgettextproperty">Room.GetTextProperty</a><br> <a href="Room.html#roomsetproperty">Room.SetProperty</a><br> <a href="Room.html#roomsettextproperty">Room.SetTextProperty</a></p>
+<p><strong>NOTE:</strong> Calling <a href="Globalfunctions_Room.html#resetroom">ResetRoom</a> will reset that room's properties to default values, as well as that room's hotspot and object properties.</p>
 </section>
-        </div>
-      </div>
-    </section>
+  </main>
+
+
+  <footer>
+    <p>Build: 05/25/21 22:29:29</p>
+  </footer>
+
+  <script src="js/search.js"></script>
   </div>
-
-
-  <script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>

@@ -6,57 +6,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Label functions and properties</title>
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/milligram.min.css" />
   <link rel="stylesheet" href="css/main.css" />
+  <link href="static/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
 
 
   <div class="container">
-    <nav class="navigation">
-      <section class="container">
-        <div class="float-left">
-          <a class="navigation-title" href="index.html">
-            <img src="static/logo.png" alt="AGS Manual">
-            <h1 class="title">AGS Manual</h1>
-          </a>
-        </div>
-        <div class="float-right">
-          <ul class="navigation-list float-right">
-            <li class="navigation-item">
-              <input type="search" id="search_input">
-            </li>
-          </ul>
-        </div>
-      </section>
-    </nav>
-
     <header>
-      <ul id="search_results">
-      </ul>
+      <label for="search_input">Search:</label>
+      <input type="search" id="search_input">
+      <ul id="search_results"></ul>
     </header>
 
-    <section>
-      <div class="row">
-        <div class="column">
-          <nav id="TOC">
-            <ul>
-              <li><a href="genindex.html">Index</a></li>
-            </ul>
+  <nav>
+    <a href="index.html">
+      <svg id="cup" width="72" height="48" viewBox="0 0 12 8" preserveAspectRatio="xMidYMid meet">
+        <g shape-rendering="crispEdges">
+          <rect width="10" height="7" fill="#ffffff" />
+          <svg y="1">
+            <rect width="12" height="5" fill="#ffffff" />
+          </svg>
+          <svg x="1">
+            <rect width="8" height="8" fill="#ffffff" />
+          </svg>
+          <svg x="1" y="1">
+            <rect width="8" height="5" fill="#2a7fff" />
+          </svg>
+          <svg x="2" y="6">
+            <rect width="6" height="1" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="2">
+            <rect width="2" height="3" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="3">
+            <rect width="1" height="1" fill="#ffffff" />
+          </svg>
+          <svg x="2" y="2">
+            <rect width="6" height="3" fill="#0000d4" />
+          </svg>
+          <svg x="3" y="5">
+            <rect width="4" height="1" fill="#0000d4" />
+          </svg>
+          <svg x="2" y="1">
+            <rect width="6" height="1" fill="#ffffff" />
+          </svg>
+        </g>
+      </svg>
+    </a>
+    <h1>
+      <a href="index.html">AGS Manual</a>
+    </h1>
+    <ul>
+      <li><a href="genindex.html">Index</a></li>
+    </ul>
 <ul>
-<li><a href="#label-functions-and-properties">Label functions and properties</a><ul>
-<li><a href="#font">Font</a></li>
-<li><a href="#text">Text</a></li>
-<li><a href="#textcolor">TextColor</a></li>
+<li><a href="#label-functions-and-properties"><span><code>Label</code> functions and properties</span></a>
+<ul>
+<li><a href="#labelfont"><span><code>Label.Font</code></span></a></li>
+<li><a href="#labeltext"><span><code>Label.Text</code></span></a></li>
+<li><a href="#labeltextalignment"><span><code>Label.TextAlignment</code></span></a></li>
+<li><a href="#labeltextcolor"><span><code>Label.TextColor</code></span></a></li>
 </ul></li>
 </ul>
-          </nav>
-        </div>
-        <div class="column column-75">
+  </nav>
+
+  <main>
 <section id="label-functions-and-properties" class="level2">
-<h2>Label functions and properties</h2>
-<section id="font" class="level3">
-<h3>Font</h3>
+<h2><a href="#label-functions-and-properties"><code>Label</code> functions and properties</a></h2>
+<p>Label is a subclass of <a href="GUIControl.html">GUIControl</a> and therefore inherits all GUIControl's functions and properties in addition to its own, which are listed below.</p>
+<hr />
+<section id="labelfont" class="level3">
+<h3><a href="#labelfont"><code>Label.Font</code></a></h3>
 <p><em>(Formerly known as SetLabelFont, which is now obsolete)</em></p>
 <pre><code>FontType Label.Font;
 </code></pre>
@@ -67,41 +88,52 @@
 }
 </code></pre>
 <p>will change label 'lblStatus' to use font "Foreign" if a game translation is in use.</p>
-<p><em>See Also:</em> <a href="Game.html#istranslationavailable">IsTranslationAvailable</a>, <a href="Label.html#text">Label.Text</a>, <a href="TextBox.html#font">TextBox.Font</a></p>
+<p><em>See Also:</em> <a href="Globalfunctions_General.html#istranslationavailable">IsTranslationAvailable</a>, <a href="Label.html#labeltext">Label.Text</a>, <a href="TextBox.html#textboxfont">TextBox.Font</a></p>
 <hr />
 </section>
-<section id="text" class="level3">
-<h3>Text</h3>
+<section id="labeltext" class="level3">
+<h3><a href="#labeltext"><code>Label.Text</code></a></h3>
 <p><em>(Formerly known as SetLabelText, which is now obsolete)</em><br> <em>(Formerly known as Label.GetText, which is now obsolete)</em><br> <em>(Formerly known as Label.SetText, which is now obsolete)</em></p>
 <pre><code>String Label.Text;
 </code></pre>
-<p>Gets/sets the text displayed in the specified label. This allows you to change the text during the game, for example to create a Lucasarts-style status line.</p>
+<p>Gets/sets the text displayed in the specified label. This allows you to change the text during the game, for example to create a LucasArts-style status line.</p>
 <p>Example:</p>
 <pre><code>lblStatus.Text = Game.GetLocationName(mouse.x, mouse.y);
 </code></pre>
 <p>will display the name of the location the cursor is over on label 'lblStatus'</p>
-<p><em>See Also:</em> <a href="Button.html#normalgraphic">Button.NormalGraphic</a>, <a href="Button.html#text">Button.Text</a>, <a href="Label.html#textcolor">Label.TextColor</a>, <a href="Label.html#font">Label.Font</a></p>
+<p><em>See Also:</em> <a href="Button.html#buttonnormalgraphic">Button.NormalGraphic</a>, <a href="Button.html#buttontext">Button.Text</a>, <a href="Label.html#labeltextcolor">Label.TextColor</a>, <a href="Label.html#labelfont">Label.Font</a></p>
 <hr />
 </section>
-<section id="textcolor" class="level3">
-<h3>TextColor</h3>
+<section id="labeltextalignment" class="level3">
+<h3><a href="#labeltextalignment"><code>Label.TextAlignment</code></a></h3>
+<pre><code>HorizontalAlignment Label.TextAlignment;
+</code></pre>
+<p>Gets/sets how the text is aligned relative to the label's rectangle. Note that currently label supports only horizontal alignment which could be eAlignLeft, eAlignRight and eAlignCenter.</p>
+<p><em>See Also:</em> <a href="StandardEnums.html">Standard Enumerated Types</a>, <a href="Label.html#labelfont">Label.Font</a>, <a href="Label.html#labeltext">Label.Text</a></p>
+<p><em>Compatibility:</em> Supported by <strong>AGS 3.5.0</strong> and later versions.</p>
+<hr />
+</section>
+<section id="labeltextcolor" class="level3">
+<h3><a href="#labeltextcolor"><code>Label.TextColor</code></a></h3>
 <p><em>(Formerly known as SetLabelColor, which is now obsolete)</em></p>
 <pre><code>int Label.TextColor;
 </code></pre>
-<p>Gets/sets the text colour used to display the label's text.</p>
+<p>Gets/sets the text color used to display the label's text.</p>
 <p>Example:</p>
 <pre><code>lblStatus.TextColor = 14;
 </code></pre>
 <p>will change label 'lblStatus' to have yellow text.</p>
-<p><em>See Also:</em> <a href="Label.html#font">Label.Font</a>, <a href="Label.html#text">Label.Text</a></p>
+<p><em>See Also:</em> <a href="Label.html#labelfont">Label.Font</a>, <a href="Label.html#labeltext">Label.Text</a></p>
 </section>
 </section>
-        </div>
-      </div>
-    </section>
+  </main>
+
+
+  <footer>
+    <p>Build: 05/25/21 22:29:29</p>
+  </footer>
+
+  <script src="js/search.js"></script>
   </div>
-
-
-  <script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>

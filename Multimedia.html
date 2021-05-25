@@ -6,64 +6,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Multimedia functions</title>
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/milligram.min.css" />
   <link rel="stylesheet" href="css/main.css" />
+  <link href="static/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
 
 
   <div class="container">
-    <nav class="navigation">
-      <section class="container">
-        <div class="float-left">
-          <a class="navigation-title" href="index.html">
-            <img src="static/logo.png" alt="AGS Manual">
-            <h1 class="title">AGS Manual</h1>
-          </a>
-        </div>
-        <div class="float-right">
-          <ul class="navigation-list float-right">
-            <li class="navigation-item">
-              <input type="search" id="search_input">
-            </li>
-          </ul>
-        </div>
-      </section>
-    </nav>
-
     <header>
-      <ul id="search_results">
-      </ul>
+      <label for="search_input">Search:</label>
+      <input type="search" id="search_input">
+      <ul id="search_results"></ul>
     </header>
 
-    <section>
-      <div class="row">
-        <div class="column">
-          <nav id="TOC">
-            <ul>
-              <li><a href="genindex.html">Index</a></li>
-            </ul>
+  <nav>
+    <a href="index.html">
+      <svg id="cup" width="72" height="48" viewBox="0 0 12 8" preserveAspectRatio="xMidYMid meet">
+        <g shape-rendering="crispEdges">
+          <rect width="10" height="7" fill="#ffffff" />
+          <svg y="1">
+            <rect width="12" height="5" fill="#ffffff" />
+          </svg>
+          <svg x="1">
+            <rect width="8" height="8" fill="#ffffff" />
+          </svg>
+          <svg x="1" y="1">
+            <rect width="8" height="5" fill="#2a7fff" />
+          </svg>
+          <svg x="2" y="6">
+            <rect width="6" height="1" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="2">
+            <rect width="2" height="3" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="3">
+            <rect width="1" height="1" fill="#ffffff" />
+          </svg>
+          <svg x="2" y="2">
+            <rect width="6" height="3" fill="#0000d4" />
+          </svg>
+          <svg x="3" y="5">
+            <rect width="4" height="1" fill="#0000d4" />
+          </svg>
+          <svg x="2" y="1">
+            <rect width="6" height="1" fill="#ffffff" />
+          </svg>
+        </g>
+      </svg>
+    </a>
+    <h1>
+      <a href="index.html">AGS Manual</a>
+    </h1>
+    <ul>
+      <li><a href="genindex.html">Index</a></li>
+    </ul>
 <ul>
-<li><a href="#multimedia-functions">Multimedia functions</a><ul>
-<li><a href="#cdaudio">CDAudio</a></li>
-<li><a href="#isaudioplaying">IsAudioPlaying</a></li>
-<li><a href="#isspeechvoxavailable">IsSpeechVoxAvailable</a></li>
-<li><a href="#playflic">PlayFlic</a></li>
-<li><a href="#playsilentmidi">PlaySilentMIDI</a></li>
-<li><a href="#playvideo">PlayVideo</a></li>
-<li><a href="#setaudiotypespeechvolumedrop">SetAudioTypeSpeechVolumeDrop</a></li>
-<li><a href="#setaudiotypevolume">SetAudioTypeVolume</a></li>
-<li><a href="#setspeechvolume">SetSpeechVolume</a></li>
-<li><a href="#stopaudio">StopAudio</a></li>
+<li><a href="#multimedia-functions"><span>Multimedia functions</span></a>
+<ul>
+<li><a href="#cdaudio"><span><code>CDAudio</code></span></a></li>
+<li><a href="#gameisaudioplaying"><span><code>Game.IsAudioPlaying</code></span></a></li>
+<li><a href="#isspeechvoxavailable"><span><code>IsSpeechVoxAvailable</code></span></a></li>
+<li><a href="#playflic"><span><code>PlayFlic</code></span></a></li>
+<li><a href="#playsilentmidi"><span><code>PlaySilentMIDI</code></span></a></li>
+<li><a href="#playvideo"><span><code>PlayVideo</code></span></a></li>
+<li><a href="#gamesetaudiotypespeechvolumedrop"><span><code>Game.SetAudioTypeSpeechVolumeDrop</code></span></a></li>
+<li><a href="#gamesetaudiotypevolume"><span><code>Game.SetAudioTypeVolume</code></span></a></li>
+<li><a href="#setspeechvolume"><span><code>SetSpeechVolume</code></span></a></li>
+<li><a href="#gamestopaudio"><span><code>Game.StopAudio</code></span></a></li>
 </ul></li>
 </ul>
-          </nav>
-        </div>
-        <div class="column column-75">
+  </nav>
+
+  <main>
 <section id="multimedia-functions" class="level2">
-<h2>Multimedia functions</h2>
+<h2><a href="#multimedia-functions">Multimedia functions</a></h2>
 <section id="cdaudio" class="level3">
-<h3>CDAudio</h3>
+<h3><a href="#cdaudio"><code>CDAudio</code></a></h3>
 <pre><code>CDAudio (eCDAudioFunction, int param)
 </code></pre>
 <p>This function allows you to play and control an audio CD in your game. Different tasks are performed, depending on the value of the AudioFunction parameter. If there is no CD-ROM drive on the system, the function does nothing.</p>
@@ -101,8 +119,8 @@ eCDSelectActiveCDDrive - changes the current CD drive to PARAM,
 <p>will play track 3 of the CD that's in the CD ROM drive.</p>
 <hr />
 </section>
-<section id="isaudioplaying" class="level3">
-<h3>IsAudioPlaying</h3>
+<section id="gameisaudioplaying" class="level3">
+<h3><a href="#gameisaudioplaying"><code>Game.IsAudioPlaying</code></a></h3>
 <p><em>(Formerly known as IsMusicPlaying, which is now obsolete)</em><br> <em>(Formerly known as IsSoundPlaying, which is now obsolete)</em></p>
 <pre><code>static bool Game.IsAudioPlaying(optional AudioType)
 </code></pre>
@@ -116,11 +134,11 @@ eCDSelectActiveCDDrive - changes the current CD drive to PARAM,
 </code></pre>
 <p>waits for any currently playing music to finish.</p>
 <p><em>Compatibility:</em> Supported by <strong>AGS 3.2.0</strong> and later versions.</p>
-<p><em>See Also:</em> <a href="Multimedia.html#stopaudio">Game.StopAudio</a></p>
+<p><em>See Also:</em> <a href="Multimedia.html#gamestopaudio">Game.StopAudio</a></p>
 <hr />
 </section>
 <section id="isspeechvoxavailable" class="level3">
-<h3>IsSpeechVoxAvailable</h3>
+<h3><a href="#isspeechvoxavailable"><code>IsSpeechVoxAvailable</code></a></h3>
 <pre><code>IsSpeechVoxAvailable()
 </code></pre>
 <p>Returns whether the SPEECH.VOX file is being used by the game. This could be useful if you have an optional speech download pack, and you want to know whether the player has it or not.</p>
@@ -131,11 +149,11 @@ eCDSelectActiveCDDrive - changes the current CD drive to PARAM,
 </code></pre>
 <p>will display a message if the voice pack is not available.</p>
 <p><strong>NOTE:</strong> This function used to be called IsVoxAvailable, but has now been renamed to avoid confusion.</p>
-<p><em>See Also:</em> <a href="AudioClip.html#isavailable">AudioClip.IsAvailable</a></p>
+<p><em>See Also:</em> <a href="AudioClip.html#audioclipisavailable">AudioClip.IsAvailable</a></p>
 <hr />
 </section>
 <section id="playflic" class="level3">
-<h3>PlayFlic</h3>
+<h3><a href="#playflic"><code>PlayFlic</code></a></h3>
 <pre><code>PlayFlic (int flic_number, int options)
 </code></pre>
 <p>Plays a FLI or FLC animation. The game checks for FLICx.FLC and FLICx.FLI (where X is FLIC_NUMBER) and if it finds one, plays it.</p>
@@ -143,7 +161,7 @@ eCDSelectActiveCDDrive - changes the current CD drive to PARAM,
 <pre><code>0  player can&#39;t skip animation
 1  player can press ESC to skip animation
 2  player can press any key or click mouse to skip animation
-+10 (ie.10,11,12) do not stretch to full-screen, just play at flc size
++10 (i.e.10,11,12) do not stretch to full-screen, just play at flc size
 +100 do not clear the screen before starting playback
 </code></pre>
 <p>The game is paused while the animation plays.</p>
@@ -155,16 +173,16 @@ eCDSelectActiveCDDrive - changes the current CD drive to PARAM,
 <hr />
 </section>
 <section id="playsilentmidi" class="level3">
-<h3>PlaySilentMIDI</h3>
+<h3><a href="#playsilentmidi"><code>PlaySilentMIDI</code></a></h3>
 <pre><code>PlaySilentMIDI (int music_number)
 </code></pre>
 <p>This command is obsolete.</p>
 <p>Use the AudioClip.Play command and set its Volume property to 0 to simulate this effect.</p>
-<p><em>See Also:</em> <a href="AudioClip.html#play">AudioClip.Play</a>, <a href="AudioChannel.html#volume">AudioChannel.Volume</a></p>
+<p><em>See Also:</em> <a href="AudioClip.html#audioclipplay">AudioClip.Play</a>, <a href="AudioChannel.html#audiochannelvolume">AudioChannel.Volume</a></p>
 <hr />
 </section>
 <section id="playvideo" class="level3">
-<h3>PlayVideo</h3>
+<h3><a href="#playvideo"><code>PlayVideo</code></a></h3>
 <pre><code>PlayVideo (string filename, VideoSkipStyle, int flags)
 </code></pre>
 <p>Plays an AVI, MPG or OGG Theora file, or any other file type supported by Media Player. The game is paused while the video plays.</p>
@@ -182,21 +200,22 @@ eVideoSkipAnyKeyOrMouse  player can press any key or click mouse to skip
 11: stretched to full screen, with game audio continuing (AVI audio muted)
 </code></pre>
 <p>There are two distinct type of videos that the PlayVideo function can play.</p>
-<p>The first is OGG Theora, which is a recently introduced video file format. AGS has built-in support for playing these videos, so everyone who plays your game will be able to see the video. OGG Theora videos are also built into the game EXE file when you compile the game (just make sure the file has a .OGV extension and is placed in your main game folder). A good converter for theora is <a href="http://v2v.cc/~j/ffmpeg2theora/">ffmpeg2theora</a>.</p>
+<p>The first is OGG Theora, which is a recently introduced video file format. AGS has built-in support for playing these videos, so everyone who plays your game will be able to see the video. OGG Theora videos are also built into the game EXE file when you compile the game (just make sure the file has a .OGV extension and is placed in your main game folder). A good converter for theora is <a href="https://v2v.cc/~j/ffmpeg2theora/">ffmpeg2theora</a>.</p>
+<p><strong>IMPORTANT:</strong> Because of an old mistake in AGS, OGG Theora videos may be positioned on screen with a slight negative offset, cutting few rows or columns of pixels. Until this is fixed, as a workaround, make sure that your video's frame sizes are multipliers of 16 and actual image placed aligned to the center. For example, if you want 320x200 video then increase canvas to 320x208 and place image at offset (0, 4).</p>
 <p>The second type of files that AGS can play is anything supported by Windows Media Player. This includes AVI, MPG and more. However, in order for these to work on the player's system, they will need to have the correct codecs installed. For example, if you create your video with the XVid codec, the player will need to have XVid installed to be able to view it. These types of video cannot be included into the game EXE, so you will have to place them separately in the Compiled folder for them to work.</p>
-<p><strong>NOTE:</strong> In 256-colour games, PlayVideo is not supported. Please use a FLC/FLI video with the <a href="Multimedia.html#playflic">PlayFlic</a> command instead.</p>
-<p><strong>Cross-Platform Support</strong></p>
-<p>Windows: <strong>Yes</strong><br> Linux: <strong>No</strong><br> MacOS: <strong>Yes</strong></p>
+<p><strong>NOTE:</strong> In 256-color games, PlayVideo is not supported. Please use a FLC/FLI video with the <a href="Multimedia.html#playflic">PlayFlic</a> command instead.</p>
 <p>Example:</p>
-<pre><code>PlayVideo(&quot;intro.mpg&quot;, eVideoSkipEscKey, 1);
+<pre><code>PlayVideo(&quot;Intro.ogv&quot;, eVideoSkipEscKey, 1);
 </code></pre>
-<p>will play the video Intro.mpg, allowing the player to skip with ESC if they've seen it before.</p>
+<p>will play the video Intro.ogv, allowing the player to skip with ESC if they've seen it before.</p>
+<p><strong>Cross-Platform Support</strong></p>
+<p>OGG Theora: supported everywhere. AVI / MPG: Windows only.</p>
 <p><em>Compatibility:</em> OGG Theora supported by <strong>AGS 3.1.1</strong> and later versions.</p>
 <p><em>See Also:</em> <a href="Multimedia.html#playflic">PlayFlic</a></p>
 <hr />
 </section>
-<section id="setaudiotypespeechvolumedrop" class="level3">
-<h3>SetAudioTypeSpeechVolumeDrop</h3>
+<section id="gamesetaudiotypespeechvolumedrop" class="level3">
+<h3><a href="#gamesetaudiotypespeechvolumedrop"><code>Game.SetAudioTypeSpeechVolumeDrop</code></a></h3>
 <p><em>(Formerly known as game.speech_music_drop, which is now obsolete)</em></p>
 <pre><code>static Game.SetAudioTypeSpeechVolumeDrop(AudioType, int volumeReduction)
 </code></pre>
@@ -207,11 +226,11 @@ eVideoSkipAnyKeyOrMouse  player can press any key or click mouse to skip
 </code></pre>
 <p>will reduce the volume of Music audio clips by 25 percentage points while speech is playing.</p>
 <p><em>Compatibility:</em> Supported by <strong>AGS 3.2.0</strong> and later versions.</p>
-<p><em>See Also:</em> <a href="Multimedia.html#setaudiotypevolume">Game.SetAudioTypeVolume</a></p>
+<p><em>See Also:</em> <a href="Multimedia.html#gamesetaudiotypevolume">Game.SetAudioTypeVolume</a></p>
 <hr />
 </section>
-<section id="setaudiotypevolume" class="level3">
-<h3>SetAudioTypeVolume</h3>
+<section id="gamesetaudiotypevolume" class="level3">
+<h3><a href="#gamesetaudiotypevolume"><code>Game.SetAudioTypeVolume</code></a></h3>
 <p><em>(Formerly known as SetSoundVolume, which is now obsolete)</em></p>
 <pre><code>static Game.SetAudioTypeVolume(AudioType, int volume, ChangeVolumeType)
 </code></pre>
@@ -228,11 +247,11 @@ eVolExistingAndFuture   change both currently playing and future audio
 </code></pre>
 <p>will change the volume of all currently playing and future music to <code>20%</code>.</p>
 <p><em>Compatibility:</em> Supported by <strong>AGS 3.2.0</strong> and later versions.</p>
-<p><em>See Also:</em> <a href="Multimedia.html#setspeechvolume">SetSpeechVolume</a>, <a href="AudioClip.html#play">AudioClip.Play</a>, <a href="System.html#volume">System.Volume</a></p>
+<p><em>See Also:</em> <a href="Multimedia.html#setspeechvolume">SetSpeechVolume</a>, <a href="AudioClip.html#audioclipplay">AudioClip.Play</a>, <a href="System.html#systemvolume">System.Volume</a></p>
 <hr />
 </section>
 <section id="setspeechvolume" class="level3">
-<h3>SetSpeechVolume</h3>
+<h3><a href="#setspeechvolume"><code>SetSpeechVolume</code></a></h3>
 <pre><code>SetSpeechVolume (int volume)
 </code></pre>
 <p>Sets the volume for in-game speech. VOLUME ranges from 0-255, where 255 is the loudest. The default speech volume is 255 so this function can only be used to reduce the volume.</p>
@@ -240,30 +259,32 @@ eVolExistingAndFuture   change both currently playing and future audio
 <pre><code>SetSpeechVolume(200);
 </code></pre>
 <p>will set the speech volume to 200.</p>
-<p><em>See Also:</em> <a href="Multimedia.html#setaudiotypevolume">Game.SetAudioTypeVolume</a></p>
+<p><em>See Also:</em> <a href="Multimedia.html#gamesetaudiotypevolume">Game.SetAudioTypeVolume</a></p>
 <hr />
 </section>
-<section id="stopaudio" class="level3">
-<h3>StopAudio</h3>
+<section id="gamestopaudio" class="level3">
+<h3><a href="#gamestopaudio"><code>Game.StopAudio</code></a></h3>
 <p><em>(Formerly known as Game.StopSound, which is now obsolete)</em><br> <em>(Formerly known as StopMusic, which is now obsolete)</em></p>
 <pre><code>static Game.StopAudio(optional AudioType)
 </code></pre>
 <p>Stops all currently playing audio. If you pass no parameters, then all audio will be stopped. Alternatively, you can pass one of the AudioTypes which will only stop audio clips of that type.</p>
-<p>If there are any audio clips queued up with PlayQueued, they will also be cancelled.</p>
+<p>If there are any audio clips queued up with PlayQueued, they will also be canceled.</p>
 <p>Example:</p>
 <pre><code>Game.StopAudio();
 </code></pre>
 <p>will stop all currently playing audio.</p>
 <p><em>Compatibility:</em> Supported by <strong>AGS 3.2.0</strong> and later versions.</p>
-<p><em>See Also:</em> <a href="Multimedia.html#isaudioplaying">Game.IsAudioPlaying</a>, <a href="AudioClip.html#play">AudioClip.Play</a>, <a href="AudioChannel.html#stop">AudioChannel.Stop</a></p>
+<p><em>See Also:</em> <a href="Multimedia.html#gameisaudioplaying">Game.IsAudioPlaying</a>, <a href="AudioClip.html#audioclipplay">AudioClip.Play</a>, <a href="AudioChannel.html#audiochannelstop">AudioChannel.Stop</a></p>
 </section>
 </section>
-        </div>
-      </div>
-    </section>
+  </main>
+
+
+  <footer>
+    <p>Build: 05/25/21 22:29:26</p>
+  </footer>
+
+  <script src="js/search.js"></script>
   </div>
-
-
-  <script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>

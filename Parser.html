@@ -6,58 +6,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Parser functions</title>
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/milligram.min.css" />
   <link rel="stylesheet" href="css/main.css" />
+  <link href="static/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
 
 
   <div class="container">
-    <nav class="navigation">
-      <section class="container">
-        <div class="float-left">
-          <a class="navigation-title" href="index.html">
-            <img src="static/logo.png" alt="AGS Manual">
-            <h1 class="title">AGS Manual</h1>
-          </a>
-        </div>
-        <div class="float-right">
-          <ul class="navigation-list float-right">
-            <li class="navigation-item">
-              <input type="search" id="search_input">
-            </li>
-          </ul>
-        </div>
-      </section>
-    </nav>
-
     <header>
-      <ul id="search_results">
-      </ul>
+      <label for="search_input">Search:</label>
+      <input type="search" id="search_input">
+      <ul id="search_results"></ul>
     </header>
 
-    <section>
-      <div class="row">
-        <div class="column">
-          <nav id="TOC">
-            <ul>
-              <li><a href="genindex.html">Index</a></li>
-            </ul>
+  <nav>
+    <a href="index.html">
+      <svg id="cup" width="72" height="48" viewBox="0 0 12 8" preserveAspectRatio="xMidYMid meet">
+        <g shape-rendering="crispEdges">
+          <rect width="10" height="7" fill="#ffffff" />
+          <svg y="1">
+            <rect width="12" height="5" fill="#ffffff" />
+          </svg>
+          <svg x="1">
+            <rect width="8" height="8" fill="#ffffff" />
+          </svg>
+          <svg x="1" y="1">
+            <rect width="8" height="5" fill="#2a7fff" />
+          </svg>
+          <svg x="2" y="6">
+            <rect width="6" height="1" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="2">
+            <rect width="2" height="3" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="3">
+            <rect width="1" height="1" fill="#ffffff" />
+          </svg>
+          <svg x="2" y="2">
+            <rect width="6" height="3" fill="#0000d4" />
+          </svg>
+          <svg x="3" y="5">
+            <rect width="4" height="1" fill="#0000d4" />
+          </svg>
+          <svg x="2" y="1">
+            <rect width="6" height="1" fill="#ffffff" />
+          </svg>
+        </g>
+      </svg>
+    </a>
+    <h1>
+      <a href="index.html">AGS Manual</a>
+    </h1>
+    <ul>
+      <li><a href="genindex.html">Index</a></li>
+    </ul>
 <ul>
-<li><a href="#parser-functions">Parser functions</a><ul>
-<li><a href="#findwordid">FindWordID</a></li>
-<li><a href="#parsetext">ParseText</a></li>
-<li><a href="#said">Said</a></li>
-<li><a href="#saidunknownword">SaidUnknownWord</a></li>
+<li><a href="#parser-functions"><span><code>Parser</code> functions</span></a>
+<ul>
+<li><a href="#parserfindwordid"><span><code>Parser.FindWordID</code></span></a></li>
+<li><a href="#parserparsetext"><span><code>Parser.ParseText</code></span></a></li>
+<li><a href="#parsersaid"><span><code>Parser.Said</code></span></a></li>
+<li><a href="#parsersaidunknownword"><span><code>Parser.SaidUnknownWord</code></span></a></li>
 </ul></li>
 </ul>
-          </nav>
-        </div>
-        <div class="column column-75">
+  </nav>
+
+  <main>
 <section id="parser-functions" class="level2">
-<h2>Parser functions</h2>
-<section id="findwordid" class="level3">
-<h3>FindWordID</h3>
+<h2><a href="#parser-functions"><code>Parser</code> functions</a></h2>
+<p>You can look into <a href="TextParser.html">TextParser</a> for additional help on using the parser in your games.</p>
+<section id="parserfindwordid" class="level3">
+<h3><a href="#parserfindwordid"><code>Parser.FindWordID</code></a></h3>
 <pre><code>static int Parser.FindWordID(string wordToFind)
 </code></pre>
 <p>Looks up <em>wordToFind</em> in the text parser dictionary, and returns the ID number.</p>
@@ -73,11 +92,11 @@
 </code></pre>
 <p>will display a message if the game dictionary includes "machine"</p>
 <p><em>Compatibility:</em> Supported by <strong>AGS 3.1.0</strong> and later versions.</p>
-<p><em>See Also:</em> <a href="Parser.html#parsetext">Parser.ParseText</a></p>
+<p><em>See Also:</em> <a href="Parser.html#parserparsetext">Parser.ParseText</a></p>
 <hr />
 </section>
-<section id="parsetext" class="level3">
-<h3>ParseText</h3>
+<section id="parserparsetext" class="level3">
+<h3><a href="#parserparsetext"><code>Parser.ParseText</code></a></h3>
 <pre><code>static Parser.ParseText(string text)
 </code></pre>
 <p>Stores the supplied user text string for later use by Said. You need to call this command first with the user's input before using the Said command. You would usually call this inside the text box's OnActivate event handler.</p>
@@ -86,11 +105,11 @@
  Parser.ParseText(command);
 </code></pre>
 <p>will get the players input and store it in string "command" for use with the said command.</p>
-<p><em>See Also:</em> <a href="Parser.html#findwordid">Parser.FindWordID</a>, <a href="Parser.html#said">Parser.Said</a></p>
+<p><em>See Also:</em> <a href="Parser.html#parserfindwordid">Parser.FindWordID</a>, <a href="Parser.html#parsersaid">Parser.Said</a></p>
 <hr />
 </section>
-<section id="said" class="level3">
-<h3>Said</h3>
+<section id="parsersaid" class="level3">
+<h3><a href="#parsersaid"><code>Parser.Said</code></a></h3>
 <pre><code>static bool Parser.Said(string text)
 </code></pre>
 <p>Checks whether the player typed in TEXT in their input passed to ParseText. Returns <em>true</em> if it matches, <em>false</em> otherwise.</p>
@@ -104,30 +123,32 @@ if (Parser.Said(&quot;load&quot;)) {
 }
 </code></pre>
 <p>will bring up the restore game dialogue if the player types "load" in the text parser.</p>
-<p><em>See Also:</em> <a href="Parser.html#parsetext">Parser.ParseText</a>, <a href="Parser.html#saidunknownword">Parser.SaidUnknownWord</a></p>
+<p><em>See Also:</em> <a href="Parser.html#parserparsetext">Parser.ParseText</a>, <a href="Parser.html#parsersaidunknownword">Parser.SaidUnknownWord</a></p>
 <hr />
 </section>
-<section id="saidunknownword" class="level3">
-<h3>SaidUnknownWord</h3>
+<section id="parsersaidunknownword" class="level3">
+<h3><a href="#parsersaidunknownword"><code>Parser.SaidUnknownWord</code></a></h3>
 <pre><code>static String Parser.SaidUnknownWord()
 </code></pre>
-<p>If a word not in the game dictionary was submitted to the last ParseText call, then the word is returned by this command. This allows you to display a message like "Sorry, this game doesn't recognise 'XXXX'."</p>
-<p>If all the words were recognised, this returns null.</p>
+<p>If a word not in the game dictionary was submitted to the last ParseText call, then the word is returned by this command. This allows you to display a message like "Sorry, this game doesn't recognize 'XXXX'."</p>
+<p>If all the words were recognized, this returns null.</p>
 <p>Example:</p>
 <pre><code>String badWord = Parser.SaidUnknownWord();
 if (badWord != null)
    Display(&quot;You can&#39;t use &#39;%s&#39; in this game.&quot;, badWord);
 </code></pre>
 <p>will display the message if the player types a word that's not in the vocabulary.</p>
-<p><em>See Also:</em> <a href="Parser.html#parsetext">Parser.ParseText</a>, <a href="Parser.html#said">Parser.Said</a></p>
+<p><em>See Also:</em> <a href="Parser.html#parserparsetext">Parser.ParseText</a>, <a href="Parser.html#parsersaid">Parser.Said</a></p>
 </section>
 </section>
-        </div>
-      </div>
-    </section>
+  </main>
+
+
+  <footer>
+    <p>Build: 05/25/21 22:29:35</p>
+  </footer>
+
+  <script src="js/search.js"></script>
   </div>
-
-
-  <script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>

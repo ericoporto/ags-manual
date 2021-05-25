@@ -6,62 +6,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>DateTime functions and properties</title>
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/milligram.min.css" />
   <link rel="stylesheet" href="css/main.css" />
+  <link href="static/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
 
 
   <div class="container">
-    <nav class="navigation">
-      <section class="container">
-        <div class="float-left">
-          <a class="navigation-title" href="index.html">
-            <img src="static/logo.png" alt="AGS Manual">
-            <h1 class="title">AGS Manual</h1>
-          </a>
-        </div>
-        <div class="float-right">
-          <ul class="navigation-list float-right">
-            <li class="navigation-item">
-              <input type="search" id="search_input">
-            </li>
-          </ul>
-        </div>
-      </section>
-    </nav>
-
     <header>
-      <ul id="search_results">
-      </ul>
+      <label for="search_input">Search:</label>
+      <input type="search" id="search_input">
+      <ul id="search_results"></ul>
     </header>
 
-    <section>
-      <div class="row">
-        <div class="column">
-          <nav id="TOC">
-            <ul>
-              <li><a href="genindex.html">Index</a></li>
-            </ul>
+  <nav>
+    <a href="index.html">
+      <svg id="cup" width="72" height="48" viewBox="0 0 12 8" preserveAspectRatio="xMidYMid meet">
+        <g shape-rendering="crispEdges">
+          <rect width="10" height="7" fill="#ffffff" />
+          <svg y="1">
+            <rect width="12" height="5" fill="#ffffff" />
+          </svg>
+          <svg x="1">
+            <rect width="8" height="8" fill="#ffffff" />
+          </svg>
+          <svg x="1" y="1">
+            <rect width="8" height="5" fill="#2a7fff" />
+          </svg>
+          <svg x="2" y="6">
+            <rect width="6" height="1" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="2">
+            <rect width="2" height="3" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="3">
+            <rect width="1" height="1" fill="#ffffff" />
+          </svg>
+          <svg x="2" y="2">
+            <rect width="6" height="3" fill="#0000d4" />
+          </svg>
+          <svg x="3" y="5">
+            <rect width="4" height="1" fill="#0000d4" />
+          </svg>
+          <svg x="2" y="1">
+            <rect width="6" height="1" fill="#ffffff" />
+          </svg>
+        </g>
+      </svg>
+    </a>
+    <h1>
+      <a href="index.html">AGS Manual</a>
+    </h1>
+    <ul>
+      <li><a href="genindex.html">Index</a></li>
+    </ul>
 <ul>
-<li><a href="#datetime-functions-and-properties">DateTime functions and properties</a><ul>
-<li><a href="#now">Now</a></li>
-<li><a href="#dayofmonth">DayOfMonth</a></li>
-<li><a href="#hour">Hour</a></li>
-<li><a href="#minute">Minute</a></li>
-<li><a href="#month">Month</a></li>
-<li><a href="#rawtime">RawTime</a></li>
-<li><a href="#second">Second</a></li>
-<li><a href="#year">Year</a></li>
+<li><a href="#datetime-functions-and-properties"><span><code>DateTime</code> functions and properties</span></a>
+<ul>
+<li><a href="#datetimenow"><span><code>DateTime.Now</code></span></a></li>
+<li><a href="#datetimedayofmonth"><span><code>DateTime.DayOfMonth</code></span></a></li>
+<li><a href="#datetimehour"><span><code>DateTime.Hour</code></span></a></li>
+<li><a href="#datetimeminute"><span><code>DateTime.Minute</code></span></a></li>
+<li><a href="#datetimemonth"><span><code>DateTime.Month</code></span></a></li>
+<li><a href="#datetimerawtime"><span><code>DateTime.RawTime</code></span></a></li>
+<li><a href="#datetimesecond"><span><code>DateTime.Second</code></span></a></li>
+<li><a href="#datetimeyear"><span><code>DateTime.Year</code></span></a></li>
 </ul></li>
 </ul>
-          </nav>
-        </div>
-        <div class="column column-75">
+  </nav>
+
+  <main>
 <section id="datetime-functions-and-properties" class="level2">
-<h2>DateTime functions and properties</h2>
-<section id="now" class="level3">
-<h3>Now</h3>
+<h2><a href="#datetime-functions-and-properties"><code>DateTime</code> functions and properties</a></h2>
+<section id="datetimenow" class="level3">
+<h3><a href="#datetimenow"><code>DateTime.Now</code></a></h3>
 <p><em>(Formerly known as GetTime, which is now obsolete)</em></p>
 <pre><code>readonly static DateTime* DateTime.Now;
 </code></pre>
@@ -74,47 +92,47 @@ Display(&quot;The date is: %02d/%02d/%04d&quot;, dt.DayOfMonth, dt.Month, dt.Yea
 Display(&quot;The time is: %02d:%02d:%02d&quot;, dt.Hour, dt.Minute, dt.Second);
 </code></pre>
 <p>will display the current date and time in 24-hour format</p>
-<p><em>See Also:</em> <a href="DateTime.html#dayofmonth">DateTime.DayOfMonth</a>, <a href="DateTime.html#hour">DateTime.Hour</a>, <a href="DateTime.html#minute">DateTime.Minute</a>, <a href="DateTime.html#month">DateTime.Month</a>, <a href="DateTime.html#rawtime">DateTime.RawTime</a>, <a href="DateTime.html#second">DateTime.Second</a>, <a href="DateTime.html#year">DateTime.Year</a></p>
+<p><em>See Also:</em> <a href="DateTime.html#datetimedayofmonth">DateTime.DayOfMonth</a>, <a href="DateTime.html#datetimehour">DateTime.Hour</a>, <a href="DateTime.html#datetimeminute">DateTime.Minute</a>, <a href="DateTime.html#datetimemonth">DateTime.Month</a>, <a href="DateTime.html#datetimerawtime">DateTime.RawTime</a>, <a href="DateTime.html#datetimesecond">DateTime.Second</a>, <a href="DateTime.html#datetimeyear">DateTime.Year</a></p>
 <hr />
 </section>
-<section id="dayofmonth" class="level3">
-<h3>DayOfMonth</h3>
+<section id="datetimedayofmonth" class="level3">
+<h3><a href="#datetimedayofmonth"><code>DateTime.DayOfMonth</code></a></h3>
 <pre><code>readonly int DateTime.DayOfMonth;
 </code></pre>
 <p>Gets the day of the month represented by the DateTime object. This will be from 1 to 31, representing the current day within the month.</p>
-<p>Example: For an example, see <a href="DateTime.html#now">DateTime.Now</a>.</p>
-<p><em>See Also:</em> <a href="DateTime.html#now">DateTime.Now</a></p>
+<p>Example: For an example, see <a href="DateTime.html#datetimenow">DateTime.Now</a>.</p>
+<p><em>See Also:</em> <a href="DateTime.html#datetimenow">DateTime.Now</a></p>
 <hr />
 </section>
-<section id="hour" class="level3">
-<h3>Hour</h3>
+<section id="datetimehour" class="level3">
+<h3><a href="#datetimehour"><code>DateTime.Hour</code></a></h3>
 <pre><code>readonly int DateTime.Hour;
 </code></pre>
 <p>Gets the hour represented by the DateTime object. This will be from 0 to 23, representing the hour in 24-hour format.</p>
-<p>Example: For an example, see <a href="DateTime.html#now">DateTime.Now</a>.</p>
-<p><em>See Also:</em> <a href="DateTime.html#now">DateTime.Now</a></p>
+<p>Example: For an example, see <a href="DateTime.html#datetimenow">DateTime.Now</a>.</p>
+<p><em>See Also:</em> <a href="DateTime.html#datetimenow">DateTime.Now</a></p>
 <hr />
 </section>
-<section id="minute" class="level3">
-<h3>Minute</h3>
+<section id="datetimeminute" class="level3">
+<h3><a href="#datetimeminute"><code>DateTime.Minute</code></a></h3>
 <pre><code>readonly int DateTime.Minute;
 </code></pre>
 <p>Gets the minute represented by the DateTime object. This will be from 0 to 59, representing the minute in 24-hour format.</p>
-<p>Example: For an example, see <a href="DateTime.html#now">DateTime.Now</a>.</p>
-<p><em>See Also:</em> <a href="DateTime.html#now">DateTime.Now</a></p>
+<p>Example: For an example, see <a href="DateTime.html#datetimenow">DateTime.Now</a>.</p>
+<p><em>See Also:</em> <a href="DateTime.html#datetimenow">DateTime.Now</a></p>
 <hr />
 </section>
-<section id="month" class="level3">
-<h3>Month</h3>
+<section id="datetimemonth" class="level3">
+<h3><a href="#datetimemonth"><code>DateTime.Month</code></a></h3>
 <pre><code>readonly int DateTime.Month;
 </code></pre>
 <p>Gets the month represented by the DateTime object. This will be from 1 to 12, representing the month of the year.</p>
-<p>Example: For an example, see <a href="DateTime.html#now">DateTime.Now</a>.</p>
-<p><em>See Also:</em> <a href="DateTime.html#now">DateTime.Now</a></p>
+<p>Example: For an example, see <a href="DateTime.html#datetimenow">DateTime.Now</a>.</p>
+<p><em>See Also:</em> <a href="DateTime.html#datetimenow">DateTime.Now</a></p>
 <hr />
 </section>
-<section id="rawtime" class="level3">
-<h3>RawTime</h3>
+<section id="datetimerawtime" class="level3">
+<h3><a href="#datetimerawtime"><code>DateTime.RawTime</code></a></h3>
 <p><em>(Formerly known as GetRawTime, which is now obsolete)</em></p>
 <pre><code>readonly int DateTime.RawTime;
 </code></pre>
@@ -128,33 +146,35 @@ dt = DateTime.Now;
 Display(&quot;After the wait it is now %d seconds later.&quot;, dt.RawTime - start_time);
 </code></pre>
 <p>should display that 3 seconds have elapsed.</p>
-<p><em>See Also:</em> <a href="DateTime.html#now">DateTime.Now</a>, <a href="Game.html#settimer">SetTimer</a></p>
+<p><em>See Also:</em> <a href="DateTime.html#datetimenow">DateTime.Now</a>, <a href="Globalfunctions_General.html#settimer">SetTimer</a></p>
 <hr />
 </section>
-<section id="second" class="level3">
-<h3>Second</h3>
+<section id="datetimesecond" class="level3">
+<h3><a href="#datetimesecond"><code>DateTime.Second</code></a></h3>
 <pre><code>readonly int DateTime.Second;
 </code></pre>
 <p>Gets the second represented by the DateTime object. This will be from 0 to 59, representing the second.</p>
-<p>Example: For an example, see <a href="DateTime.html#now">DateTime.Now</a>.</p>
-<p><em>See Also:</em> <a href="DateTime.html#now">DateTime.Now</a></p>
+<p>Example: For an example, see <a href="DateTime.html#datetimenow">DateTime.Now</a>.</p>
+<p><em>See Also:</em> <a href="DateTime.html#datetimenow">DateTime.Now</a></p>
 <hr />
 </section>
-<section id="year" class="level3">
-<h3>Year</h3>
+<section id="datetimeyear" class="level3">
+<h3><a href="#datetimeyear"><code>DateTime.Year</code></a></h3>
 <pre><code>readonly int DateTime.Year;
 </code></pre>
 <p>Gets the year represented by the DateTime object. This is the full year, for example <em>2005</em>.</p>
-<p>Example: For an example, see <a href="DateTime.html#now">DateTime.Now</a>.</p>
-<p><em>See Also:</em> <a href="DateTime.html#now">DateTime.Now</a></p>
+<p>Example: For an example, see <a href="DateTime.html#datetimenow">DateTime.Now</a>.</p>
+<p><em>See Also:</em> <a href="DateTime.html#datetimenow">DateTime.Now</a></p>
 </section>
 </section>
-        </div>
-      </div>
-    </section>
+  </main>
+
+
+  <footer>
+    <p>Build: 05/25/21 22:29:25</p>
+  </footer>
+
+  <script src="js/search.js"></script>
   </div>
-
-
-  <script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>

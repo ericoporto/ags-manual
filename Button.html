@@ -6,155 +6,177 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Button functions and properties</title>
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/milligram.min.css" />
   <link rel="stylesheet" href="css/main.css" />
+  <link href="static/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
 
 
   <div class="container">
-    <nav class="navigation">
-      <section class="container">
-        <div class="float-left">
-          <a class="navigation-title" href="index.html">
-            <img src="static/logo.png" alt="AGS Manual">
-            <h1 class="title">AGS Manual</h1>
-          </a>
-        </div>
-        <div class="float-right">
-          <ul class="navigation-list float-right">
-            <li class="navigation-item">
-              <input type="search" id="search_input">
-            </li>
-          </ul>
-        </div>
-      </section>
-    </nav>
-
     <header>
-      <ul id="search_results">
-      </ul>
+      <label for="search_input">Search:</label>
+      <input type="search" id="search_input">
+      <ul id="search_results"></ul>
     </header>
 
-    <section>
-      <div class="row">
-        <div class="column">
-          <nav id="TOC">
-            <ul>
-              <li><a href="genindex.html">Index</a></li>
-            </ul>
+  <nav>
+    <a href="index.html">
+      <svg id="cup" width="72" height="48" viewBox="0 0 12 8" preserveAspectRatio="xMidYMid meet">
+        <g shape-rendering="crispEdges">
+          <rect width="10" height="7" fill="#ffffff" />
+          <svg y="1">
+            <rect width="12" height="5" fill="#ffffff" />
+          </svg>
+          <svg x="1">
+            <rect width="8" height="8" fill="#ffffff" />
+          </svg>
+          <svg x="1" y="1">
+            <rect width="8" height="5" fill="#2a7fff" />
+          </svg>
+          <svg x="2" y="6">
+            <rect width="6" height="1" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="2">
+            <rect width="2" height="3" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="3">
+            <rect width="1" height="1" fill="#ffffff" />
+          </svg>
+          <svg x="2" y="2">
+            <rect width="6" height="3" fill="#0000d4" />
+          </svg>
+          <svg x="3" y="5">
+            <rect width="4" height="1" fill="#0000d4" />
+          </svg>
+          <svg x="2" y="1">
+            <rect width="6" height="1" fill="#ffffff" />
+          </svg>
+        </g>
+      </svg>
+    </a>
+    <h1>
+      <a href="index.html">AGS Manual</a>
+    </h1>
+    <ul>
+      <li><a href="genindex.html">Index</a></li>
+    </ul>
 <ul>
-<li><a href="#button-functions-and-properties">Button functions and properties</a><ul>
-<li><a href="#click">Click</a></li>
-<li><a href="#animate">Animate</a></li>
-<li><a href="#animating">Animating</a></li>
-<li><a href="#frame">Frame</a></li>
-<li><a href="#loop">Loop</a></li>
-<li><a href="#view">View</a></li>
-<li><a href="#clipimage">ClipImage</a></li>
-<li><a href="#font">Font</a></li>
-<li><a href="#graphic">Graphic</a></li>
-<li><a href="#mouseovergraphic">MouseOverGraphic</a></li>
-<li><a href="#normalgraphic">NormalGraphic</a></li>
-<li><a href="#pushedgraphic">PushedGraphic</a></li>
-<li><a href="#text">Text</a></li>
-<li><a href="#textcolor">TextColor</a></li>
+<li><a href="#button-functions-and-properties"><span><code>Button</code> functions and properties</span></a>
+<ul>
+<li><a href="#buttonclick"><span><code>Button.Click</code></span></a></li>
+<li><a href="#buttonanimate"><span><code>Button.Animate</code></span></a></li>
+<li><a href="#buttonanimating"><span><code>Button.Animating</code></span></a></li>
+<li><a href="#buttonframe"><span><code>Button.Frame</code></span></a></li>
+<li><a href="#buttonloop"><span><code>Button.Loop</code></span></a></li>
+<li><a href="#buttonview"><span><code>Button.View</code></span></a></li>
+<li><a href="#buttonclipimage"><span><code>Button.ClipImage</code></span></a></li>
+<li><a href="#buttonfont"><span><code>Button.Font</code></span></a></li>
+<li><a href="#buttongraphic"><span><code>Button.Graphic</code></span></a></li>
+<li><a href="#buttonmouseovergraphic"><span><code>Button.MouseOverGraphic</code></span></a></li>
+<li><a href="#buttonnormalgraphic"><span><code>Button.NormalGraphic</code></span></a></li>
+<li><a href="#buttonpushedgraphic"><span><code>Button.PushedGraphic</code></span></a></li>
+<li><a href="#buttontext"><span><code>Button.Text</code></span></a></li>
+<li><a href="#buttontextalignment"><span><code>Button.TextAlignment</code></span></a></li>
+<li><a href="#buttontextcolor"><span><code>Button.TextColor</code></span></a></li>
 </ul></li>
 </ul>
-          </nav>
-        </div>
-        <div class="column column-75">
+  </nav>
+
+  <main>
 <section id="button-functions-and-properties" class="level2">
-<h2>Button functions and properties</h2>
-<section id="click" class="level3">
-<h3>Click</h3>
+<h2><a href="#button-functions-and-properties"><code>Button</code> functions and properties</a></h2>
+<p>Button is a subclass of <a href="GUIControl.html">GUIControl</a> and therefore inherits all GUIControl's functions and properties in addition to its own, which are listed below.</p>
+<hr />
+<section id="buttonclick" class="level3">
+<h3><a href="#buttonclick"><code>Button.Click</code></a></h3>
 <pre><code>Button.Click()
 </code></pre>
 <p>Forces Button's OnClick event. If there is a script function bound to that event it will be run, otherwise nothing happens.</p>
 <p><em>Compatibility:</em> Supported by <strong>AGS 3.4.0</strong> and later versions.</p>
-<p><em>See Also:</em> <a href="GUI.html#click">GUI.Click</a>, <a href="GUI.html#processclick">GUI.ProcessClick</a></p>
+<p><em>See Also:</em> <a href="GUI.html#guiclick">GUI.Click</a>, <a href="GUI.html#guiprocessclick">GUI.ProcessClick</a></p>
 <hr />
 </section>
-<section id="animate" class="level3">
-<h3>Animate</h3>
+<section id="buttonanimate" class="level3">
+<h3><a href="#buttonanimate"><code>Button.Animate</code></a></h3>
 <p><em>(Formerly known as AnimateButton, which is now obsolete)</em></p>
 <pre><code>Button.Animate(int view, int loop, int delay, RepeatStyle)
 </code></pre>
 <p>Animates a GUI button by playing the specified view loop on it. This could be useful for Sierra-style death animations and other effects.</p>
-<p>LOOP from VIEW will be played on the button. The DELAY specifies the speed of the animation - larger numbers are slower. This has the same values you use with the Character.Animate and Object.Animate commands.</p>
+<p>LOOP from VIEW will be played on the button. The DELAY specifies the speed of the animation - larger numbers are slower. This has the same values you use with the <a href="Character.html#characteranimate">Character.Animate</a> and <a href="Object.html#objectanimate">Object.Animate</a> commands.</p>
 <p>REPEAT determines whether the animation will loop repeatedly, or just play once and stop with the last frame showing (eOnce or eRepeat are the possible values).</p>
-<p>You can abort an animation at any time by setting the button's NormalGraphic property, or starting a new animation on the same button.</p>
+<p>You can abort an animation at any time by setting the button's <a href="Button.html#buttonnormalgraphic">NormalGraphic property</a>, or starting a new animation on the same button.</p>
 <p><strong>NOTE:</strong> This command destroys the button's normal, pushed and mouseover images. If you want to return the button to normal usage after playing an animation, you will have to set the Graphic properties to restore the images.</p>
 <p><strong>NOTE:</strong> This command does not support flipped view frames. Any frames marked as "Flipped" will in fact be drawn normally when on a button.</p>
 <p>Example:</p>
 <pre><code>btnDeathAnim.Animate(6, 2, 4, eRepeat);
 </code></pre>
 <p>will animate the 'btnDeathAnim' button using loop 2 of view 6, with a delay of 4 cycles per frame, and repeat the animation continually.</p>
-<p><em>See Also:</em> <a href="Button.html#animating">Button.Animating</a>, <a href="Button.html#frame">Button.Frame</a>, <a href="Button.html#loop">Button.Loop</a>, <a href="Button.html#view">Button.View</a>, <a href="Button.html#normalgraphic">Button.NormalGraphic</a></p>
+<p><em>See Also:</em> <a href="Button.html#buttonanimating">Button.Animating</a>, <a href="Button.html#buttonframe">Button.Frame</a>, <a href="Button.html#buttonloop">Button.Loop</a>, <a href="Button.html#buttonview">Button.View</a>, <a href="Button.html#buttonnormalgraphic">Button.NormalGraphic</a>,<br />
+<a href="Character.html#characteranimate">Character.Animate</a>, <a href="Object.html#objectanimate">Object.Animate</a>,</p>
 <hr />
 </section>
-<section id="animating" class="level3">
-<h3>Animating</h3>
+<section id="buttonanimating" class="level3">
+<h3><a href="#buttonanimating"><code>Button.Animating</code></a></h3>
 <pre><code>readonly bool Button.Animating
 </code></pre>
 <p>Returns true if the specified button is currently animating, or false otherwise.</p>
-<p>This property is read-only. To change button's animation, use the <a href="Button.html#animate">Animate</a> command.</p>
+<p>This property is read-only. To change button's animation, use the <a href="Button.html#buttonanimate">Animate</a> command.</p>
 <p>Example:</p>
 <pre><code>btnDeathAnim.Animate(6, 2, 4, eRepeat);
 while (btnDeathAnim.Animating) Wait(1);
 </code></pre>
 <p>will animate button and wait until the animation finishes.</p>
 <p><em>Compatibility:</em> Supported by <strong>AGS 3.4.1</strong> and later versions.</p>
-<p><em>See Also:</em> <a href="Button.html#animate">Button.Animate</a>, <a href="Button.html#frame">Button.Frame</a>, <a href="Button.html#loop">Button.Loop</a>, <a href="Button.html#view">Button.View</a>, <a href="Button.html#graphic">Button.Graphic</a></p>
+<p><em>See Also:</em> <a href="Button.html#buttonanimate">Button.Animate</a>, <a href="Button.html#buttonframe">Button.Frame</a>, <a href="Button.html#buttonloop">Button.Loop</a>, <a href="Button.html#buttonview">Button.View</a>, <a href="Button.html#buttongraphic">Button.Graphic</a></p>
 <hr />
 </section>
-<section id="frame" class="level3">
-<h3>Frame</h3>
+<section id="buttonframe" class="level3">
+<h3><a href="#buttonframe"><code>Button.Frame</code></a></h3>
 <pre><code>readonly int Button.Frame
 </code></pre>
 <p>Gets the frame number that the animated button is currently set to. If the button is not currently animated, this will be 0 (in which case the Graphic property will hold its sprite number).</p>
-<p>This property is read-only. To change button's animation, use the <a href="Button.html#animate">Animate</a> command.</p>
+<p>This property is read-only. To change button's animation, use the <a href="Button.html#buttonanimate">Animate</a> command.</p>
 <p><em>Compatibility:</em> Supported by <strong>AGS 3.4.1</strong> and later versions.</p>
-<p><em>See Also:</em> <a href="Button.html#animating">Button.Animating</a>, <a href="Button.html#loop">Button.Loop</a>, <a href="Button.html#view">Button.View</a>, <a href="Button.html#graphic">Button.Graphic</a></p>
+<p><em>See Also:</em> <a href="Button.html#buttonanimating">Button.Animating</a>, <a href="Button.html#buttonloop">Button.Loop</a>, <a href="Button.html#buttonview">Button.View</a>, <a href="Button.html#buttongraphic">Button.Graphic</a></p>
 <hr />
 </section>
-<section id="loop" class="level3">
-<h3>Loop</h3>
+<section id="buttonloop" class="level3">
+<h3><a href="#buttonloop"><code>Button.Loop</code></a></h3>
 <pre><code>readonly int Button.Loop
 </code></pre>
 <p>Gets the loop that the animated button is currently set to. If the button is not currently animated, this will be 0 (in which case the Graphic property will hold its sprite number).</p>
-<p>This property is read-only. To change button's animation, use the <a href="Button.html#animate">Animate</a> command.</p>
+<p>This property is read-only. To change button's animation, use the <a href="Button.html#buttonanimate">Animate</a> command.</p>
 <p><em>Compatibility:</em> Supported by <strong>AGS 3.4.1</strong> and later versions.</p>
-<p><em>See Also:</em> <a href="Button.html#animate">Button.Animate</a>, <a href="Button.html#frame">Button.Frame</a>, <a href="Button.html#view">Button.View</a>, <a href="Button.html#graphic">Button.Graphic</a></p>
+<p><em>See Also:</em> <a href="Button.html#buttonanimate">Button.Animate</a>, <a href="Button.html#buttonframe">Button.Frame</a>, <a href="Button.html#buttonview">Button.View</a>, <a href="Button.html#buttongraphic">Button.Graphic</a></p>
 <hr />
 </section>
-<section id="view" class="level3">
-<h3>View</h3>
+<section id="buttonview" class="level3">
+<h3><a href="#buttonview"><code>Button.View</code></a></h3>
 <pre><code>readonly int Button.View
 </code></pre>
 <p>Gets the view that the animated button is currently set to. If the button is not currently animated, this will be 0 (in which case the Graphic property will hold its sprite number).</p>
-<p>This property is read-only. To change button's animation, use the <a href="Button.html#animate">Animate</a> command.</p>
+<p>This property is read-only. To change button's animation, use the <a href="Button.html#buttonanimate">Animate</a> command.</p>
 <p><em>Compatibility:</em> Supported by <strong>AGS 3.4.1</strong> and later versions.</p>
-<p><em>See Also:</em> <a href="Button.html#animate">Button.Animate</a>, <a href="Button.html#frame">Button.Frame</a>, <a href="Button.html#loop">Button.Loop</a>, <a href="Button.html#graphic">Button.Graphic</a></p>
+<p><em>See Also:</em> <a href="Button.html#buttonanimate">Button.Animate</a>, <a href="Button.html#buttonframe">Button.Frame</a>, <a href="Button.html#buttonloop">Button.Loop</a>, <a href="Button.html#buttongraphic">Button.Graphic</a></p>
 <hr />
 </section>
-<section id="clipimage" class="level3">
-<h3>ClipImage</h3>
+<section id="buttonclipimage" class="level3">
+<h3><a href="#buttonclipimage"><code>Button.ClipImage</code></a></h3>
 <pre><code>bool Button.ClipImage;
 </code></pre>
 <p>Gets/sets whether the button clips its image to the button boundaries.</p>
 <p>For example, if the button is sized 30x30, but its Graphic is a 50x50 image, then this property controls whether the image is allowed to spill over the edge of the button.</p>
-<p>The default is false, ie. the image is not clipped.</p>
+<p>The default is false, i.e. the image is not clipped.</p>
 <p>Setting this to true can be useful in that it ensures that the button's image is not larger than the button's clickable area, which can cause confusion when it happens.</p>
 <p>Example:</p>
 <pre><code>btnOK.ClipImage = true;
 </code></pre>
 <p>sets the <em>btnOK</em> button so that its image will be restrained to the button's clickable area.</p>
-<p><em>See Also:</em> <a href="Button.html#graphic">Button.Graphic</a></p>
+<p><em>See Also:</em> <a href="Button.html#buttongraphic">Button.Graphic</a></p>
 <hr />
 </section>
-<section id="font" class="level3">
-<h3>Font</h3>
+<section id="buttonfont" class="level3">
+<h3><a href="#buttonfont"><code>Button.Font</code></a></h3>
 <pre><code>FontType Button.Font
 </code></pre>
 <p>Gets/sets the font used by the button to display text.</p>
@@ -163,25 +185,25 @@ while (btnDeathAnim.Animating) Wait(1);
 <pre><code>btnOK.Font = eFontMain;
 </code></pre>
 <p>will change the <em>btnOK</em> button to use Font "Main".</p>
-<p><em>See Also:</em> <a href="Label.html#font">Label.Font</a>, <a href="TextBox.html#font">TextBox.Font</a></p>
+<p><em>See Also:</em> <a href="Label.html#labelfont">Label.Font</a>, <a href="TextBox.html#textboxfont">TextBox.Font</a></p>
 <hr />
 </section>
-<section id="graphic" class="level3">
-<h3>Graphic</h3>
+<section id="buttongraphic" class="level3">
+<h3><a href="#buttongraphic"><code>Button.Graphic</code></a></h3>
 <p><em>(Formerly part of GetButtonPic, which is now obsolete)</em></p>
 <pre><code>readonly int Button.Graphic;
 </code></pre>
 <p>Gets the current image on a GUI button. If a value less than 1 is returned, then no image is currently displayed on the button.</p>
-<p>This property is read-only; in order to set the image, you must use one of the <a href="Button.html#normalgraphic">NormalGraphic</a>, <a href="Button.html#mouseovergraphic">MouseOverGraphic</a> or <a href="Button.html#pushedgraphic">PushedGraphic</a> properties.</p>
+<p>This property is read-only; in order to set the image, you must use one of the <a href="Button.html#buttonnormalgraphic">NormalGraphic</a>, <a href="Button.html#buttonmouseovergraphic">MouseOverGraphic</a> or <a href="Button.html#buttonpushedgraphic">PushedGraphic</a> properties.</p>
 <p>Example:</p>
 <pre><code>Display(&quot;The button is currently using sprite %d.&quot;, btnPlay.Graphic);
 </code></pre>
 <p>will display btnPlay's current sprite number.</p>
-<p><em>See Also:</em> <a href="Button.html#clipimage">Button.ClipImage</a>, <a href="Button.html#mouseovergraphic">Button.MouseOverGraphic</a>, <a href="Button.html#normalgraphic">Button.NormalGraphic</a>, <a href="Button.html#pushedgraphic">Button.PushedGraphic</a></p>
+<p><em>See Also:</em> <a href="Button.html#buttonclipimage">Button.ClipImage</a>, <a href="Button.html#buttonmouseovergraphic">Button.MouseOverGraphic</a>, <a href="Button.html#buttonnormalgraphic">Button.NormalGraphic</a>, <a href="Button.html#buttonpushedgraphic">Button.PushedGraphic</a></p>
 <hr />
 </section>
-<section id="mouseovergraphic" class="level3">
-<h3>MouseOverGraphic</h3>
+<section id="buttonmouseovergraphic" class="level3">
+<h3><a href="#buttonmouseovergraphic"><code>Button.MouseOverGraphic</code></a></h3>
 <p><em>(Formerly part of GetButtonPic, which is now obsolete)</em><br> <em>(Formerly part of SetButtonPic, which is now obsolete)</em></p>
 <pre><code>int Button.MouseOverGraphic;
 </code></pre>
@@ -190,38 +212,38 @@ while (btnDeathAnim.Animating) Wait(1);
 <pre><code>Display(&quot;The button&#39;s mouse-over image is sprite %d.&quot;, btnPlay.MouseOverGraphic);
 </code></pre>
 <p>will display btnPlay's mouse-over sprite number.</p>
-<p><em>See Also:</em> <a href="Button.html#graphic">Button.Graphic</a>, <a href="Button.html#normalgraphic">Button.NormalGraphic</a>, <a href="Button.html#pushedgraphic">Button.PushedGraphic</a></p>
+<p><em>See Also:</em> <a href="Button.html#buttongraphic">Button.Graphic</a>, <a href="Button.html#buttonnormalgraphic">Button.NormalGraphic</a>, <a href="Button.html#buttonpushedgraphic">Button.PushedGraphic</a></p>
 <hr />
 </section>
-<section id="normalgraphic" class="level3">
-<h3>NormalGraphic</h3>
+<section id="buttonnormalgraphic" class="level3">
+<h3><a href="#buttonnormalgraphic"><code>Button.NormalGraphic</code></a></h3>
 <p><em>(Formerly part of GetButtonPic, which is now obsolete)</em><br> <em>(Formerly part of SetButtonPic, which is now obsolete)</em></p>
 <pre><code>int Button.NormalGraphic;
 </code></pre>
-<p>Gets/sets the button's normal sprite (ie. the graphic used when the button is not pushed and the mouse is not over it).</p>
+<p>Gets/sets the button's normal sprite (i.e. the graphic used when the button is not pushed and the mouse is not over it).</p>
 <p>Note that setting this to a different sprite will change the button's size to match the size of the new sprite.</p>
 <p>Example:</p>
 <pre><code>Display(&quot;The button&#39;s normal image is sprite %d.&quot;, btnPlay.NormalGraphic);
 </code></pre>
 <p>will display btnPlay's normal sprite number.</p>
-<p><em>See Also:</em> <a href="Button.html#clipimage">Button.ClipImage</a> <a href="Button.html#graphic">Button.Graphic</a>, <a href="Button.html#mouseovergraphic">Button.MouseOverGraphic</a>, <a href="Button.html#pushedgraphic">Button.PushedGraphic</a>, <a href="Button.html#textcolor">Button.TextColor</a></p>
+<p><em>See Also:</em> <a href="Button.html#buttonclipimage">Button.ClipImage</a> <a href="Button.html#buttongraphic">Button.Graphic</a>, <a href="Button.html#buttonmouseovergraphic">Button.MouseOverGraphic</a>, <a href="Button.html#buttonpushedgraphic">Button.PushedGraphic</a>, <a href="Button.html#buttontextcolor">Button.TextColor</a></p>
 <hr />
 </section>
-<section id="pushedgraphic" class="level3">
-<h3>PushedGraphic</h3>
+<section id="buttonpushedgraphic" class="level3">
+<h3><a href="#buttonpushedgraphic"><code>Button.PushedGraphic</code></a></h3>
 <p><em>(Formerly part of GetButtonPic, which is now obsolete)</em><br> <em>(Formerly part of SetButtonPic, which is now obsolete)</em></p>
 <pre><code>int Button.PushedGraphic;
 </code></pre>
-<p>Gets/sets the button's pushed sprite (ie. the graphic used when the button is pushed in by the user). This can be -1, which indicates that the button does not have a pushed image.</p>
+<p>Gets/sets the button's pushed sprite (i.e. the graphic used when the button is pushed in by the user). This can be -1, which indicates that the button does not have a pushed image.</p>
 <p>Example:</p>
 <pre><code>Display(&quot;The button&#39;s pushed image is sprite %d.&quot;, btnPlay.PushedGraphic);
 </code></pre>
 <p>will display btnPlay's pushed sprite number.</p>
-<p><em>See Also:</em> <a href="Button.html#graphic">Button.Graphic</a>, <a href="Button.html#mouseovergraphic">Button.MouseOverGraphic</a>, <a href="Button.html#normalgraphic">Button.NormalGraphic</a></p>
+<p><em>See Also:</em> <a href="Button.html#buttongraphic">Button.Graphic</a>, <a href="Button.html#buttonmouseovergraphic">Button.MouseOverGraphic</a>, <a href="Button.html#buttonnormalgraphic">Button.NormalGraphic</a></p>
 <hr />
 </section>
-<section id="text" class="level3">
-<h3>Text</h3>
+<section id="buttontext" class="level3">
+<h3><a href="#buttontext"><code>Button.Text</code></a></h3>
 <p><em>(Formerly known as SetButtonText, which is now obsolete)</em><br> <em>(Formerly known as Button.GetText, which is now obsolete)</em><br> <em>(Formerly known as Button.SetText, which is now obsolete)</em></p>
 <pre><code>String Button.Text;
 </code></pre>
@@ -231,28 +253,40 @@ while (btnDeathAnim.Animating) Wait(1);
 btnController.Text = &quot;Enable jibble&quot;;
 </code></pre>
 <p>will display the old text, then change button btnController to read 'Enable jibble'.</p>
-<p><em>See Also:</em> <a href="Button.html#normalgraphic">Button.NormalGraphic</a>, <a href="Label.html#text">Label.Text</a></p>
+<p><em>See Also:</em> <a href="Button.html#buttonnormalgraphic">Button.NormalGraphic</a>, <a href="Label.html#labeltext">Label.Text</a></p>
 <hr />
 </section>
-<section id="textcolor" class="level3">
-<h3>TextColor</h3>
+<section id="buttontextalignment" class="level3">
+<h3><a href="#buttontextalignment"><code>Button.TextAlignment</code></a></h3>
+<pre><code>Alignment Button.TextAlignment;
+</code></pre>
+<p>Gets/sets how the text is aligned relative to the button's rectangle.</p>
+<p>If the button is displaying an image rather than text, then this property has no effect.</p>
+<p><em>See Also:</em> <a href="StandardEnums.html">Standard Enumerated Types</a>, <a href="Button.html#buttonnormalgraphic">Button.NormalGraphic</a></p>
+<p><em>Compatibility:</em> Supported by <strong>AGS 3.5.0</strong> and later versions.</p>
+<hr />
+</section>
+<section id="buttontextcolor" class="level3">
+<h3><a href="#buttontextcolor"><code>Button.TextColor</code></a></h3>
 <pre><code>int Button.TextColor;
 </code></pre>
-<p>Gets/sets the text colour used to display the button's text.</p>
+<p>Gets/sets the text color used to display the button's text.</p>
 <p>If the button is displaying an image rather than text, then this property has no effect.</p>
 <p>Example:</p>
 <pre><code>btnRestart.TextColor = 15;
 </code></pre>
 <p>will change button 'btnRestart' to have white text.</p>
-<p><em>See Also:</em> <a href="Button.html#normalgraphic">Button.NormalGraphic</a></p>
+<p><em>See Also:</em> <a href="Button.html#buttonnormalgraphic">Button.NormalGraphic</a></p>
 </section>
 </section>
-        </div>
-      </div>
-    </section>
+  </main>
+
+
+  <footer>
+    <p>Build: 05/25/21 22:29:21</p>
+  </footer>
+
+  <script src="js/search.js"></script>
   </div>
-
-
-  <script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>

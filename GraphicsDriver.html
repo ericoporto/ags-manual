@@ -6,68 +6,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Graphics driver selection</title>
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/milligram.min.css" />
   <link rel="stylesheet" href="css/main.css" />
+  <link href="static/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
 
 
   <div class="container">
-    <nav class="navigation">
-      <section class="container">
-        <div class="float-left">
-          <a class="navigation-title" href="index.html">
-            <img src="static/logo.png" alt="AGS Manual">
-            <h1 class="title">AGS Manual</h1>
-          </a>
-        </div>
-        <div class="float-right">
-          <ul class="navigation-list float-right">
-            <li class="navigation-item">
-              <input type="search" id="search_input">
-            </li>
-          </ul>
-        </div>
-      </section>
-    </nav>
-
     <header>
-      <ul id="search_results">
-      </ul>
+      <label for="search_input">Search:</label>
+      <input type="search" id="search_input">
+      <ul id="search_results"></ul>
     </header>
 
-    <section>
-      <div class="row">
-        <div class="column">
-          <nav id="TOC">
-            <ul>
-              <li><a href="genindex.html">Index</a></li>
-            </ul>
+  <nav>
+    <a href="index.html">
+      <svg id="cup" width="72" height="48" viewBox="0 0 12 8" preserveAspectRatio="xMidYMid meet">
+        <g shape-rendering="crispEdges">
+          <rect width="10" height="7" fill="#ffffff" />
+          <svg y="1">
+            <rect width="12" height="5" fill="#ffffff" />
+          </svg>
+          <svg x="1">
+            <rect width="8" height="8" fill="#ffffff" />
+          </svg>
+          <svg x="1" y="1">
+            <rect width="8" height="5" fill="#2a7fff" />
+          </svg>
+          <svg x="2" y="6">
+            <rect width="6" height="1" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="2">
+            <rect width="2" height="3" fill="#2a7fff" />
+          </svg>
+          <svg x="9" y="3">
+            <rect width="1" height="1" fill="#ffffff" />
+          </svg>
+          <svg x="2" y="2">
+            <rect width="6" height="3" fill="#0000d4" />
+          </svg>
+          <svg x="3" y="5">
+            <rect width="4" height="1" fill="#0000d4" />
+          </svg>
+          <svg x="2" y="1">
+            <rect width="6" height="1" fill="#ffffff" />
+          </svg>
+        </g>
+      </svg>
+    </a>
+    <h1>
+      <a href="index.html">AGS Manual</a>
+    </h1>
+    <ul>
+      <li><a href="genindex.html">Index</a></li>
+    </ul>
 <ul>
-<li><a href="#graphics-driver-selection">Graphics driver selection</a></li>
+<li><a href="#graphics-driver-selection"><span>Graphics driver selection</span></a>
+<ul>
+<li><a href="#system-requirements"><span>System Requirements</span></a></li>
+</ul></li>
 </ul>
-          </nav>
-        </div>
-        <div class="column column-75">
+  </nav>
+
+  <main>
 <section id="graphics-driver-selection" class="level2">
-<h2>Graphics driver selection</h2>
+<h2><a href="#graphics-driver-selection">Graphics driver selection</a></h2>
 <p>AGS has three available graphics drivers when run on Windows -- DirectDraw, Direct3D and OpenGL.</p>
-<p>DirectDraw is the 'classic' software graphics driver, that AGS has used ever since the initial Windows version was released. It's perfectly fine for simple games that don't use many large sprites, tinting or alpha blending. It's also quite fast at doing RawDrawing to the screen.</p>
+<p>DirectDraw is the 'classic' software graphics driver, that AGS has used ever since the initial Windows version was released. It's perfectly fine for simple games that don't use many large sprites, tinting or alpha blending. It's also quite fast at performing drawing operations issued through a <a href="DrawingSurface.html">DrawingSurface</a>.</p>
 <p>Direct3D is a newer, hardware accelerated graphics driver. It uses the Direct3D 9.0 to render the game in a fully hardware-accelerated environment. This means that the game will run a lot faster if you use features such as alpha blending and tinting, which are quite slow to perform in software mode. However, with Direct3D doing RawDraw operations can be quite slow, and the driver won't work on all graphics cards.</p>
 <p>It should be noted that DirectDraw and Direct3D 9 drivers are know to sometimes fail to work on latest versions of the Windows because of compatibility issues.</p>
-<p>OpenGL is another hardware accelerated graphics driver, and because it is not strictly linked to particular version of DirectX, it may work where Direct3D failed. Other than that, it should not have any significant perfomance differences from the former.</p>
+<p>OpenGL is another hardware accelerated graphics driver, and because it is not strictly linked to particular version of DirectX, it may work where Direct3D failed. Other than that, it should not have any significant performance differences from the former.</p>
 <p>No matter which you choose as your default graphics driver, the player can always run the Setup program and switch to using the other driver if they are having problems on their PC.</p>
-<p><strong>System Requirements</strong></p>
-<p><strong>DirectDraw</strong>: any Windows-based PC with DirectX 5 or later installed<br> <strong>Direct3D</strong>: any Windows-based PC with DirectX 9.0 installed and a graphics card designed for DirectX 8.1 or later (most cards manufactured from 2003 onwards)<br> <strong>OpenGL</strong>: your graphics card drivers should provide support for OpenGL 3.0 or higher for the game visuals to have full functionality.</p>
+<section id="system-requirements" class="level3">
+<h3><a href="#system-requirements">System Requirements</a></h3>
+<p><strong>DirectDraw</strong><br> Any Windows-based PC with DirectX 5 or later installed.</p>
+<p><strong>Direct3D</strong><br> Any Windows-based PC with DirectX 9.0 installed and a graphics card designed for DirectX 8.1 or later (most cards manufactured from 2003 onwards).</p>
+<p><strong>OpenGL</strong><br> Your graphics card drivers should provide support for OpenGL 3.0 or higher for the game visuals to have full functionality.</p>
 <p>If you are running with Direct3D 9 selected and get the error message "Graphics card does not support Pixel Shader 1.4" on startup, this indicates that your graphics card is too old to run with the Direct3D driver. You should try one of the other two drivers instead.</p>
-<p>See Also: <a href="System.html#hardwareacceleration">System.HardwareAcceleration property</a></p>
+<p>See Also: <a href="System.html#systemhardwareacceleration">System.HardwareAcceleration property</a></p>
 </section>
-        </div>
-      </div>
-    </section>
+</section>
+  </main>
+
+
+  <footer>
+    <p>Build: 05/25/21 22:29:33</p>
+  </footer>
+
+  <script src="js/search.js"></script>
   </div>
-
-
-  <script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>
