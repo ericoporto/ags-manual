@@ -100,9 +100,11 @@ table {
     border-spacing: 0;
     text-align: left;
     width: 100%;
+    color: var(--text-color);
 }
 
 td {
+    border-top-color: var(--text-color);
     border-top: 1px solid;
     padding-left: 4px;
     padding-right: 4px;
@@ -110,6 +112,7 @@ td {
 
 th {
     border-bottom: 1px solid;
+    border-bottom-color: var(--text-color);
 }
 
 header {

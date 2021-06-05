@@ -52,6 +52,7 @@ function adjust_theme() {
 }
 
 checkbox_mode.addEventListener("click", function () {
+  document.body.style.transition = "1.2s";
   adjust_theme()
 });
 
