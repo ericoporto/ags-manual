@@ -61,7 +61,11 @@ img {
 }
 
 h1 a, h2 a, h3 a {
-    color: inherit;
+    color: var(--text-color-a);
+}
+
+li::marker {
+  color: var(--text-color);;
 }
 
 a {
