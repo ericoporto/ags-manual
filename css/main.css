@@ -24,17 +24,27 @@ html, body {
     }
 }
 
+
 body {
+   /* light theme */
   --text-color: #222222;
-  --text-color-a: #222288;
-  --text-color-code: #a78a4d;
+  --text-color-a: #006ab1;
+  --text-color-code: #a31515;
+  --text-color-pre-code: #1e1e1e;
   --bkg-color: #efefef;
+  --bkg-color-pre: #dcdcdc;
+  --border-color-header-ul: #2a7fff;
+  --text-color-footer: #cdcdcd;
 }
 body.dark-theme {
   --text-color: #d4d4d4;
   --text-color-a: #3794ff;
   --text-color-code: #d7ba7d;
+  --text-color-pre-code: #d4d4d4;
   --bkg-color: #1e1e1e;
+  --bkg-color-pre: #161616;
+  --border-color-header-ul: #2a7fff;
+  --text-color-footer: #424242;
 }
 
 body {
@@ -51,7 +61,7 @@ img {
 }
 
 h1 a, h2 a, h3 a {
-    color: var(--text-color-a);
+    color: inherit;
 }
 
 a {
@@ -68,14 +78,14 @@ code {
 }
 
 pre {
-    background-color: #161616;
+    background-color: var(--bkg-color-pre);
     border-radius: 2px;
     padding: 12px 20px;
     white-space: pre-wrap;
 }
 
 pre code {
-    color: #d4d4d4;
+    color: var(--text-color-pre-code);
 }
 
 table {
@@ -105,7 +115,7 @@ header input {
 }
 
 header ul {
-    border-color: #2a7fff;
+    border-color: var(--border-color-header-ul);
     border-style: none;
     list-style-position: inside;
     padding: 0;
@@ -121,7 +131,7 @@ header input {
 }
 
 footer {
-    color: #424242;
+    color: var(--text-color-footer);
     text-align: right;
     grid-area: footer;
 }
