@@ -56,7 +56,7 @@ p {
     color: var(--text-color);
 }
 
-label {
+label.search_input {
     color: var(--text-color);
 }
 
