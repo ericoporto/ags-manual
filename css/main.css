@@ -60,12 +60,16 @@ img {
     max-width: 100%;
 }
 
-h1 a, h2 a, h3 a {
-    color: var(--text-color-a);
-}
-
 li::marker {
   color: var(--text-color);;
+}
+
+li {
+  color: var(--text-color);;
+}
+
+h1 a, h2 a, h3 a {
+    color: var(--text-color-a);
 }
 
 a {
