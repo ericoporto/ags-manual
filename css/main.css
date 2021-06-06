@@ -178,10 +178,6 @@ nav h1 {
 }
 
 nav code {
-    color: var(--text-color-code);
-}
-
-nav code a {
     color: var(--text-color-a);
 }
 
