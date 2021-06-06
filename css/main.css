@@ -78,26 +78,13 @@ li {
   color: var(--text-color);
 }
 
-h1 a, h2 a, h3 a {
-    color: var(--text-color-a);
-}
-
-a {
-    color: var(--text-color-a);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 code {
     color: var(--text-color-code);
 }
 
 pre {
     background-color: var(--bkg-color-pre);
-    color: var(--text-color-code);
+    color: var(--text-color);
     border-radius: 2px;
     padding: 12px 20px;
     white-space: pre-wrap;
@@ -105,6 +92,19 @@ pre {
 
 pre code {
     color: var(--text-color-pre-code);
+}
+
+a {
+    color: var(--text-color-a);
+    text-decoration: none;
+}
+
+h1 a, h2 a, h3 a {
+    color: var(--text-color-a);
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 table {
