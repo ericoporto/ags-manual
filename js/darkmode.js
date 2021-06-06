@@ -17,6 +17,7 @@ function set_light_theme() {
 }
 
 function init_dark_mode_toggle() {
+  document.body.classList.add('notransition'); // Disable transitions
   if(local_theme == 'dark' || prefersDarkScheme.matches) {
     set_dark_theme();
     checkbox_mode.checked = true
@@ -24,6 +25,9 @@ function init_dark_mode_toggle() {
     set_light_theme()
     checkbox_mode.checked = false
   }
+  document.body.offsetHeight; // Trigger a reflow, flushing the CSS changes
+  document.body.classList.remove('notransition'); // Re-enable transitions
+  document.body.style.transition = "1.2s";
 }
 
 init_dark_mode_toggle();
@@ -37,7 +41,6 @@ function adjust_theme() {
 }
 
 checkbox_mode.addEventListener("click", function () {
-  document.body.style.transition = "1.2s";
   adjust_theme()
 });
 

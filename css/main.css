@@ -24,6 +24,12 @@ html, body {
     }
 }
 
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
 
 body {
    /* light theme */
