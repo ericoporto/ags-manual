@@ -18,7 +18,7 @@ function set_light_theme() {
 
 function init_dark_mode_toggle() {
   document.body.classList.add('notransition'); // Disable transitions
-  if(local_theme == 'dark' || prefersDarkScheme.matches) {
+  if(local_theme == 'dark' && local_theme != 'light' || prefersDarkScheme.matches) {
     set_dark_theme();
     checkbox_mode.checked = true
   } else if(local_theme == 'light' || !prefersDarkScheme.matches) {
