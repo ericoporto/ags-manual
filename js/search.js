@@ -26,47 +26,6 @@ SOFTWARE.
 @licend  The above is the entire license notice for the JavaScript code in this page.
 */
 
-const checkbox_mode = document.getElementById("dark_mode_toggle")
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-const local_theme = window.localStorage.getItem('local_theme');
-
-function set_dark_theme() {
-  if(!document.body.classList.contains("dark-theme")){
-    document.body.classList.add("dark-theme");
-  }
-  window.localStorage.setItem('local_theme', 'dark');
-}
-function set_light_theme() {
-  if(document.body.classList.contains("dark-theme")){
-    document.body.classList.remove("dark-theme");
-  }
-  window.localStorage.setItem('local_theme', 'light');
-}
-
-function adjust_theme() {
-  if(checkbox_mode.checked) {
-    set_dark_theme();
-  } else {
-    set_light_theme();
-  }
-}
-
-checkbox_mode.addEventListener("click", function () {
-  document.body.style.transition = "1.2s";
-  adjust_theme()
-});
-
-function init_dark_mode_toggle() {
-  if(local_theme == 'dark' || prefersDarkScheme.matches) {
-    set_dark_theme();
-    checkbox_mode.checked = true
-  } else if(local_theme == 'light' || !prefersDarkScheme.matches) {
-    set_light_theme()
-    checkbox_mode.checked = false
-  }
-}
-
-
 var SEARCH_CHECK_MS = 600;
 var search_input;
 var search_results;
@@ -76,7 +35,6 @@ var previous_query;
 window.onload = function() { init(); }
 
 function init() {
-    init_dark_mode_toggle();
     search_input = document.getElementById('search_input');
     search_results = document.getElementById('search_results');
     previous_search = search_input.value;
