@@ -100,7 +100,11 @@ a {
 }
 
 h1 a, h2 a, h3 a {
-    color: var(--text-color-a);
+    color: var(--text-color);
+}
+
+h1 code a, h2 code a, h3 code a {
+    color: var(--text-color-code);
 }
 
 a:hover {
@@ -175,6 +179,10 @@ nav h1 {
 
 nav code {
     color: var(--text-color-code);
+}
+
+nav code a {
+    color: var(--text-color-a);
 }
 
 main {
