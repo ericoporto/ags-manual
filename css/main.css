@@ -97,6 +97,7 @@ code {
 
 pre {
     background-color: var(--bkg-color-pre);
+    color: var(--text-color-code);
     border-radius: 2px;
     padding: 12px 20px;
     white-space: pre-wrap;
