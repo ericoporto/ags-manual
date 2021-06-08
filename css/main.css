@@ -37,7 +37,7 @@ body {
   --text-color-a: #006ab1;
   --text-color-code: #a31515;
   --text-color-pre-code: #1e1e1e;
-  --bkg-color: #efefef;
+  --bkg-color: #f8f8f8;
   --bkg-color-pre: #dcdcdc;
   --border-color-header-ul: #2a7fff;
   --text-color-footer: #cdcdcd;
@@ -61,6 +61,11 @@ h1, h2, h3, h4, h5,
 p {
     color: var(--text-color);
 }
+
+h1, h2, h3 {
+    font-weight: lighter;
+}
+
 
 label.search_input {
     color: var(--text-color);
@@ -162,6 +167,10 @@ footer {
     grid-area: footer;
 }
 
+footer p {
+    color: var(--text-color-footer);
+}
+
 nav {
     grid-area: nav;
     padding-top: 20px;
@@ -173,7 +182,6 @@ nav ul {
 }
 
 nav h1 {
-    font-weight: lighter;
     font-size: 14pt;
 }
 
