@@ -4,6 +4,8 @@ AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE([-Werror -Wall foreign])
 AM_SILENT_RULES([yes])
+SOURCEDIR=source
+AC_SUBST([SOURCEDIR])
 
 AGS_PROG_PANDOC([$srcdir/lua/write_feature_check.lua])
 
@@ -30,30 +32,30 @@ AM_CONDITIONAL([BUILD_CHM],
     [(test "x${with_chmcmd}" != xno && test "x${CHMCMD}" != x ) || \
      (test "x${with_chmcmd}" = xno && test "x${HHC}" != x)])
 
-AC_CONFIG_LINKS([source/index.md:source/index.md])
-AC_CONFIG_SRCDIR([source/index.md])
-AC_CONFIG_LINKS([source/_Sidebar.md:source/_Sidebar.md])
-AC_CONFIG_SRCDIR([source/_Sidebar.md])
+AC_CONFIG_LINKS([${SOURCEDIR}/index.md:${SOURCEDIR}/index.md])
+AC_CONFIG_SRCDIR([${SOURCEDIR}/index.md])
+AC_CONFIG_LINKS([${SOURCEDIR}/_Sidebar.md:${SOURCEDIR}/_Sidebar.md])
+AC_CONFIG_SRCDIR([${SOURCEDIR}/_Sidebar.md])
 AC_CONFIG_FILES([Makefile])
 
 m4_define([IMAGEFILES_LIST],
-    [m4_flatten(m4_chomp(m4_quote(m4_esyscmd([git -C source ls-files 'images/*']))))])
+    [m4_flatten(m4_chomp(m4_quote(m4_esyscmd([git -C ${SOURCEDIR} ls-files 'images/*']))))])
 m4_define([TOPFILES_LIST],
-    [m4_flatten(m4_chomp(m4_quote(m4_esyscmd([git -C source ls-files ':(exclude)*/*' ':(exclude)_*' ':(exclude)index.md']))))])
+    [m4_flatten(m4_chomp(m4_quote(m4_esyscmd([git -C ${SOURCEDIR} ls-files ':(exclude)*/*' ':(exclude)_*' ':(exclude)index.md']))))])
 
 AM_COND_IF([BUILD_CHM],
     [m4_foreach_w([var], IMAGEFILES_LIST,
-        [AC_CONFIG_LINKS(source/var:source/var)])
-     AC_CONFIG_LINKS([source/ags-help.stp:htmlhelp/ags-help.stp])])
+        [AC_CONFIG_LINKS(${SOURCEDIR}/var:${SOURCEDIR}/var)])
+     AC_CONFIG_LINKS([${SOURCEDIR}/ags-help.stp:htmlhelp/ags-help.stp])])
 
 m4_define([BASENAME_LIST_NO_INDEX], [m4_bpatsubst(TOPFILES_LIST, [\.[^.]+\( \|$\)], [\1])])
 m4_define([BASENAME_LIST], [BASENAME_LIST_NO_INDEX index])
 
-AC_SUBST([HTM_FILES], ["m4_map_args_w(BASENAME_LIST, [[ source/]], [[.htm]])"])
-AC_SUBST([HTML_FILES], ["m4_map_args_w(BASENAME_LIST, [[ source/]], [[.html]])"])
-AC_SUBST([IMAGE_FILES], ["m4_map_args_w(IMAGEFILES_LIST, [[ source/]])"])
-AC_SUBST([METADATA_FILES], ["m4_map_args_w(BASENAME_LIST_NO_INDEX, [[ source/]], [[.lua]])"])
-AC_SUBST([TOP_FILES], ["m4_map_args_w(TOPFILES_LIST, [[ source/]])"])
+AC_SUBST([HTM_FILES], ["m4_map_args_w(BASENAME_LIST, [[ ${SOURCEDIR}/]], [[.htm]])"])
+AC_SUBST([HTML_FILES], ["m4_map_args_w(BASENAME_LIST, [[ ${SOURCEDIR}/]], [[.html]])"])
+AC_SUBST([IMAGE_FILES], ["m4_map_args_w(IMAGEFILES_LIST, [[ ${SOURCEDIR}/]])"])
+AC_SUBST([METADATA_FILES], ["m4_map_args_w(BASENAME_LIST_NO_INDEX, [[ ${SOURCEDIR}/]], [[.lua]])"])
+AC_SUBST([TOP_FILES], ["m4_map_args_w(TOPFILES_LIST, [[ ${SOURCEDIR}/]])"])
 AC_SUBST([HHP_FILES], ["m4_map_args_w(BASENAME_LIST, [[ ]], [[.htm]]) IMAGEFILES_LIST"])
 AC_SUBST([FOOTER], ["m4_chomp(m4_quote(m4_esyscmd([git rev-parse HEAD])))"])
 AC_SUBST([BRANCH_NAME], ["m4_chomp(m4_quote(m4_esyscmd([git -C source branch --show-current])))"])

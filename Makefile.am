@@ -1,3 +1,4 @@
+sourcedir = source
 websitedir = $(pkgdatadir)/website
 websitecssdir = $(pkgdatadir)/website/css
 websitefontsdir = $(pkgdatadir)/website/fonts
@@ -25,7 +26,7 @@ websitestatic_DATA = \
 	$(srcdir)/html/static/logo.svg
 
 if BUILD_CHM
-pkgdata_DATA = source/ags-help.chm
+pkgdata_DATA = $(sourcedir)/ags-help.chm
 endif
 
 CLEANFILES = \
@@ -37,9 +38,9 @@ CLEANFILES = \
 	metadata.lua \
 	search.js \
 	navigation.js \
-	source/ags-help.hhc \
-	source/ags-help.hhk \
-	source/ags-help.hhp
+	$(sourcedir)/ags-help.hhc \
+	$(sourcedir)/ags-help.hhk \
+	$(sourcedir)/ags-help.hhp
 
 EXTRA_DIST = \
 	$(IMAGE_FILES) \
@@ -130,7 +131,7 @@ search.js: metadata.lua
 		--eol lf \
 		--output $@
 
-navigation.js: source/_Sidebar.md
+navigation.js: $(sourcedir)/_Sidebar.md
 	$(AM_V_GEN)echo | "$(PANDOC)" \
 		--to "$(srcdir)/lua/write_navigationjs.lua" \
 		--template "$(srcdir)/html/template_navigation.js" \
@@ -151,7 +152,7 @@ navigation.js: source/_Sidebar.md
 		--output $@ \
 		$<
 
-source/index.htm: source/index.md
+$(sourcedir)/index.htm: $(sourcedir)/index.md
 	$(AM_V_GEN)"$(PANDOC)" --from gfm-tex_math_dollars \
 		--to html4 \
 		--metadata title=$(*F) \
@@ -163,13 +164,13 @@ source/index.htm: source/index.md
 		--output $@ \
 		$<
 
-source/ags-help.hhk: metadata.lua
+$(sourcedir)/ags-help.hhk: metadata.lua
 	$(AM_V_GEN)echo | "$(PANDOC)" \
 		--to "$(srcdir)/lua/write_hhk.lua" \
 		--eol crlf \
 		--output $@
 
-source/ags-help.hhc: source/_Sidebar.md
+$(sourcedir)/ags-help.hhc: $(sourcedir)/_Sidebar.md
 	$(AM_V_GEN)"$(PANDOC)" --from gfm-tex_math_dollars \
 		--to "$(srcdir)/lua/write_hhc.lua" \
 		--lua-filter "$(srcdir)/lua/rewrite_links.lua" \
@@ -178,9 +179,9 @@ source/ags-help.hhc: source/_Sidebar.md
 		--wrap=none \
 		--output $@ \
 		$<
-		-$(AM_V_GEN) sed -z -i -E "s/(<\/OBJECT>[^<]*?<UL>)/<param name=\"ImageNumber\" value=\"1\">\n\1/g" source/ags-help.hhc
+		-$(AM_V_GEN) sed -z -i -E "s/(<\/OBJECT>[^<]*?<UL>)/<param name=\"ImageNumber\" value=\"1\">\n\1/g" $(sourcedir)/ags-help.hhc
 
-source/ags-help.hhp:
+$(sourcedir)/ags-help.hhp:
 	$(AM_V_GEN)echo | "$(PANDOC)" \
 		--to "$(srcdir)/lua/write_hhp.lua" \
 		--metadata incfiles="$(HHP_FILES)" \
@@ -190,12 +191,12 @@ source/ags-help.hhp:
 		--eol crlf \
 		--output $@
 
-source/ags-help.chm: $(HTM_FILES) source/ags-help.hhk source/ags-help.hhc source/ags-help.hhp
+$(sourcedir)/ags-help.chm: $(HTM_FILES) $(sourcedir)/ags-help.hhk $(sourcedir)/ags-help.hhc $(sourcedir)/ags-help.hhp
 if BUILD_CHM_WITH_HHC
-	$(AM_V_GEN)"$(HHC)" source/ags-help.hhp || exit 0; exit 1
+	$(AM_V_GEN)"$(HHC)" $(sourcedir)/ags-help.hhp || exit 0; exit 1
 endif
 if BUILD_CHM_WITH_CHMCMD
-	$(AM_V_GEN)cd source && "$(CHMCMD)" ags-help.hhp
+	$(AM_V_GEN)cd $(sourcedir) && "$(CHMCMD)" ags-help.hhp
 endif
 
 check: metadata.lua
