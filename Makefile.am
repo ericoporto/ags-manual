@@ -1,4 +1,3 @@
-sourcedir = source
 websitedir = $(pkgdatadir)/website
 websitecssdir = $(pkgdatadir)/website/css
 websitefontsdir = $(pkgdatadir)/website/fonts
@@ -26,7 +25,7 @@ websitestatic_DATA = \
 	$(srcdir)/html/static/logo.svg
 
 if BUILD_CHM
-pkgdata_DATA = $(sourcedir)/ags-help.chm
+pkgdata_DATA = $(SOURCE_DIR)/ags-help.chm
 endif
 
 CLEANFILES = \
@@ -38,9 +37,9 @@ CLEANFILES = \
 	metadata.lua \
 	search.js \
 	navigation.js \
-	$(sourcedir)/ags-help.hhc \
-	$(sourcedir)/ags-help.hhk \
-	$(sourcedir)/ags-help.hhp
+	$(SOURCE_DIR)/ags-help.hhc \
+	$(SOURCE_DIR)/ags-help.hhk \
+	$(SOURCE_DIR)/ags-help.hhp
 
 EXTRA_DIST = \
 	$(IMAGE_FILES) \
@@ -131,7 +130,7 @@ search.js: metadata.lua
 		--eol lf \
 		--output $@
 
-navigation.js: $(sourcedir)/_Sidebar.md
+navigation.js: $(SOURCE_DIR)/_Sidebar.md
 	$(AM_V_GEN)echo | "$(PANDOC)" \
 		--to "$(srcdir)/lua/write_navigationjs.lua" \
 		--template "$(srcdir)/html/template_navigation.js" \
@@ -152,7 +151,7 @@ navigation.js: $(sourcedir)/_Sidebar.md
 		--output $@ \
 		$<
 
-$(sourcedir)/index.htm: $(sourcedir)/index.md
+$(SOURCE_DIR)/index.htm: $(SOURCE_DIR)/index.md
 	$(AM_V_GEN)"$(PANDOC)" --from gfm-tex_math_dollars \
 		--to html4 \
 		--metadata title=$(*F) \
@@ -164,13 +163,13 @@ $(sourcedir)/index.htm: $(sourcedir)/index.md
 		--output $@ \
 		$<
 
-$(sourcedir)/ags-help.hhk: metadata.lua
+$(SOURCE_DIR)/ags-help.hhk: metadata.lua
 	$(AM_V_GEN)echo | "$(PANDOC)" \
 		--to "$(srcdir)/lua/write_hhk.lua" \
 		--eol crlf \
 		--output $@
 
-$(sourcedir)/ags-help.hhc: $(sourcedir)/_Sidebar.md
+$(SOURCE_DIR)/ags-help.hhc: $(SOURCE_DIR)/_Sidebar.md
 	$(AM_V_GEN)"$(PANDOC)" --from gfm-tex_math_dollars \
 		--to "$(srcdir)/lua/write_hhc.lua" \
 		--lua-filter "$(srcdir)/lua/rewrite_links.lua" \
@@ -179,9 +178,9 @@ $(sourcedir)/ags-help.hhc: $(sourcedir)/_Sidebar.md
 		--wrap=none \
 		--output $@ \
 		$<
-		-$(AM_V_GEN) sed -z -i -E "s/(<\/OBJECT>[^<]*?<UL>)/<param name=\"ImageNumber\" value=\"1\">\n\1/g" $(sourcedir)/ags-help.hhc
+		-$(AM_V_GEN) sed -z -i -E "s/(<\/OBJECT>[^<]*?<UL>)/<param name=\"ImageNumber\" value=\"1\">\n\1/g" $(SOURCE_DIR)/ags-help.hhc
 
-$(sourcedir)/ags-help.hhp:
+$(SOURCE_DIR)/ags-help.hhp:
 	$(AM_V_GEN)echo | "$(PANDOC)" \
 		--to "$(srcdir)/lua/write_hhp.lua" \
 		--metadata incfiles="$(HHP_FILES)" \
@@ -191,12 +190,12 @@ $(sourcedir)/ags-help.hhp:
 		--eol crlf \
 		--output $@
 
-$(sourcedir)/ags-help.chm: $(HTM_FILES) $(sourcedir)/ags-help.hhk $(sourcedir)/ags-help.hhc $(sourcedir)/ags-help.hhp
+$(SOURCE_DIR)/ags-help.chm: $(HTM_FILES) $(SOURCE_DIR)/ags-help.hhk $(SOURCE_DIR)/ags-help.hhc $(SOURCE_DIR)/ags-help.hhp
 if BUILD_CHM_WITH_HHC
-	$(AM_V_GEN)"$(HHC)" $(sourcedir)/ags-help.hhp || exit 0; exit 1
+	$(AM_V_GEN)"$(HHC)" $(SOURCE_DIR)/ags-help.hhp || exit 0; exit 1
 endif
 if BUILD_CHM_WITH_CHMCMD
-	$(AM_V_GEN)cd $(sourcedir) && "$(CHMCMD)" ags-help.hhp
+	$(AM_V_GEN)cd source && "$(CHMCMD)" ags-help.hhp
 endif
 
 check: metadata.lua
