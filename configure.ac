@@ -14,7 +14,7 @@ AC_ARG_WITH([source],
     [AS_HELP_STRING([--with-source=DIR], [directory with markdown source files @<:@default=source@:>@])],
     [SOURCE_DIR="$withval"],
     [SOURCE_DIR=source])
-AC_SUSBT([SOURCE_DIR])
+AC_SUBST([SOURCE_DIR])
 
 AC_ARG_WITH([chmcmd],
     [AS_HELP_STRING([--with-chmcmd],
