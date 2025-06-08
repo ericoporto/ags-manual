@@ -10,6 +10,11 @@ AGS_PROG_PANDOC([$srcdir/lua/write_feature_check.lua])
 AC_ARG_VAR([CHMCMD], [path to chmcmd])
 AC_ARG_VAR([HHC], [path to hhc])
 
+AC_ARG_WITH([source],
+    [AS_HELP_STRING([--with-source=DIR], [directory with markdown source files @<:@default=source@:>@])],
+    [SOURCE_DIR="$withval"],
+    [SOURCE_DIR=source])
+
 AC_ARG_WITH([chmcmd],
     [AS_HELP_STRING([--with-chmcmd],
         [compile with Free Pascal CHM compiler @<:@default=no@:>@])],
@@ -30,20 +35,20 @@ AM_CONDITIONAL([BUILD_CHM],
     [(test "x${with_chmcmd}" != xno && test "x${CHMCMD}" != x ) || \
      (test "x${with_chmcmd}" = xno && test "x${HHC}" != x)])
 
-AC_CONFIG_LINKS([source/index.md:source/index.md])
-AC_CONFIG_SRCDIR([source/index.md])
-AC_CONFIG_LINKS([source/_Sidebar.md:source/_Sidebar.md])
-AC_CONFIG_SRCDIR([source/_Sidebar.md])
+AC_CONFIG_LINKS([source/index.md:$SOURCE_DIR/index.md])
+AC_CONFIG_SRCDIR([$SOURCE_DIR/index.md])
+AC_CONFIG_LINKS([source/_Sidebar.md:$SOURCE_DIR/_Sidebar.md])
+AC_CONFIG_SRCDIR([$SOURCE_DIR/_Sidebar.md])
 AC_CONFIG_FILES([Makefile])
 
 m4_define([IMAGEFILES_LIST],
-    [m4_flatten(m4_chomp(m4_quote(m4_esyscmd([git -C source ls-files 'images/*']))))])
+    [m4_flatten(m4_chomp(m4_quote(m4_esyscmd([git -C ]SOURCE_DIR[ ls-files 'images/*']))))])
 m4_define([TOPFILES_LIST],
-    [m4_flatten(m4_chomp(m4_quote(m4_esyscmd([git -C source ls-files ':(exclude)*/*' ':(exclude)_*' ':(exclude)index.md']))))])
+    [m4_flatten(m4_chomp(m4_quote(m4_esyscmd([git -C ]SOURCE_DIR[ ls-files ':(exclude)*/*' ':(exclude)_*' ':(exclude)index.md']))))])
 
 AM_COND_IF([BUILD_CHM],
     [m4_foreach_w([var], IMAGEFILES_LIST,
-        [AC_CONFIG_LINKS(source/var:source/var)])
+        [AC_CONFIG_LINKS(source/var:$SOURCE_DIR/var)])
      AC_CONFIG_LINKS([source/ags-help.stp:htmlhelp/ags-help.stp])])
 
 m4_define([BASENAME_LIST_NO_INDEX], [m4_bpatsubst(TOPFILES_LIST, [\.[^.]+\( \|$\)], [\1])])
@@ -57,6 +62,7 @@ AC_SUBST([TOP_FILES], ["m4_map_args_w(TOPFILES_LIST, [[ source/]])"])
 AC_SUBST([HHP_FILES], ["m4_map_args_w(BASENAME_LIST, [[ ]], [[.htm]]) IMAGEFILES_LIST"])
 AC_SUBST([FOOTER], ["m4_chomp(m4_quote(m4_esyscmd([git rev-parse HEAD])))"])
 AC_SUBST([BRANCH_NAME], ["m4_chomp(m4_quote(m4_esyscmd([git -C source branch --show-current])))"])
+AC_SUBST([SOURCE_DIR])
 AC_OUTPUT
 
 cat << EOF
