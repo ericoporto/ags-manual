@@ -7,6 +7,8 @@ AM_SILENT_RULES([yes])
 SOURCEDIR=source
 AC_SUBST([SOURCEDIR])
 
+echo "Using source directory: '${SOURCEDIR}'"
+
 AGS_PROG_PANDOC([$srcdir/lua/write_feature_check.lua])
 
 AC_ARG_VAR([CHMCMD], [path to chmcmd])
