@@ -25,7 +25,7 @@ websitestatic_DATA = \
 	$(srcdir)/html/static/logo.svg
 
 if BUILD_CHM
-pkgdata_DATA = $(SOURCE_DIR)/ags-help.chm
+pkgdata_DATA = source/ags-help.chm
 endif
 
 CLEANFILES = \
@@ -37,9 +37,9 @@ CLEANFILES = \
 	metadata.lua \
 	search.js \
 	navigation.js \
-	$(SOURCE_DIR)/ags-help.hhc \
-	$(SOURCE_DIR)/ags-help.hhk \
-	$(SOURCE_DIR)/ags-help.hhp
+	source/ags-help.hhc \
+	source/ags-help.hhk \
+	source/ags-help.hhp
 
 EXTRA_DIST = \
 	$(IMAGE_FILES) \
@@ -130,7 +130,7 @@ search.js: metadata.lua
 		--eol lf \
 		--output $@
 
-navigation.js: $(SOURCE_DIR)/_Sidebar.md
+navigation.js: source/_Sidebar.md
 	$(AM_V_GEN)echo | "$(PANDOC)" \
 		--to "$(srcdir)/lua/write_navigationjs.lua" \
 		--template "$(srcdir)/html/template_navigation.js" \
@@ -151,7 +151,7 @@ navigation.js: $(SOURCE_DIR)/_Sidebar.md
 		--output $@ \
 		$<
 
-$(SOURCE_DIR)/index.htm: $(SOURCE_DIR)/index.md
+source/index.htm: source/index.md
 	$(AM_V_GEN)"$(PANDOC)" --from gfm-tex_math_dollars \
 		--to html4 \
 		--metadata title=$(*F) \
@@ -163,13 +163,13 @@ $(SOURCE_DIR)/index.htm: $(SOURCE_DIR)/index.md
 		--output $@ \
 		$<
 
-$(SOURCE_DIR)/ags-help.hhk: metadata.lua
+source/ags-help.hhk: metadata.lua
 	$(AM_V_GEN)echo | "$(PANDOC)" \
 		--to "$(srcdir)/lua/write_hhk.lua" \
 		--eol crlf \
 		--output $@
 
-$(SOURCE_DIR)/ags-help.hhc: $(SOURCE_DIR)/_Sidebar.md
+source/ags-help.hhc: source/_Sidebar.md
 	$(AM_V_GEN)"$(PANDOC)" --from gfm-tex_math_dollars \
 		--to "$(srcdir)/lua/write_hhc.lua" \
 		--lua-filter "$(srcdir)/lua/rewrite_links.lua" \
@@ -178,9 +178,9 @@ $(SOURCE_DIR)/ags-help.hhc: $(SOURCE_DIR)/_Sidebar.md
 		--wrap=none \
 		--output $@ \
 		$<
-		-$(AM_V_GEN) sed -z -i -E "s/(<\/OBJECT>[^<]*?<UL>)/<param name=\"ImageNumber\" value=\"1\">\n\1/g" $(SOURCE_DIR)/ags-help.hhc
+		-$(AM_V_GEN) sed -z -i -E "s/(<\/OBJECT>[^<]*?<UL>)/<param name=\"ImageNumber\" value=\"1\">\n\1/g" source/ags-help.hhc
 
-$(SOURCE_DIR)/ags-help.hhp:
+source/ags-help.hhp:
 	$(AM_V_GEN)echo | "$(PANDOC)" \
 		--to "$(srcdir)/lua/write_hhp.lua" \
 		--metadata incfiles="$(HHP_FILES)" \
@@ -190,9 +190,9 @@ $(SOURCE_DIR)/ags-help.hhp:
 		--eol crlf \
 		--output $@
 
-$(SOURCE_DIR)/ags-help.chm: $(HTM_FILES) $(SOURCE_DIR)/ags-help.hhk $(SOURCE_DIR)/ags-help.hhc $(SOURCE_DIR)/ags-help.hhp
+source/ags-help.chm: $(HTM_FILES) source/ags-help.hhk source/ags-help.hhc source/ags-help.hhp
 if BUILD_CHM_WITH_HHC
-	$(AM_V_GEN)"$(HHC)" $(SOURCE_DIR)/ags-help.hhp || exit 0; exit 1
+	$(AM_V_GEN)"$(HHC)" source/ags-help.hhp || exit 0; exit 1
 endif
 if BUILD_CHM_WITH_CHMCMD
 	$(AM_V_GEN)cd source && "$(CHMCMD)" ags-help.hhp
