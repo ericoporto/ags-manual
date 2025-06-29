@@ -12,8 +12,15 @@
 <body>
 
 
+  <div class="header-bg"></div>
   <div class="container">
     <header>
+      <h1>
+        <a href="index.html">
+          <img src="static/logo.svg" id="cup" width="48" height="48">
+          AGS Manual
+        </a>
+      </h1>
       <label class="header_input search-box">
         <input type="search" id="search_input" placeholder="Search">
         <label class="toggle-icon" title="Match Case">
@@ -35,6 +42,10 @@
         <input type="checkbox" checked="checked"  id="dark_mode_toggle">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26a5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" /></svg>
       </label>
+      
+      <label class="mobile-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 32 32" width="24px" fill="currentColor"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" /></svg>
+      </label>
 
       <script src="js/darkmode.js"></script>
       <script src="js/mark.min.js"></script>
@@ -43,46 +54,14 @@
     </header>
 
   <nav>
-    <h1>
-      <a href="index.html">
-        <svg id="cup" width="48" height="48" viewBox="0 0 12 8" preserveAspectRatio="xMidYMid meet">
-          <g shape-rendering="crispEdges">
-            <rect width="10" height="7" fill="#ffffff" />
-            <svg y="1">
-              <rect width="12" height="5" fill="#ffffff" />
-            </svg>
-            <svg x="1">
-              <rect width="8" height="8" fill="#ffffff" />
-            </svg>
-            <svg x="1" y="1">
-              <rect width="8" height="5" fill="#2a7fff" />
-            </svg>
-            <svg x="2" y="6">
-              <rect width="6" height="1" fill="#2a7fff" />
-            </svg>
-            <svg x="9" y="2">
-              <rect width="2" height="3" fill="#2a7fff" />
-            </svg>
-            <svg x="9" y="3">
-              <rect width="1" height="1" fill="#ffffff" />
-            </svg>
-            <svg x="2" y="2">
-              <rect width="6" height="3" fill="#0000d4" />
-            </svg>
-            <svg x="3" y="5">
-              <rect width="4" height="1" fill="#0000d4" />
-            </svg>
-            <svg x="2" y="1">
-              <rect width="6" height="1" fill="#ffffff" />
-            </svg>
-          </g>
-        </svg>
-        AGS Manual
-      </a>
-    </h1>
+    <ul>
+      <li><a href="genindex.html">Index</a></li>
+    </ul>
   </nav>
 
-  <main>
+  <div class="content">
+    <article>
+      <main>
 <a href="#a">A</a>&nbsp;
 <a href="#b">B</a>&nbsp;
 <a href="#c">C</a>&nbsp;
@@ -105,18 +84,18 @@
 <a href="#u">U</a>&nbsp;
 <a href="#v">V</a>&nbsp;
 <a href="#w">W</a>&nbsp;
-<a href="#y">Y</a>&nbsp;
-<a href="#`">`</a>
+<a href="#y">Y</a>
 <h3 id="a">A</h3>
 <a href="Globalfunctions_General.html#abortgame">AbortGame</a><br>
 <a href="OOProgramming.html#access-with-extender-functions">Access with extender functions (Object Oriented Programming)</a><br>
+<a href="Setup.html#accessibility">Accessibility (Run-time engine setup)</a><br>
 <a href="acintro3.html#adding-some-interaction">Adding some interaction (Getting Started with AGS - Part 3)</a><br>
 <a href="acintro8.html#additional-characters">Additional Characters (Getting Started with AGS - Part 8)</a><br>
 <a href="SystemLimits.html#additional-considerations">Additional considerations (System limits)</a><br>
 <a href="Translations.html#additional-options">Additional options (Translations)</a><br>
-<a href="Setup.html#advanced-graphics-options">Advanced graphics options (Run-time engine setup)</a><br>
 <a href="Translations.html#advanced-help">Advanced Help (Translations)</a><br>
 <a href="AdvancedRoomFeatures.html#advanced-room-features">Advanced room features</a><br>
+<a href="Setup.html#advanced-setup-page">Advanced setup page (Run-time engine setup)</a><br>
 <a href="EnginePluginDesign-timeAPI.html#ags_editorloadgame">AGS_EditorLoadGame (Engine Plugin Design-time API)</a><br>
 <a href="EnginePluginDesign-timeAPI.html#ags_editorproperties">AGS_EditorProperties (Engine Plugin Design-time API)</a><br>
 <a href="EnginePluginDesign-timeAPI.html#ags_editorsavegame">AGS_EditorSaveGame (Engine Plugin Design-time API)</a><br>
@@ -142,7 +121,10 @@
 <a href="AnonymousUsageInfo.html#anonymous-usage-information">Anonymous usage information</a><br>
 <a href="ScriptAPIOverview.html#api-switches">API switches (Script API Overview)</a><br>
 <a href="Globalfunctions_Room.html#arethingsoverlapping">AreThingsOverlapping</a><br>
+<a href="DynamicArrays.html#arrays-length">Array's Length (Dynamic Arrays)</a><br>
 <a href="ScriptKeywords.html#arrays">Arrays (Script language keywords)</a><br>
+<a href="ScriptManagedStructs.html#arrays-of-managed-objects">Arrays of managed objects (Managed Structs)</a><br>
+<a href="ScriptAttributes.html#attributes">Attributes</a><br>
 <a href="DefaultSetup.html#audio">Audio (Default Setup)</a><br>
 <a href="AudioInScript.html#audio-in-script">Audio in script</a><br>
 <a href="MusicAndSound.html#audio-in-the-editor">Audio in the Editor (Music and sound)</a><br>
@@ -184,11 +166,13 @@
 <a href="BackingUpYourGame.html#backing-up-your-game">Backing up your game</a><br>
 <a href="GeneralSettings.html#backwards-compatibility">Backwards compatibility (General settings)</a><br>
 <a href="GeneralSettings.html#basic-properties">Basic properties (General settings)</a><br>
+<a href="Setup.html#basic-setup-page">Basic setup page (Run-time engine setup)</a><br>
 <a href="TemplateBASS.html#bass-template">BASS template</a><br>
 <a href="StandardEnums.html#blockingstyle">BlockingStyle</a><br>
 <a href="ScriptKeywords.html#break">break (Script language keywords)</a><br>
 <a href="BuildAndroid.html#building-for-android">Building for Android</a><br>
 <a href="BuildAndroid.html#building-the-app">Building the App (Building for Android)</a><br>
+<a href="ScriptManagedStructs.html#built-in-managed-structs">Built-in managed structs (Managed Structs)</a><br>
 <a href="Button.html#button-functions-and-properties">Button</a><br>
 <a href="Button.html#buttonanimate">Button.Animate</a><br>
 <a href="Button.html#buttonanimating">Button.Animating</a><br>
@@ -204,7 +188,10 @@
 <a href="Button.html#buttontext">Button.Text</a><br>
 <a href="Button.html#buttontextalignment">Button.TextAlignment</a><br>
 <a href="Button.html#buttontextcolor">Button.TextColor</a><br>
+<a href="Button.html#buttontextpaddinghorizontal">Button.TextPaddingHorizontal</a><br>
+<a href="Button.html#buttontextpaddingvertical">Button.TextPaddingVertical</a><br>
 <a href="Button.html#buttonview">Button.View</a><br>
+<a href="Button.html#buttonwraptext">Button.WrapText</a><br>
 <h3 id="c">C</h3>
 <a href="Globalfunctions_General.html#callroomscript">CallRoomScript</a><br>
 <a href="Camera.html#camera-functions-and-properties">Camera</a><br>
@@ -222,11 +209,13 @@
 <a href="GameSavesCompatibility.html#changes-that-dont-break-saves-and-are-safe">Changes that DON'T break saves and ARE SAFE (Game saves compatibility)</a><br>
 <a href="GameSavesCompatibility.html#changes-that-dont-break-saves-but-are-not-safe">Changes that DON'T break saves but are NOT SAFE (Game saves compatibility)</a><br>
 <a href="UpgradeTo36.html#changes-to-key-input-handling">Changes to key input handling (Upgrading to AGS 3.6)</a><br>
+<a href="Feature_Rooms.html#changing-rooms">Changing Rooms (Feature: Rooms)</a><br>
 <a href="Character.html#character-functions-and-properties">Character</a><br>
+<a href="GeneralSettings.html#character-behavior">Character behavior (General settings)</a><br>
 <a href="EditorCharacter.html#character-editor">Character Editor</a><br>
 <a href="EventTypes.html#character-events">Character events (Event Types)</a><br>
-<a href="GeneralSettings.html#character-movement">Character movement (General settings)</a><br>
 <a href="AdvancedRoomFeatures.html#character-scaling">Character scaling (Advanced room features)</a><br>
+<a href="Feature_Characters.html#character-views">Character Views (Feature: Characters)</a><br>
 <a href="Character.html#characteractiveinventory">Character.ActiveInventory</a><br>
 <a href="Character.html#characteraddinventory">Character.AddInventory</a><br>
 <a href="Character.html#characteraddwaypoint">Character.AddWaypoint</a><br>
@@ -252,6 +241,7 @@
 <a href="Character.html#characterfacelocation">Character.FaceLocation</a><br>
 <a href="Character.html#characterfaceobject">Character.FaceObject</a><br>
 <a href="Character.html#characterfollowcharacter">Character.FollowCharacter</a><br>
+<a href="Character.html#characterfollowing">Character.Following</a><br>
 <a href="Character.html#characterframe">Character.Frame</a><br>
 <a href="Character.html#charactergetatroomxy">Character.GetAtRoomXY</a><br>
 <a href="Character.html#charactergetatscreenxy">Character.GetAtScreenXY</a><br>
@@ -360,6 +350,7 @@
 <a href="acintro8.html#conversations">Conversations (Getting Started with AGS - Part 8)</a><br>
 <a href="Settingupthegame.html#conversations">Conversations (Setting up the game)</a><br>
 <a href="Copyright.html#copyright-and-terms-of-use">Copyright and terms of use</a><br>
+<a href="Globalfunctions_General.html#copysaveslot">CopySaveSlot</a><br>
 <a href="acintro1.html#creating-a-16-bit-or-32-bit-color-game">Creating a 16-bit or 32-bit color game (Getting Started with AGS)</a><br>
 <a href="acintro1.html#creating-a-256-color-game">Creating a 256-color game (Getting Started with AGS)</a><br>
 <a href="EditorPlugins.html#creating-a-plugin-with-visual-c">Creating a plugin with Visual C# (Editor Plugins)</a><br>
@@ -377,8 +368,10 @@
 <a href="CustomDialogOptions.html#custom-dialog-options-rendering">Custom dialog options rendering</a><br>
 <a href="DistGame.html#custom-icon">Custom icon (Distributing your game)</a><br>
 <a href="EditorGUI.html#custom-inventory">Custom inventory (GUI Editor)</a><br>
+<a href="Setup.html#custom-paths-page">Custom paths page (Run-time engine setup)</a><br>
 <a href="CustomProperties.html#custom-properties">Custom Properties</a><br>
 <a href="UpgradeTo35.html#custom-say-function-in-dialogs">Custom Say function in Dialogs (Upgrading to AGS 3.5)</a><br>
+<a href="Feature_Characters.html#custom-views-and-animating">Custom Views and Animating (Feature: Characters)</a><br>
 <a href="EditorGUI.html#customized-text-windows">Customized Text Windows (GUI Editor)</a><br>
 <a href="DistGame.html#customizing-game-data">Customizing game data (Distributing your game)</a><br>
 <a href="acintro7.html#cutscenes">Cutscenes (Getting Started with AGS - Part 7)</a><br>
@@ -430,6 +423,7 @@
 <a href="Dialog.html#dialogsetoptionstate">Dialog.SetOptionState</a><br>
 <a href="Dialog.html#dialogshowtextparser">Dialog.ShowTextParser</a><br>
 <a href="Dialog.html#dialogstart">Dialog.Start</a><br>
+<a href="Dialog.html#dialogstop">Dialog.Stop</a><br>
 <a href="StandardEnums.html#dialogoptionsaystyle">DialogOptionSayStyle</a><br>
 <a href="DialogOptionsRenderingInfo.html#dialogoptionsrenderinginfo-functions-and-properties">DialogOptionsRenderingInfo</a><br>
 <a href="DialogOptionsRenderingInfo.html#dialogoptionsrenderinginfoactiveoptionid">DialogOptionsRenderingInfo.ActiveOptionID</a><br>
@@ -477,6 +471,8 @@
 <a href="Globalfunctions_Message.html#display">Display</a><br>
 <a href="Globalfunctions_Message.html#displayat">DisplayAt</a><br>
 <a href="Globalfunctions_Message.html#displayaty">DisplayAtY</a><br>
+<a href="Feature_InventoryItems.html#displaying-items">Displaying Items (Feature: Inventory Items)</a><br>
+<a href="Feature_Rooms.html#displaying-rooms">Displaying Rooms (Feature: Rooms)</a><br>
 <a href="Globalfunctions_Message.html#displaymessage">DisplayMessage</a><br>
 <a href="Globalfunctions_Message.html#displaymessageaty">DisplayMessageAtY</a><br>
 <a href="Globalfunctions_Message.html#displaytopbar">DisplayTopBar</a><br>
@@ -503,6 +499,7 @@
 <a href="DrawingSurface.html#drawingsurfacerelease">DrawingSurface.Release</a><br>
 <a href="DrawingSurface.html#drawingsurfaceusehighrescoordinates">DrawingSurface.UseHighResCoordinates</a><br>
 <a href="DrawingSurface.html#drawingsurfacewidth">DrawingSurface.Width</a><br>
+<a href="UpgradeTo362.html#dynamic-arrays-length-attribute">Dynamic array's Length attribute (Upgrading to AGS 3.6.2)</a><br>
 <a href="DynamicArrays.html#dynamic-arrays">Dynamic Arrays</a><br>
 <a href="DynamicSprite.html#dynamicsprite-functions-and-properties">DynamicSprite</a><br>
 <a href="DynamicSprite.html#dynamicspritechangecanvassize">DynamicSprite.ChangeCanvasSize</a><br>
@@ -535,7 +532,6 @@
 <a href="EditorCommandLineOptions.html#editor-command-line-options">Editor Command Line Options</a><br>
 <a href="EditorPlugins.html#editor-plugins">Editor Plugins</a><br>
 <a href="EditorPreferences.html#editor-preferences">Editor Preferences</a><br>
-<a href="acintro.html#editor-tutorial">Editor Tutorial</a><br>
 <a href="StandardEnums.html#eflipdirection">eFlipDirection</a><br>
 <a href="Globalfunctions_Room.html#enablegroundlevelareas">EnableGroundLevelAreas</a><br>
 <a href="Globalfunctions_General.html#enableinterface">EnableInterface</a><br>
@@ -545,49 +541,68 @@
 <a href="EnginePluginRun-timeAPI.html#engine-plugin-run-time-api">Engine Plugin Run-time API</a><br>
 <a href="EnginePlugins.html#engine-plugins">Engine Plugins</a><br>
 <a href="Plugins.html#engine-plugins-and-other-platforms">Engine Plugins and other platforms (Plugins)</a><br>
+<a href="StandardEnums.html#enginevalueid">EngineValueID</a><br>
 <a href="ScriptKeywords.html#enum">enum (Script language keywords)</a><br>
 <a href="DefaultSetup.html#environment">Environment (Default Setup)</a><br>
 <a href="StandardEnums.html#eoperatingsystem">eOperatingSystem</a><br>
 <a href="Preprocessor.html#error">error (Preprocessor)</a><br>
 <a href="StandardEnums.html#espeechstyle">eSpeechStyle</a><br>
+<a href="UpgradeTo362.html#event-handler-functions-can-be-in-any-script-module">Event handler functions can be in any script module (Upgrading to AGS 3.6.2)</a><br>
 <a href="EventTypes.html#event-types">Event Types</a><br>
 <a href="StandardEnums.html#eventtype">EventType</a><br>
 <a href="StandardEnums.html#evoicemode">eVoiceMode</a><br>
 <a href="CustomDialogOptions.html#example-a-classic-mouse-controls">Example A. Classic mouse controls (Custom dialog options rendering)</a><br>
 <a href="CustomDialogOptions.html#example-b-keyboard-controls">Example B. Keyboard controls (Custom dialog options rendering)</a><br>
+<a href="ScriptManagedStructs.html#examples">Examples (Managed Structs)</a><br>
+<a href="ScriptStructs.html#examples">Examples (Structs)</a><br>
 <a href="Tumbleweed.html#exit-extensions">Exit Extensions (Tumbleweed)</a><br>
 <a href="UpgradeTo361.html#expanded-interaction-callbacks">Expanded interaction callbacks (Upgrading to AGS 3.6.1)</a><br>
+<a href="UpgradeTo362.html#expanded-voice-clip-names">Expanded voice clip names (Upgrading to AGS 3.6.2)</a><br>
 <a href="ScriptKeywords.html#export">export (Script language keywords)</a><br>
 <a href="ImportingFunctionsAndVariables.html#exporting-and-importing-a-function">Exporting and importing a function (Importing functions and variables in other scripts)</a><br>
 <a href="ImportingFunctionsAndVariables.html#exporting-and-importing-a-variable">Exporting and importing a variable (Importing functions and variables in other scripts)</a><br>
 <a href="ExtenderFunctions.html#extender-functions">Extender functions</a><br>
+<a href="ScriptStructs.html#extending-structs">Extending structs (Structs)</a><br>
 <h3 id="f">F</h3>
 <a href="Globalfunctions_Screen.html#fadein">FadeIn</a><br>
 <a href="Globalfunctions_Screen.html#fadeout">FadeOut</a><br>
+<a href="Feature_Characters.html#feature-characters">Feature: Characters</a><br>
+<a href="Feature_Game.html#feature-game">Feature: Game</a><br>
+<a href="Feature_InventoryItems.html#feature-inventory-items">Feature: Inventory Items</a><br>
+<a href="Feature_Rooms.html#feature-rooms">Feature: Rooms</a><br>
 <a href="File.html#file-functions-and-properties">File</a><br>
 <a href="MusicAndSound.html#file-formats">File formats (Music and sound)</a><br>
 <a href="File.html#fileclose">File.Close</a><br>
+<a href="File.html#filecopy">File.Copy</a><br>
 <a href="File.html#filedelete">File.Delete</a><br>
 <a href="File.html#fileeof">File.EOF</a><br>
 <a href="File.html#fileerror">File.Error</a><br>
 <a href="File.html#fileexists">File.Exists</a><br>
+<a href="File.html#filegetfiles">File.GetFiles</a><br>
+<a href="File.html#filegetfiletime">File.GetFileTime</a><br>
 <a href="File.html#fileopen">File.Open</a><br>
 <a href="File.html#filepath">File.Path</a><br>
 <a href="File.html#fileposition">File.Position</a><br>
 <a href="File.html#filereadint">File.ReadInt</a><br>
+<a href="File.html#filereadrawbytes">File.ReadRawBytes</a><br>
 <a href="File.html#filereadrawchar">File.ReadRawChar</a><br>
+<a href="File.html#filereadrawfloat">File.ReadRawFloat</a><br>
 <a href="File.html#filereadrawint">File.ReadRawInt</a><br>
 <a href="File.html#filereadrawlineback">File.ReadRawLineBack</a><br>
 <a href="File.html#filereadstringback">File.ReadStringBack</a><br>
+<a href="File.html#filerename">File.Rename</a><br>
 <a href="File.html#fileresolvepath">File.ResolvePath</a><br>
 <a href="File.html#fileseek">File.Seek</a><br>
 <a href="File.html#filewriteint">File.WriteInt</a><br>
+<a href="File.html#filewriterawbytes">File.WriteRawBytes</a><br>
 <a href="File.html#filewriterawchar">File.WriteRawChar</a><br>
+<a href="File.html#filewriterawfloat">File.WriteRawFloat</a><br>
 <a href="File.html#filewriterawint">File.WriteRawInt</a><br>
 <a href="File.html#filewriterawline">File.WriteRawLine</a><br>
 <a href="File.html#filewritestring">File.WriteString</a><br>
 <a href="StandardEnums.html#filemode">FileMode</a><br>
 <a href="StandardEnums.html#fileseek">FileSeek</a><br>
+<a href="StandardEnums.html#filesortstyle">FileSortStyle</a><br>
 <a href="DynamicArrays.html#filling-a-dynamic-array">Filling a dynamic array (Dynamic Arrays)</a><br>
 <a href="Globalfunctions_Screen.html#flipscreen">FlipScreen</a><br>
 <a href="Maths.html#floattoint">FloatToInt</a><br>
@@ -603,9 +618,14 @@
 <h3 id="g">G</h3>
 <a href="Game.html#game-functions-and-properties">Game</a><br>
 <a href="GameEventsOrder.html#game-events-order">Game events order</a><br>
+<a href="Feature_Game.html#game-genre-and-gameplay">Game genre and gameplay (Feature: Game)</a><br>
 <a href="acintro1.html#game-resolution">Game Resolution (Getting Started with AGS)</a><br>
+<a href="RuntimeEngine.html#game-saves">Game saves (The run-time engine)</a><br>
 <a href="GameSavesCompatibility.html#game-saves-compatibility">Game saves compatibility</a><br>
+<a href="Feature_Game.html#game-scripts">Game scripts (Feature: Game)</a><br>
+<a href="Feature_Game.html#game-start-and-ending">Game start and ending (Feature: Game)</a><br>
 <a href="acintro7.html#game-starting-point">Game starting point (Getting Started with AGS - Part 7)</a><br>
+<a href="Feature_Game.html#game-templates">Game Templates (Feature: Game)</a><br>
 <a href="Gamevariables.html#game-variables">Game variables</a><br>
 <a href="Game.html#gameaudioclipcount">Game.AudioClipCount</a><br>
 <a href="Game.html#gameaudioclips">Game.AudioClips</a><br>
@@ -626,11 +646,14 @@
 <a href="Game.html#gamegetloopcountforview">Game.GetLoopCountForView</a><br>
 <a href="Game.html#gamegetrunnextsettingforloop">Game.GetRunNextSettingForLoop</a><br>
 <a href="Game.html#gamegetsaveslotdescription">Game.GetSaveSlotDescription</a><br>
+<a href="Game.html#gamegetsaveslots">Game.GetSaveSlots</a><br>
+<a href="Game.html#gamegetsaveslottime">Game.GetSaveSlotTime</a><br>
 <a href="Game.html#gamegetviewframe">Game.GetViewFrame</a><br>
 <a href="Game.html#gameglobalmessages">Game.GlobalMessages</a><br>
 <a href="Game.html#gameglobalstrings">Game.GlobalStrings</a><br>
 <a href="Game.html#gameguicount">Game.GUICount</a><br>
 <a href="Game.html#gameignoreuserinputaftertexttimeoutms">Game.IgnoreUserInputAfterTextTimeoutMs</a><br>
+<a href="Game.html#gameinblockingwait">Game.InBlockingWait</a><br>
 <a href="Game.html#gameinputbox">Game.InputBox</a><br>
 <a href="Game.html#gameinskippablecutscene">Game.InSkippableCutscene</a><br>
 <a href="Game.html#gameinventoryitemcount">Game.InventoryItemCount</a><br>
@@ -644,6 +667,7 @@
 <a href="Game.html#gameprecachesprite">Game.PrecacheSprite</a><br>
 <a href="Game.html#gameprecacheview">Game.PrecacheView</a><br>
 <a href="Game.html#gameresetdoonceonly">Game.ResetDoOnceOnly</a><br>
+<a href="Game.html#gamescansaveslots">Game.ScanSaveSlots</a><br>
 <a href="Game.html#gamesetaudiotypespeechvolumedrop">Game.SetAudioTypeSpeechVolumeDrop</a><br>
 <a href="Game.html#gamesetaudiotypevolume">Game.SetAudioTypeVolume</a><br>
 <a href="Game.html#gamesetsavegamedirectory">Game.SetSaveGameDirectory</a><br>
@@ -677,6 +701,7 @@
 <a href="Globalfunctions_Room.html#getscalingat">GetScalingAt</a><br>
 <a href="Globalfunctions_General.html#gettextheight">GetTextHeight</a><br>
 <a href="Globalfunctions_General.html#gettextwidth">GetTextWidth</a><br>
+<a href="Globalfunctions_General.html#gettimerpos">GetTimerPos</a><br>
 <a href="acintro1.html#getting-started-with-ags">Getting Started with AGS</a><br>
 <a href="acintro2.html#getting-started-with-ags---part-2">Getting Started with AGS - Part 2</a><br>
 <a href="acintro3.html#getting-started-with-ags---part-3">Getting Started with AGS - Part 3</a><br>
@@ -692,6 +717,7 @@
 <a href="Globalfunctions_Room.html#getwalkableareaat">GetWalkableAreaAt</a><br>
 <a href="Globalfunctions_Room.html#getwalkableareaatroom">GetWalkableAreaAtRoom</a><br>
 <a href="Globalfunctions_Room.html#getwalkableareaatscreen">GetWalkableAreaAtScreen</a><br>
+<a href="Globalfunctions_Room.html#getwalkbehindbase">GetWalkBehindBase</a><br>
 <a href="Globalfunctions_General.html#givescore">GiveScore</a><br>
 <a href="GlobalArrays.html#global-arrays">Global Arrays</a><br>
 <a href="Globalfunctions_Event.html#global-event-handlers">Global event handlers</a><br>
@@ -704,6 +730,7 @@
 <a href="GlobalVariables.html#global-variables">Global variables</a><br>
 <a href="DefaultSetup.html#graphics">Graphics (Default Setup)</a><br>
 <a href="GraphicsDriver.html#graphics-driver-selection">Graphics driver selection</a><br>
+<a href="Setup.html#graphics-options-advanced">Graphics options (advanced) (Run-time engine setup)</a><br>
 <a href="Setup.html#graphics-settings">Graphics settings (Run-time engine setup)</a><br>
 <a href="GUI.html#gui-functions-and-properties">GUI</a><br>
 <a href="EditorGUI.html#gui-buttons">GUI buttons (GUI Editor)</a><br>
@@ -776,6 +803,7 @@
 <a href="Hotspot.html#hotspotsettextproperty">Hotspot.SetTextProperty</a><br>
 <a href="Hotspot.html#hotspotwalktox">Hotspot.WalkToX</a><br>
 <a href="Hotspot.html#hotspotwalktoy">Hotspot.WalkToY</a><br>
+<a href="Feature_Rooms.html#hotspots">Hotspots (Feature: Rooms)</a><br>
 <a href="acintro3.html#hotspots">Hotspots (Getting Started with AGS - Part 3)</a><br>
 <a href="EditorInventoryItems.html#hotspotx">HotspotX (Inventory Items Editor)</a><br>
 <a href="EditorInventoryItems.html#hotspoty">HotspotY (Inventory Items Editor)</a><br>
@@ -816,6 +844,7 @@
 <a href="EnginePluginRun-timeAPI.html#iagsenginecallgamescriptfunction">IAGSEngine.CallGameScriptFunction (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsenginecanrunscriptfunctionnow">IAGSEngine.CanRunScriptFunctionNow (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsenginecreateblankbitmap">IAGSEngine.CreateBlankBitmap (Engine Plugin Run-time API)</a><br>
+<a href="EnginePluginRun-timeAPI.html#iagsenginecreatedynamicarray">IAGSEngine.CreateDynamicArray (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsenginecreatedynamicsprite">IAGSEngine.CreateDynamicSprite (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsenginecreatescriptstring">IAGSEngine.CreateScriptString (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsenginedecrementmanagedobjectrefcount">IAGSEngine.DecrementManagedObjectRefCount (Engine Plugin Run-time API)</a><br>
@@ -838,6 +867,8 @@
 <a href="EnginePluginRun-timeAPI.html#iagsenginegetdirectinputkeyboard">IAGSEngine.GetDirectInputKeyboard (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsenginegetdirectinputmouse">IAGSEngine.GetDirectInputMouse (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsenginegetdirectsound">IAGSEngine.GetDirectSound (Engine Plugin Run-time API)</a><br>
+<a href="EnginePluginRun-timeAPI.html#iagsenginegetdynamicarraylength">IAGSEngine.GetDynamicArrayLength (Engine Plugin Run-time API)</a><br>
+<a href="EnginePluginRun-timeAPI.html#iagsenginegetdynamicarraysize">IAGSEngine.GetDynamicArraySize (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsenginegetengineversion">IAGSEngine.GetEngineVersion (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsenginegetfilestreambyhandle">IAGSEngine.GetFileStreamByHandle (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsenginegetfonttype">IAGSEngine.GetFontType (Engine Plugin Run-time API)</a><br>
@@ -881,6 +912,7 @@
 <a href="EnginePluginRun-timeAPI.html#iagsengineisgamepaused">IAGSEngine.IsGamePaused (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsengineisrunningunderdebugger">IAGSEngine.IsRunningUnderDebugger (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsengineisspritealphablended">IAGSEngine.IsSpriteAlphaBlended (Engine Plugin Run-time API)</a><br>
+<a href="EnginePluginRun-timeAPI.html#iagsenginelog">IAGSEngine.Log (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsenginelookupparserword">IAGSEngine.LookupParserWord (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsenginemakerawcolorpixel">IAGSEngine.MakeRawColorPixel (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsenginemarkregiondirty">IAGSEngine.MarkRegionDirty (Engine Plugin Run-time API)</a><br>
@@ -945,6 +977,7 @@
 <a href="EnginePluginRun-timeAPI.html#iagsstreamwrite">IAGSStream.Write (Engine Plugin Run-time API)</a><br>
 <a href="EnginePluginRun-timeAPI.html#iagsstreamwritebyte">IAGSStream.WriteByte (Engine Plugin Run-time API)</a><br>
 <a href="EditorInventoryItems.html#id">ID (Inventory Items Editor)</a><br>
+<a href="Feature_Characters.html#idling">Idling (Feature: Characters)</a><br>
 <a href="Templates.html#if-the-list-of-templates-is-empty">If the list of templates is empty (New Game templates)</a><br>
 <a href="ScriptKeywords.html#if-else-statements">if, else statements (Script language keywords)</a><br>
 <a href="Preprocessor.html#ifdef-ifndef-endif">ifdef, ifndef, endif (Preprocessor)</a><br>
@@ -961,6 +994,7 @@
 <a href="ImportingFunctionsAndVariables.html#importing-functions-and-variables-in-other-scripts">Importing functions and variables in other scripts</a><br>
 <a href="Settingupthegame.html#importing-your-own-sprite-graphics">Importing your own sprite graphics (Setting up the game)</a><br>
 <a href="UpgradeTo36.html#improvement-of-overlays">Improvement of Overlays (Upgrading to AGS 3.6)</a><br>
+<a href="ScriptAttributes.html#indexed-attributes">Indexed attributes (Attributes)</a><br>
 <a href="GeneralSettings.html#information">Information (General settings)</a><br>
 <a href="StandardEnums.html#inputtype">InputType</a><br>
 <a href="BuildAndroid.html#installation-requirements-for-android-in-ags-editor">Installation requirements for Android in AGS Editor (Building for Android)</a><br>
@@ -976,6 +1010,7 @@
 <a href="Tumbleweed.html#introduction">Introduction (Tumbleweed)</a><br>
 <a href="Settingupthegame.html#introduction-sequences">Introduction sequences (Setting up the game)</a><br>
 <a href="Maths.html#inttofloat">IntToFloat</a><br>
+<a href="Feature_Characters.html#inventory">Inventory (Feature: Characters)</a><br>
 <a href="GeneralSettings.html#inventory">Inventory (General settings)</a><br>
 <a href="acintro4.html#inventory">Inventory (Getting Started with AGS - Part 4)</a><br>
 <a href="Settingupthegame.html#inventory">Inventory (Setting up the game)</a><br>
@@ -1041,6 +1076,7 @@
 <a href="ListBox.html#listboxclear">ListBox.Clear</a><br>
 <a href="ListBox.html#listboxfilldirlist">ListBox.FillDirList</a><br>
 <a href="ListBox.html#listboxfillsavegamelist">ListBox.FillSaveGameList</a><br>
+<a href="ListBox.html#listboxfillsavegameslots">ListBox.FillSaveGameSlots</a><br>
 <a href="ListBox.html#listboxfont">ListBox.Font</a><br>
 <a href="ListBox.html#listboxgetitematlocation">ListBox.GetItemAtLocation</a><br>
 <a href="ListBox.html#listboxhideborder">ListBox.HideBorder</a><br>
@@ -1062,13 +1098,16 @@
 <a href="ListBox.html#listboxtextcolor">ListBox.TextColor</a><br>
 <a href="ListBox.html#listboxtopitem">ListBox.TopItem</a><br>
 <a href="ListBox.html#listboxtranslated">ListBox.Translated</a><br>
+<a href="UpgradeTo362.html#loading-old-saves-feature">Loading old saves feature (Upgrading to AGS 3.6.2)</a><br>
 <a href="StandardEnums.html#locationtype">LocationType</a><br>
 <a href="EditorLogPanel.html#log-panel">Log Panel</a><br>
 <a href="UpgradeTo361.html#log-panel-in-the-editor">Log Panel in the Editor (Upgrading to AGS 3.6.1)</a><br>
 <a href="StandardEnums.html#loglevel">LogLevel</a><br>
 <a href="ScriptingTutorialPart2.html#loops">Loops (Scripting Tutorial - Part 2)</a><br>
 <h3 id="m">M</h3>
+<a href="EditorCommandLineOptions.html#make-template-flag">Make template flag (Editor Command Line Options)</a><br>
 <a href="ScriptKeywords.html#managed">managed (Script language keywords)</a><br>
+<a href="ScriptManagedStructs.html#managed-structs">Managed Structs</a><br>
 <a href="acintro5.html#managing-inventory">Managing Inventory (Getting Started with AGS - Part 5)</a><br>
 <a href="ScriptModules.html#managing-modules">Managing modules</a><br>
 <a href="DistGame.html#managing-the-audio-footprint">Managing the Audio Footprint (Distributing your game)</a><br>
@@ -1092,6 +1131,8 @@
 <a href="Maths.html#mathssqrt">Maths.Sqrt</a><br>
 <a href="Maths.html#mathstan">Maths.Tan</a><br>
 <a href="Maths.html#mathstanh">Maths.Tanh</a><br>
+<a href="ScriptStructs.html#member-functions">Member functions (Structs)</a><br>
+<a href="ScriptStructs.html#member-modifiers">Member modifiers (Structs)</a><br>
 <a href="MIDI-playback.html#midi-playback">MIDI playback</a><br>
 <a href="UpgradeTo36.html#midi-playback">MIDI playback (Upgrading to AGS 3.6)</a><br>
 <a href="DefaultSetup.html#misc">Misc (Default Setup)</a><br>
@@ -1126,6 +1167,8 @@
 <a href="StandardEnums.html#mousebutton">MouseButton</a><br>
 <a href="Globalfunctions_General.html#movecharactertohotspot">MoveCharacterToHotspot</a><br>
 <a href="Globalfunctions_General.html#movecharactertoobject">MoveCharacterToObject</a><br>
+<a href="Globalfunctions_General.html#movesaveslot">MoveSaveSlot</a><br>
+<a href="Feature_Characters.html#moving-and-walking">Moving and Walking (Feature: Characters)</a><br>
 <a href="TextParser.html#multi-words">Multi-words (Text Parser)</a><br>
 <a href="ScriptKeywords.html#multidimensional-arrays">Multidimensional arrays (Script language keywords)</a><br>
 <a href="Multimedia.html#multimedia-functions">Multimedia functions</a><br>
@@ -1145,6 +1188,7 @@
 <a href="UpgradeTo36.html#new-sprite-compression-options">New sprite compression options (Upgrading to AGS 3.6)</a><br>
 <a href="UpgradeTo35.html#new-viewportcamera-system">New Viewport/Camera system (Upgrading to AGS 3.5)</a><br>
 <a href="ScriptKeywords.html#noloopcheck">noloopcheck (Script language keywords)</a><br>
+<a href="Feature_Characters.html#non-player-chararacters">Non-Player Chararacters (Feature: Characters)</a><br>
 <h3 id="o">O</h3>
 <a href="Object.html#object-functions-and-properties">Object</a><br>
 <a href="EventTypes.html#object-events">Object events (Event Types)</a><br>
@@ -1210,7 +1254,6 @@
 <a href="EditorCommandLineOptions.html#opening-the-editor">Opening the Editor (Editor Command Line Options)</a><br>
 <a href="ScriptKeywords.html#operators">Operators (Script language keywords)</a><br>
 <a href="ScriptingTutorialPart2.html#or-expressions">OR Expressions (Scripting Tutorial - Part 2)</a><br>
-<a href="Setup.html#other-advanced-settings">Other advanced settings (Run-time engine setup)</a><br>
 <a href="OtherFeatures.html#other-features">Other Features</a><br>
 <a href="Overlay.html#overlay-functions-and-properties">Overlay</a><br>
 <a href="Overlay.html#overlaycreategraphical">Overlay.CreateGraphical</a><br>
@@ -1223,6 +1266,8 @@
 <a href="Overlay.html#overlayheight">Overlay.Height</a><br>
 <a href="Overlay.html#overlayinroom">Overlay.InRoom</a><br>
 <a href="Overlay.html#overlayremove">Overlay.Remove</a><br>
+<a href="Overlay.html#overlaysetposition">Overlay.SetPosition</a><br>
+<a href="Overlay.html#overlaysetsize">Overlay.SetSize</a><br>
 <a href="Overlay.html#overlaysettext">Overlay.SetText</a><br>
 <a href="Overlay.html#overlaytransparency">Overlay.Transparency</a><br>
 <a href="Overlay.html#overlayvalid">Overlay.Valid</a><br>
@@ -1242,8 +1287,10 @@
 <a href="Parser.html#parserparsetext">Parser.ParseText</a><br>
 <a href="Parser.html#parsersaid">Parser.Said</a><br>
 <a href="Parser.html#parsersaidunknownword">Parser.SaidUnknownWord</a><br>
+<a href="ScriptManagedStructs.html#passing-objects-reference">Passing object's reference (Managed Structs)</a><br>
 <a href="Globalfunctions_General.html#pausegame">PauseGame</a><br>
 <a href="DefaultSetup.html#performance">Performance (Default Setup)</a><br>
+<a href="Feature_Characters.html#player-character">Player Character (Feature: Characters)</a><br>
 <a href="EditorInventoryItems.html#playerstartswithitem">PlayerStartsWithItem (Inventory Items Editor)</a><br>
 <a href="Multimedia.html#playflic">PlayFlic</a><br>
 <a href="Multimedia.html#playsilentmidi">PlaySilentMIDI</a><br>
@@ -1256,16 +1303,19 @@
 <a href="Pointers.html#pointers-for-programming-newbies">Pointers for programming newbies (Pointers in AGS)</a><br>
 <a href="Pointers.html#pointers-in-ags">Pointers in AGS</a><br>
 <a href="Preprocessor.html#preprocessor">Preprocessor</a><br>
+<a href="UpgradeTo362.html#prescanning-save-slots">Prescanning save slots. (Upgrading to AGS 3.6.2)</a><br>
 <a href="EditorInventoryItems.html#properties">Properties (Inventory Items Editor)</a><br>
 <a href="EditorView.html#properties">Properties (View Editor)</a><br>
 <a href="EditorRoom.html#properties-control">Properties control (Room Editor)</a><br>
 <a href="ScriptKeywords.html#protected">protected (Script language keywords)</a><br>
 <a href="OOProgramming.html#protection">Protection (Object Oriented Programming)</a><br>
+<a href="ScriptAttributes.html#protection-modifiers">Protection modifiers (Attributes)</a><br>
 <h3 id="q">Q</h3>
 <a href="Globalfunctions_General.html#quitgame">QuitGame</a><br>
 <h3 id="r">R</h3>
 <a href="Globalfunctions_General.html#random">Random</a><br>
 <a href="ScriptKeywords.html#readonly">readonly (Script language keywords)</a><br>
+<a href="ScriptAttributes.html#readonly-attributes">Readonly attributes (Attributes)</a><br>
 <a href="acintro5.html#recap">Recap (Getting Started with AGS - Part 5)</a><br>
 <a href="ScriptingTutorialPart1.html#recap">Recap (Scripting Tutorial - Part 1)</a><br>
 <a href="ScriptingTutorialPart2.html#recap">Recap (Scripting Tutorial - Part 2)</a><br>
@@ -1286,8 +1336,10 @@
 <a href="Region.html#regiontintluminance">Region.TintLuminance</a><br>
 <a href="Region.html#regiontintred">Region.TintRed</a><br>
 <a href="Region.html#regiontintsaturation">Region.TintSaturation</a><br>
+<a href="Feature_Rooms.html#regions">Regions (Feature: Rooms)</a><br>
 <a href="Globalfunctions_Room.html#releaseviewport">ReleaseViewport</a><br>
 <a href="Globalfunctions_Room.html#removewalkablearea">RemoveWalkableArea</a><br>
+<a href="StandardEnums.html#renderlayer">RenderLayer</a><br>
 <a href="Globalfunctions_Event.html#repeatedly_execute">repeatedly_execute</a><br>
 <a href="RepExec.html#repeatedly_execute-_always">repeatedly_execute (_always)</a><br>
 <a href="Globalfunctions_Event.html#repeatedly_execute_always">repeatedly_execute_always</a><br>
@@ -1296,19 +1348,51 @@
 <a href="Globalfunctions_Room.html#resetroom">ResetRoom</a><br>
 <a href="DynamicArrays.html#resizing-a-dynamic-array">Resizing a dynamic array (Dynamic Arrays)</a><br>
 <a href="Globalfunctions_General.html#restartgame">RestartGame</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfo">RestoredSaveInfo</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfoaudiocliptypecount">RestoredSaveInfo.AudioClipTypeCount</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfocancel">RestoredSaveInfo.Cancel</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfocharactercount">RestoredSaveInfo.CharacterCount</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfocursorcount">RestoredSaveInfo.CursorCount</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfodescription">RestoredSaveInfo.Description</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfodialogcount">RestoredSaveInfo.DialogCount</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfoengineversion">RestoredSaveInfo.EngineVersion</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfoglobalscriptdatasize">RestoredSaveInfo.GlobalScriptDataSize</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfoguicontrolcount">RestoredSaveInfo.GUIControlCount</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfoguicount">RestoredSaveInfo.GUICount</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfohasextradata">RestoredSaveInfo.HasExtraData</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfohasmissingdata">RestoredSaveInfo.HasMissingData</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfoinventoryitemcount">RestoredSaveInfo.InventoryItemCount</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfoisprescan">RestoredSaveInfo.IsPrescan</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinforetrywithoutcomponents">RestoredSaveInfo.RetryWithoutComponents</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinforoom">RestoredSaveInfo.Room</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfoscriptmodulecount">RestoredSaveInfo.ScriptModuleCount</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfoscriptmoduledatasizes">RestoredSaveInfo.ScriptModuleDataSizes</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfoscriptmodulenames">RestoredSaveInfo.ScriptModuleNames</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfoslot">RestoredSaveInfo.Slot</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfoviewcount">RestoredSaveInfo.ViewCount</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfoviewframecount">RestoredSaveInfo.ViewFrameCount</a><br>
+<a href="RestoredSaveInfo.html#restoredsaveinfoviewloopcount">RestoredSaveInfo.ViewLoopCount</a><br>
+<a href="StandardEnums.html#restoredsaveresult">RestoredSaveResult</a><br>
 <a href="Globalfunctions_General.html#restoregamedialog">RestoreGameDialog</a><br>
 <a href="Globalfunctions_General.html#restoregameslot">RestoreGameSlot</a><br>
 <a href="Globalfunctions_Room.html#restorewalkablearea">RestoreWalkableArea</a><br>
+<a href="UpgradeTo362.html#restricting-the-data-read-or-written-in-a-save">Restricting the data read or written in a save (Upgrading to AGS 3.6.2)</a><br>
 <a href="ScriptKeywords.html#return">return (Script language keywords)</a><br>
 <a href="EditorView.html#right-click-context-menu">Right Click Context Menu (View Editor)</a><br>
 <a href="Room.html#room-functions-and-properties">Room</a><br>
+<a href="Feature_Rooms.html#room-areas">Room Areas (Feature: Rooms)</a><br>
+<a href="Feature_Rooms.html#room-backgrounds">Room Backgrounds (Feature: Rooms)</a><br>
+<a href="Feature_Rooms.html#room-contents">Room contents (Feature: Rooms)</a><br>
+<a href="Feature_Rooms.html#room-edges">Room Edges (Feature: Rooms)</a><br>
 <a href="EditorRoom.html#room-editor">Room Editor</a><br>
 <a href="UpgradeTo35.html#room-editor-and-multilayer-mode">Room editor and multilayer mode (Upgrading to AGS 3.5)</a><br>
 <a href="EventTypes.html#room-events">Room events (Event Types)</a><br>
 <a href="EditorRoom.html#room-events">Room Events (Room Editor)</a><br>
 <a href="EditorRoom.html#room-masks-hotspot-walkable-areas-walk-behinds-and-regions">Room masks (Hotspot, Walkable areas, Walk-behinds and Regions) (Room Editor)</a><br>
+<a href="Feature_Rooms.html#room-objects">Room Objects (Feature: Rooms)</a><br>
 <a href="EditorRoom.html#room-properties">Room Properties (Room Editor)</a><br>
 <a href="UpgradeTo35.html#room-sizes-and-mask-resolution">Room sizes and mask resolution (Upgrading to AGS 3.5)</a><br>
+<a href="Room.html#roombackgroundcount">Room.BackgroundCount</a><br>
 <a href="Room.html#roombottomedge">Room.BottomEdge</a><br>
 <a href="Room.html#roomcolordepth">Room.ColorDepth</a><br>
 <a href="Room.html#roomexists">Room.Exists</a><br>
@@ -1319,6 +1403,7 @@
 <a href="Room.html#roomleftedge">Room.LeftEdge</a><br>
 <a href="Room.html#roommessages">Room.Messages</a><br>
 <a href="Room.html#roommusiconload">Room.MusicOnLoad</a><br>
+<a href="Room.html#roomnearestwalkablearea">Room.NearestWalkableArea</a><br>
 <a href="Room.html#roomobjectcount">Room.ObjectCount</a><br>
 <a href="Room.html#roomprocessclick">Room.ProcessClick</a><br>
 <a href="Room.html#roomrightedge">Room.RightEdge</a><br>
@@ -1332,9 +1417,11 @@
 <a href="EnginePluginRun-timeAPI.html#run-time-events">Run-time events (Engine Plugin Run-time API)</a><br>
 <a href="Globalfunctions_General.html#runagsgame">RunAGSGame</a><br>
 <h3 id="s">S</h3>
+<a href="StandardEnums.html#savecomponentselection">SaveComponentSelection</a><br>
 <a href="GeneralSettings.html#saved-games">Saved Games (General settings)</a><br>
 <a href="Globalfunctions_General.html#savegamedialog">SaveGameDialog</a><br>
 <a href="Globalfunctions_General.html#savegameslot">SaveGameSlot</a><br>
+<a href="StandardEnums.html#savegamesortstyle">SaveGameSortStyle</a><br>
 <a href="Globalfunctions_General.html#savescreenshot">SaveScreenShot</a><br>
 <a href="acintro8.html#say-dialog">Say Dialog (Getting Started with AGS - Part 8)</a><br>
 <a href="Screen.html#screen-functions-and-properties">Screen</a><br>
@@ -1415,10 +1502,11 @@
 <a href="GameSavesCompatibility.html#solution-4-string-dictionary-and-set">Solution 4: String, Dictionary and Set (Game saves compatibility)</a><br>
 <a href="GameSavesCompatibility.html#solution-5-extending-dynamic-arrays-and-managed-structs">Solution 5: Extending dynamic arrays and managed structs (Game saves compatibility)</a><br>
 <a href="UpgradeTo35.html#some-script-functions-replaced-andor-deprecated">Some script functions replaced and/or deprecated (Upgrading to AGS 3.5)</a><br>
+<a href="StandardEnums.html#sortdirection">SortDirection</a><br>
 <a href="StandardEnums.html#sortstyle">SortStyle</a><br>
 <a href="GeneralSettings.html#sound">Sound (General settings)</a><br>
 <a href="Setup.html#sound-options">Sound options (Run-time engine setup)</a><br>
-<a href="SourceControl.html#source-control-integration">Source Control integration</a><br>
+<a href="Feature_Characters.html#speaking">Speaking (Feature: Characters)</a><br>
 <a href="Speech.html#speech-functions-and-properties">Speech</a><br>
 <a href="Speech.html#speechanimationstoptimemargin">Speech.AnimationStopTimeMargin</a><br>
 <a href="Speech.html#speechcustomportraitplacement">Speech.CustomPortraitPlacement</a><br>
@@ -1445,8 +1533,10 @@
 <a href="Globalfunctions_General.html#startcutscene">StartCutscene</a><br>
 <a href="StartingOff.html#starting-off">Starting off</a><br>
 <a href="acintro1.html#starting-off">Starting off (Getting Started with AGS)</a><br>
+<a href="ScriptAttributes.html#static-attributes">Static attributes (Attributes)</a><br>
 <a href="OOProgramming.html#static-attributes">Static attributes (Object Oriented Programming)</a><br>
 <a href="ExtenderFunctions.html#static-extenders">Static extenders (Extender functions)</a><br>
+<a href="ScriptStructs.html#static-functions">Static functions (Structs)</a><br>
 <a href="Dialog.html#stopdialog">StopDialog</a><br>
 <a href="StandardEnums.html#stopmovementstyle">StopMovementStyle</a><br>
 <a href="String.html#string-functions">String</a><br>
@@ -1472,8 +1562,11 @@
 <a href="String.html#stringuppercase">String.UpperCase</a><br>
 <a href="StandardEnums.html#stringcomparestyle">StringCompareStyle</a><br>
 <a href="ScriptKeywords.html#struct">struct (Script language keywords)</a><br>
+<a href="ScriptManagedStructs.html#structs-declaration-and-creating-objects">Struct's declaration and creating objects (Managed Structs)</a><br>
+<a href="ScriptStructs.html#structs">Structs</a><br>
 <a href="DialogScript.html#substituting-dialog-speech-with-custom-functions">Substituting dialog speech with custom functions (Dialog Script)</a><br>
 <a href="ScriptingTutorialPart1.html#summary">Summary (Scripting Tutorial - Part 1)</a><br>
+<a href="UpgradeTo362.html#support-for-loading-saves-with-less-content-for-any-given-type-of-data">Support for loading saves with less content for any given type of data. (Upgrading to AGS 3.6.2)</a><br>
 <a href="ScriptKeywords.html#switch-case-statements">switch, case statements (Script language keywords)</a><br>
 <a href="System.html#system-functions-and-properties">System</a><br>
 <a href="SystemLimits.html#system-limits">System limits</a><br>
@@ -1486,7 +1579,10 @@
 <a href="System.html#systemaudiochannels">System.AudioChannels</a><br>
 <a href="System.html#systemcapslock">System.CapsLock</a><br>
 <a href="System.html#systemcolordepth">System.ColorDepth</a><br>
+<a href="System.html#systemdisplayfps">System.DisplayFPS</a><br>
 <a href="System.html#systemgamma">System.Gamma</a><br>
+<a href="System.html#systemgetengineinteger">System.GetEngineInteger</a><br>
+<a href="System.html#systemgetenginestring">System.GetEngineString</a><br>
 <a href="System.html#systemhardwareacceleration">System.HardwareAcceleration</a><br>
 <a href="System.html#systemhasinputfocus">System.HasInputFocus</a><br>
 <a href="System.html#systemlog">System.Log</a><br>
@@ -1585,12 +1681,17 @@
 <a href="UpgradeTo35.html#upgrading-to-ags-35">Upgrading to AGS 3.5</a><br>
 <a href="UpgradeTo36.html#upgrading-to-ags-36">Upgrading to AGS 3.6</a><br>
 <a href="UpgradeTo361.html#upgrading-to-ags-361">Upgrading to AGS 3.6.1</a><br>
+<a href="UpgradeTo362.html#upgrading-to-ags-362">Upgrading to AGS 3.6.2</a><br>
+<a href="ScriptAttributes.html#uses-of-attribute">Uses of attribute (Attributes)</a><br>
 <a href="UnicodeSupport.html#using-ascii-mode">Using ASCII mode (Unicode Support)</a><br>
 <a href="Templates.html#using-downloaded-templates">Using downloaded templates (New Game templates)</a><br>
 <a href="Tumbleweed.html#using-inventory-items">Using Inventory Items (Tumbleweed)</a><br>
 <a href="DialogScript.html#using-regular-scripting-commands-in-dialogs">Using regular scripting commands in dialogs (Dialog Script)</a><br>
+<a href="Feature_InventoryItems.html#using-the-item-on-something-else">Using the Item on something else (Feature: Inventory Items)</a><br>
 <a href="acintro6.html#using-your-own-graphics">Using your own graphics (Getting Started with AGS - Part 6)</a><br>
 <h3 id="v">V</h3>
+<a href="ValidateRestoredSave.html#validate_restored_save">validate_restored_save</a><br>
+<a href="UpgradeTo362.html#validating-restored-saves">Validating restored saves. (Upgrading to AGS 3.6.2)</a><br>
 <a href="ScriptingTutorialPart1.html#variables">Variables (Scripting Tutorial - Part 1)</a><br>
 <a href="TemplateVerbcoin.html#verbcoin-template">VerbCoin template</a><br>
 <a href="TemplateVerbcoin.html#verbcoinactionlabel">VerbCoin.ActionLabel</a><br>
@@ -1698,7 +1799,9 @@
 <a href="Globalfunctions_Wait.html#waitkey">WaitKey</a><br>
 <a href="Globalfunctions_Wait.html#waitmouse">WaitMouse</a><br>
 <a href="Globalfunctions_Wait.html#waitmousekey">WaitMouseKey</a><br>
+<a href="Feature_Rooms.html#walk-behinds">Walk-behinds (Feature: Rooms)</a><br>
 <a href="acintro3.html#walk-to-points">Walk-to points (Getting Started with AGS - Part 3)</a><br>
+<a href="Feature_Rooms.html#walkable-areas">Walkable areas (Feature: Rooms)</a><br>
 <a href="StandardEnums.html#walkwhere">WalkWhere</a><br>
 <a href="DistGame.html#warning-on-de-compiling-the-built-game">Warning on de-compiling the built game (Distributing your game)</a><br>
 <a href="TroubleshootingWindowsZoneID.html#what-are-alternate-data-streams">What are "alternate data streams"? (Troubleshooting Windows Zone Identifier)</a><br>
@@ -1708,20 +1811,25 @@
 <a href="ScriptModules.html#writing-script-modules">Writing Script Modules (Managing modules)</a><br>
 <h3 id="y">Y</h3>
 <a href="ScriptingTutorialPart2.html#your-own-functions">Your Own Functions (Scripting Tutorial - Part 2)</a><br>
-<h3 id="`">`</h3>
-<a href="Overlay.html#overlaysetposition">`Overlay.SetPosition (Overlay functions and properties)</a><br>
-<a href="Overlay.html#overlaysetsize">`Overlay.SetSize (Overlay functions and properties)</a><br>
-  </main>
-
-
-  <footer>
-    <p>
-      <a href="jslicensing.html" data-jslicense="1">Third-party JavaScript licensing</a><br>
-      Build: feeb81b0e78f9acbe84b8696babae870a6284b5b
-    </p>
-  </footer>
-
-  <script src="js/search.js"></script>
+      </main>
+      <footer>
+        <p>
+          <a href="jslicensing.html" data-jslicense="1">Third-party JavaScript licensing</a><br>
+          Build: ed75ea05a92de6b9ff5582c5376524816e60c494
+        </p>
+      </footer>
+    </article>
+    
+    <aside>
+    </aside>
   </div>
+
+
+
+
+  </div>
+  <script src="js/navigation.js"></script>
+  <script src="js/search.js"></script>
+  
 </body>
 </html>

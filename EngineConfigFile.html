@@ -12,8 +12,15 @@
 <body>
 
 
+  <div class="header-bg"></div>
   <div class="container">
     <header>
+      <h1>
+        <a href="index.html">
+          <img src="static/logo.svg" id="cup" width="48" height="48">
+          AGS Manual
+        </a>
+      </h1>
       <label class="header_input search-box">
         <input type="search" id="search_input" placeholder="Search">
         <label class="toggle-icon" title="Match Case">
@@ -35,6 +42,10 @@
         <input type="checkbox" checked="checked"  id="dark_mode_toggle">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26a5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" /></svg>
       </label>
+      
+      <label class="mobile-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 32 32" width="24px" fill="currentColor"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" /></svg>
+      </label>
 
       <script src="js/darkmode.js"></script>
       <script src="js/mark.min.js"></script>
@@ -43,56 +54,14 @@
     </header>
 
   <nav>
-    <h1>
-      <a href="index.html">
-        <svg id="cup" width="48" height="48" viewBox="0 0 12 8" preserveAspectRatio="xMidYMid meet">
-          <g shape-rendering="crispEdges">
-            <rect width="10" height="7" fill="#ffffff" />
-            <svg y="1">
-              <rect width="12" height="5" fill="#ffffff" />
-            </svg>
-            <svg x="1">
-              <rect width="8" height="8" fill="#ffffff" />
-            </svg>
-            <svg x="1" y="1">
-              <rect width="8" height="5" fill="#2a7fff" />
-            </svg>
-            <svg x="2" y="6">
-              <rect width="6" height="1" fill="#2a7fff" />
-            </svg>
-            <svg x="9" y="2">
-              <rect width="2" height="3" fill="#2a7fff" />
-            </svg>
-            <svg x="9" y="3">
-              <rect width="1" height="1" fill="#ffffff" />
-            </svg>
-            <svg x="2" y="2">
-              <rect width="6" height="3" fill="#0000d4" />
-            </svg>
-            <svg x="3" y="5">
-              <rect width="4" height="1" fill="#0000d4" />
-            </svg>
-            <svg x="2" y="1">
-              <rect width="6" height="1" fill="#ffffff" />
-            </svg>
-          </g>
-        </svg>
-        AGS Manual
-      </a>
-    </h1>
     <ul>
       <li><a href="genindex.html">Index</a></li>
     </ul>
-<ul>
-<li><a href="#engine-config-file" id="toc-engine-config-file">Engine Config File</a>
-<ul>
-<li><a href="#configuration-file-locations" id="toc-configuration-file-locations">Configuration file locations</a></li>
-<li><a href="#configuration-file-options" id="toc-configuration-file-options">Configuration file options</a></li>
-</ul></li>
-</ul>
   </nav>
 
-  <main>
+  <div class="content">
+    <article>
+      <main>
 <section id="engine-config-file" class="level2">
 <h2><a href="#engine-config-file">Engine Config File</a></h2>
 <p>The Engine can be adjusted through a configuration file. This config file for historical reasons is called <code>acsetup.cfg</code>.</p>
@@ -106,11 +75,16 @@
 </ol>
 <p>Locations of two latter files differ between running platforms:</p>
 <ul>
-<li><strong>Linux</strong>:
+<li><strong>Linux</strong>, <strong>FreeBSD</strong>:
 <ul>
 <li>user's global config: <code>$XDG_DATA_HOME/ags/acsetup.cfg</code></li>
 <li>user's game config: <code>$XDG_DATA_HOME/ags/GAMENAME/acsetup.cfg</code></li>
 <li>NOTE: if <code>$XDG_DATA_HOME</code> is not defined, then <code>$HOME/.local/share</code> is used instead.</li>
+</ul></li>
+<li><strong>MacOSX</strong>:
+<ul>
+<li>user's global config: <code>Users/&lt;username&gt;/Library/Application Support/uk.co.adventuregamestudio/acsetup.cfg</code></li>
+<li>user's game config: <code>Users/&lt;username&gt;/Library/Application Support/GAMENAME/acsetup.cfg</code></li>
 </ul></li>
 <li><strong>Windows</strong>:
 <ul>
@@ -134,6 +108,7 @@
 <ul>
 <li><code>direct3d</code>, <code>opengl</code>, <code>opengles</code>, <code>opengles2</code>, <code>metal</code>, <code>software</code>.</li>
 </ul></li>
+<li><code>display = [integer]</code> - starting display number, which is the 1-based index of a display, and 0 means "use system defaults".</li>
 <li><code>fullscreen = [string]</code> - a fullscreen mode definition, which may be one of the following:
 <ul>
 <li><code>WxH</code> - explicit window size (e.g. <code>1280x720</code>);</li>
@@ -269,9 +244,22 @@
 <li><code>verbose</code> (1), <code>debug</code> (2), <code>info</code> (3), <code>warn</code> (4), <code>error</code> (5), <code>critical</code> (6).</li>
 </ul></li>
 </ul></li>
+<li><strong>[access]</strong> - accessibility options.
+<ul>
+<li><code>speechskip = [string]</code> - forces game to this speech skip style. Values are:
+<ul>
+<li><code>default</code> - use game defaults</li>
+<li><code>input</code> - player input (e.g. mouse click or keyboard press)</li>
+<li><code>time</code> - standard timeout</li>
+<li><code>any</code> - either input or time</li>
+</ul></li>
+<li><code>textskip = [string]</code> - forces game to this text message skip style. Values are same as for the <code>speechskip</code>.</li>
+<li><code>textreadspeed = [integer]</code> - forces game to this text reading speed (number of characters per second).</li>
+</ul></li>
 <li><strong>[override]</strong> - special options, overriding game behavior.
 <ul>
 <li><code>multitasking = [0; 1]</code> - lock the game in the "single-tasking" or "multitasking" mode. In the nutshell, "multitasking" here means that the game will continue running when player switched away from game window; otherwise it will freeze until player switches back.</li>
+<li><code>noplugins = [0; 1]</code> - don't load plugin libraries (the engine may still use plugin stubs or embedded plugins, of these are present).</li>
 <li><code>os = [string]</code> - trick the game to think that it runs on a particular operating system. This may come handy if the game is scripted to play differently depending on OS. Possible choices are:
 <ul>
 <li><code>dos</code> - MS DOS;</li>
@@ -281,18 +269,20 @@
 </ul></li>
 <li><code>legacysave_assume_dataver = [integer]</code> - when restoring a save of a legacy format, lets engine assume certain game data version ID. This may be necessary because of a mistake in pre-3.5.0 save formats, where contents depended on a game data version rather than a save version.</li>
 <li><code>legacysave_let_gui_diff = [0; 1]</code> - when restoring a save of a legacy format, lets engine read less gui elements than are registered by the current game. This was a (possibly unintended) effect in pre-3.5.0 save format.</li>
+<li><code>max_save = [integer]</code> - overrides standard save/restore game dialogs to use this as the saves limit.</li>
 <li><code>restore_game_key = [integer]</code> - key for calling built-in restore game dialog. Key value corresponds to the <a href="Keycodes.html">AGS script keycode</a>.</li>
 <li><code>save_game_key = [integer]</code> - key for calling built-in save game dialog.</li>
 <li><code>upscale = [0; 1]</code> - run game in the "upscale mode". The earlier versions of AGS provided support for "upscaling" low-res games to hi-res. The script API has means for detecting if the game is running upscaled, and game developer could use this opportunity to setup game accordingly (e.g. assign hi-res fonts, etc). This options works <strong>only</strong> for games created before AGS 3.1.0 with low-res native resolution, such as 320x200 or 320x240, and it may somewhat improve game looks.</li>
 </ul></li>
 <li><strong>[disabled]</strong> - special instructions for the setup program hinting to disable particular options or lock some in the certain state. Ignored by the engine.
 <ul>
+<li><code>access_skipstyle = [0; 1]</code> - tells to disable speech/text skip styles and text reading speed in "Accessibility" options.</li>
+<li><code>antialias = [0; 1]</code> - tells to lock "Smooth scaled sprites" selection at the value set in the config file;</li>
 <li><code>gfxdrivers = [0; 1]</code> - tells to lock "Graphics driver" selection in a default state;</li>
 <li><code>&lt;gfxdriver id&gt; = [0; 1]</code> - tells to remove particular graphics driver from the selection list;</li>
 <li><code>filters = [0; 1]</code> - tells to lock "Graphics filter" selection at the value set in the config file;</li>
 <li><code>&lt;filter id&gt; = [0; 1]</code> - tells to remove particular graphics filter from the selection list;</li>
 <li><code>fullscreen = [0; 1]</code> - tells to disable fullscreen desktop checkbox and fullscreen mode selection list;</li>
-<li><code>antialias = [0; 1]</code> - tells to lock "Smooth scaled sprites" selection at the value set in the config file;</li>
 <li><code>render_at_screenres = [0; 1]</code> - tells to lock "Render sprites in screen resolution" selection at the value set in the config file;</li>
 <li><code>speechvox = [0; 1]</code> - tells to lock "Use digital speech pack" selection at the value set in the config file;</li>
 <li><code>translation = [0; 1]</code> - tells to lock "Game language" selection at the value set in the config file;</li>
@@ -300,17 +290,33 @@
 </ul>
 </section>
 </section>
-  </main>
-
-
-  <footer>
-    <p>
-      <a href="jslicensing.html" data-jslicense="1">Third-party JavaScript licensing</a><br>
-      Build: feeb81b0e78f9acbe84b8696babae870a6284b5b
-    </p>
-  </footer>
-
-  <script src="js/search.js"></script>
+      <a class="edit-link" href="https://github.com/adventuregamestudio/ags-manual-source/blob/master/EngineConfigFile.md" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg> Edit this page</a>
+      </main>
+      <footer>
+        <p>
+          <a href="jslicensing.html" data-jslicense="1">Third-party JavaScript licensing</a><br>
+          Build: ed75ea05a92de6b9ff5582c5376524816e60c494
+        </p>
+      </footer>
+    </article>
+    
+    <aside>
+<ul>
+<li><a href="#engine-config-file" id="toc-engine-config-file">Engine Config File</a>
+<ul>
+<li><a href="#configuration-file-locations" id="toc-configuration-file-locations">Configuration file locations</a></li>
+<li><a href="#configuration-file-options" id="toc-configuration-file-options">Configuration file options</a></li>
+</ul></li>
+</ul>
+    </aside>
   </div>
+
+
+
+
+  </div>
+  <script src="js/navigation.js"></script>
+  <script src="js/search.js"></script>
+  
 </body>
 </html>

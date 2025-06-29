@@ -12,8 +12,15 @@
 <body>
 
 
+  <div class="header-bg"></div>
   <div class="container">
     <header>
+      <h1>
+        <a href="index.html">
+          <img src="static/logo.svg" id="cup" width="48" height="48">
+          AGS Manual
+        </a>
+      </h1>
       <label class="header_input search-box">
         <input type="search" id="search_input" placeholder="Search">
         <label class="toggle-icon" title="Match Case">
@@ -35,6 +42,10 @@
         <input type="checkbox" checked="checked"  id="dark_mode_toggle">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26a5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" /></svg>
       </label>
+      
+      <label class="mobile-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 32 32" width="24px" fill="currentColor"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" /></svg>
+      </label>
 
       <script src="js/darkmode.js"></script>
       <script src="js/mark.min.js"></script>
@@ -43,56 +54,14 @@
     </header>
 
   <nav>
-    <h1>
-      <a href="index.html">
-        <svg id="cup" width="48" height="48" viewBox="0 0 12 8" preserveAspectRatio="xMidYMid meet">
-          <g shape-rendering="crispEdges">
-            <rect width="10" height="7" fill="#ffffff" />
-            <svg y="1">
-              <rect width="12" height="5" fill="#ffffff" />
-            </svg>
-            <svg x="1">
-              <rect width="8" height="8" fill="#ffffff" />
-            </svg>
-            <svg x="1" y="1">
-              <rect width="8" height="5" fill="#2a7fff" />
-            </svg>
-            <svg x="2" y="6">
-              <rect width="6" height="1" fill="#2a7fff" />
-            </svg>
-            <svg x="9" y="2">
-              <rect width="2" height="3" fill="#2a7fff" />
-            </svg>
-            <svg x="9" y="3">
-              <rect width="1" height="1" fill="#ffffff" />
-            </svg>
-            <svg x="2" y="2">
-              <rect width="6" height="3" fill="#0000d4" />
-            </svg>
-            <svg x="3" y="5">
-              <rect width="4" height="1" fill="#0000d4" />
-            </svg>
-            <svg x="2" y="1">
-              <rect width="6" height="1" fill="#ffffff" />
-            </svg>
-          </g>
-        </svg>
-        AGS Manual
-      </a>
-    </h1>
     <ul>
       <li><a href="genindex.html">Index</a></li>
     </ul>
-<ul>
-<li><a href="#the-run-time-engine" id="toc-the-run-time-engine">The run-time engine</a>
-<ul>
-<li><a href="#how-the-engine-finds-the-game-data" id="toc-how-the-engine-finds-the-game-data">How the engine finds the game data</a></li>
-<li><a href="#command-line" id="toc-command-line">Command line</a></li>
-</ul></li>
-</ul>
   </nav>
 
-  <main>
+  <div class="content">
+    <article>
+      <main>
 <section id="the-run-time-engine" class="level2">
 <h2><a href="#the-run-time-engine">The run-time engine</a></h2>
 <p>The engine (also called the "interpreter") is what runs your game and is what the player will use.</p>
@@ -109,6 +78,26 @@
 </ol>
 <p>This search order means, if you are shipping a game, make sure that only one game file is in the same directory as the engine.</p>
 </section>
+<section id="game-saves" class="level3">
+<h3><a href="#game-saves">Game saves</a></h3>
+<p>AGS game save files are by default named "agssave.NNN" where NNN is a 3-digit number in a range from 000 to 999. Some games may have an added custom save extension, in which case the file name has a form "agssave.NNN.customext".</p>
+<p>Depending on a OS, game saves default location will differ:</p>
+<ul>
+<li><strong>Linux</strong>, <strong>FreeBSD</strong>:
+<ul>
+<li><code>$XDG_DATA_HOME/ags/GAMENAME/</code></li>
+<li>NOTE: if <code>$XDG_DATA_HOME</code> is not defined, then <code>$HOME/.local/share</code> is used instead.</li>
+</ul></li>
+<li><strong>MacOSX</strong>:
+<ul>
+<li><code>Users/&lt;username&gt;/Library/Application Support/GAMENAME/</code></li>
+</ul></li>
+<li><strong>Windows</strong>:
+<ul>
+<li><code>%USERPROFILE%/Saved Games/GAMENAME/</code></li>
+</ul></li>
+</ul>
+</section>
 <section id="command-line" class="level3">
 <h3><a href="#command-line">Command line</a></h3>
 <p><em>Note:</em> On Windows, you <strong>must</strong> use <code>--console-attach</code> when you are on the <code>cmd.exe</code> or other windows prompt and want to read the output of the ags runtime directly in the terminal, as printed in stdout.</p>
@@ -120,6 +109,7 @@
 <li><code>--clear-cache-on-room-change</code> - clears sprite cache on every room change</li>
 <li><code>--conf &lt;FILEPATH&gt;</code> - specify an explicit config file to read on startup.</li>
 <li><code>--console-attach</code> - write the output to the parent process's console (Windows only).</li>
+<li><code>--display &lt;NUMBER&gt;</code> - start the game on the selected display (1-based index, 0 means "use system default").</li>
 <li><code>--fps</code> - display fps counter.</li>
 <li><code>--fullscreen</code> - run in fullscreen mode.</li>
 <li><code>--gfxdriver &lt;name&gt;</code> - use specified graphics driver:
@@ -173,7 +163,9 @@
 </ul></li>
 </ul></li>
 <li><code>--log-file-path=PATH</code> - define a custom path for the log file.</li>
-<li><code>--no-message-box</code> - disable alerts as modal message boxes (Windows only).</li>
+<li><code>--no-message-box</code> - disable alerts as modal message boxes (on systems where applicable).</li>
+<li><code>--no-plugins</code> - don't load external plugin libraries (may still use plugin stubs or built-in replacements if they are present in the engine).</li>
+<li><code>--no-translation</code> - use default game language on start.</li>
 <li><code>--noiface</code> - don't draw game GUI (for test purposes).</li>
 <li><code>--noscript</code> - don't run room scripts (for test purposes); <em>WARNING:</em> unreliable.</li>
 <li><code>--nospr</code> - don't draw room objects and characters (for test purposes).</li>
@@ -196,6 +188,7 @@
 </ul></li>
 <li><code>--test</code> - run the game in the test mode, unlocking test key combinations and console.</li>
 <li><code>--translation</code> - select the given translation on start.</li>
+<li><code>--version</code> - print engine's version and stop.</li>
 <li><code>--user-data-dir &lt;DIR&gt;</code> - set the save game directory. Corresponds to "user_data_dir" config option.</li>
 <li><code>--windowed</code> - run in windowed mode.</li>
 </ul>
@@ -203,17 +196,34 @@
 <p><em>See also:</em> <a href="DefaultSetup.html">Default setup (Editor Pane)</a>, <a href="Setup.html">Run-time engine setup</a></p>
 </section>
 </section>
-  </main>
-
-
-  <footer>
-    <p>
-      <a href="jslicensing.html" data-jslicense="1">Third-party JavaScript licensing</a><br>
-      Build: feeb81b0e78f9acbe84b8696babae870a6284b5b
-    </p>
-  </footer>
-
-  <script src="js/search.js"></script>
+      <a class="edit-link" href="https://github.com/adventuregamestudio/ags-manual-source/blob/master/RuntimeEngine.md" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg> Edit this page</a>
+      </main>
+      <footer>
+        <p>
+          <a href="jslicensing.html" data-jslicense="1">Third-party JavaScript licensing</a><br>
+          Build: ed75ea05a92de6b9ff5582c5376524816e60c494
+        </p>
+      </footer>
+    </article>
+    
+    <aside>
+<ul>
+<li><a href="#the-run-time-engine" id="toc-the-run-time-engine">The run-time engine</a>
+<ul>
+<li><a href="#how-the-engine-finds-the-game-data" id="toc-how-the-engine-finds-the-game-data">How the engine finds the game data</a></li>
+<li><a href="#game-saves" id="toc-game-saves">Game saves</a></li>
+<li><a href="#command-line" id="toc-command-line">Command line</a></li>
+</ul></li>
+</ul>
+    </aside>
   </div>
+
+
+
+
+  </div>
+  <script src="js/navigation.js"></script>
+  <script src="js/search.js"></script>
+  
 </body>
 </html>

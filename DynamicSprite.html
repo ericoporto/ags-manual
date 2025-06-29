@@ -12,8 +12,15 @@
 <body>
 
 
+  <div class="header-bg"></div>
   <div class="container">
     <header>
+      <h1>
+        <a href="index.html">
+          <img src="static/logo.svg" id="cup" width="48" height="48">
+          AGS Manual
+        </a>
+      </h1>
       <label class="header_input search-box">
         <input type="search" id="search_input" placeholder="Search">
         <label class="toggle-icon" title="Match Case">
@@ -35,6 +42,10 @@
         <input type="checkbox" checked="checked"  id="dark_mode_toggle">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26a5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" /></svg>
       </label>
+      
+      <label class="mobile-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 32 32" width="24px" fill="currentColor"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" /></svg>
+      </label>
 
       <script src="js/darkmode.js"></script>
       <script src="js/mark.min.js"></script>
@@ -43,82 +54,21 @@
     </header>
 
   <nav>
-    <h1>
-      <a href="index.html">
-        <svg id="cup" width="48" height="48" viewBox="0 0 12 8" preserveAspectRatio="xMidYMid meet">
-          <g shape-rendering="crispEdges">
-            <rect width="10" height="7" fill="#ffffff" />
-            <svg y="1">
-              <rect width="12" height="5" fill="#ffffff" />
-            </svg>
-            <svg x="1">
-              <rect width="8" height="8" fill="#ffffff" />
-            </svg>
-            <svg x="1" y="1">
-              <rect width="8" height="5" fill="#2a7fff" />
-            </svg>
-            <svg x="2" y="6">
-              <rect width="6" height="1" fill="#2a7fff" />
-            </svg>
-            <svg x="9" y="2">
-              <rect width="2" height="3" fill="#2a7fff" />
-            </svg>
-            <svg x="9" y="3">
-              <rect width="1" height="1" fill="#ffffff" />
-            </svg>
-            <svg x="2" y="2">
-              <rect width="6" height="3" fill="#0000d4" />
-            </svg>
-            <svg x="3" y="5">
-              <rect width="4" height="1" fill="#0000d4" />
-            </svg>
-            <svg x="2" y="1">
-              <rect width="6" height="1" fill="#ffffff" />
-            </svg>
-          </g>
-        </svg>
-        AGS Manual
-      </a>
-    </h1>
     <ul>
       <li><a href="genindex.html">Index</a></li>
     </ul>
-<ul>
-<li><a href="#dynamicsprite-functions-and-properties" id="toc-dynamicsprite-functions-and-properties"><code>DynamicSprite</code> functions and properties</a>
-<ul>
-<li><a href="#dynamicspritecreate" id="toc-dynamicspritecreate"><code>DynamicSprite.Create</code></a></li>
-<li><a href="#dynamicspritecreatefrombackground" id="toc-dynamicspritecreatefrombackground"><code>DynamicSprite.CreateFromBackground</code></a></li>
-<li><a href="#dynamicspritecreatefromdrawingsurface" id="toc-dynamicspritecreatefromdrawingsurface"><code>DynamicSprite.CreateFromDrawingSurface</code></a></li>
-<li><a href="#dynamicspritecreatefromexistingsprite" id="toc-dynamicspritecreatefromexistingsprite"><code>DynamicSprite.CreateFromExistingSprite</code></a></li>
-<li><a href="#dynamicspritecreatefromfile" id="toc-dynamicspritecreatefromfile"><code>DynamicSprite.CreateFromFile</code></a></li>
-<li><a href="#dynamicspritecreatefromsavegame" id="toc-dynamicspritecreatefromsavegame"><code>DynamicSprite.CreateFromSaveGame</code></a></li>
-<li><a href="#dynamicspritecreatefromscreenshot" id="toc-dynamicspritecreatefromscreenshot"><code>DynamicSprite.CreateFromScreenShot</code></a></li>
-<li><a href="#dynamicspritechangecanvassize" id="toc-dynamicspritechangecanvassize"><code>DynamicSprite.ChangeCanvasSize</code></a></li>
-<li><a href="#dynamicspritecopytransparencymask" id="toc-dynamicspritecopytransparencymask"><code>DynamicSprite.CopyTransparencyMask</code></a></li>
-<li><a href="#dynamicspritecrop" id="toc-dynamicspritecrop"><code>DynamicSprite.Crop</code></a></li>
-<li><a href="#dynamicspritedelete" id="toc-dynamicspritedelete"><code>DynamicSprite.Delete</code></a></li>
-<li><a href="#dynamicspriteflip" id="toc-dynamicspriteflip"><code>DynamicSprite.Flip</code></a></li>
-<li><a href="#dynamicspritegetdrawingsurface" id="toc-dynamicspritegetdrawingsurface"><code>DynamicSprite.GetDrawingSurface</code></a></li>
-<li><a href="#dynamicspriteresize" id="toc-dynamicspriteresize"><code>DynamicSprite.Resize</code></a></li>
-<li><a href="#dynamicspriterotate" id="toc-dynamicspriterotate"><code>DynamicSprite.Rotate</code></a></li>
-<li><a href="#dynamicspritesavetofile" id="toc-dynamicspritesavetofile"><code>DynamicSprite.SaveToFile</code></a></li>
-<li><a href="#dynamicspritetint" id="toc-dynamicspritetint"><code>DynamicSprite.Tint</code></a></li>
-<li><a href="#dynamicspritecolordepth" id="toc-dynamicspritecolordepth"><code>DynamicSprite.ColorDepth</code></a></li>
-<li><a href="#dynamicspritegraphic" id="toc-dynamicspritegraphic"><code>DynamicSprite.Graphic</code></a></li>
-<li><a href="#dynamicspriteheight" id="toc-dynamicspriteheight"><code>DynamicSprite.Height</code></a></li>
-<li><a href="#dynamicspritewidth" id="toc-dynamicspritewidth"><code>DynamicSprite.Width</code></a></li>
-</ul></li>
-</ul>
   </nav>
 
-  <main>
+  <div class="content">
+    <article>
+      <main>
 <section id="dynamicsprite-functions-and-properties" class="level2">
 <h2><a href="#dynamicsprite-functions-and-properties"><code>DynamicSprite</code> functions and properties</a></h2>
 <p>DynamicSprite lets you create a new sprite dynamically at runtime, either a new blank sprite, a copy of the existing one, or load one from a file. DynamicSprites may be modified in various ways, and drawn upon. The latter is done by retrieving a <a href="DrawingSurface.html"><code>DrawingSurface</code></a> with <a href="DynamicSprite.html#dynamicspritegetdrawingsurface"><code>GetDrawingSurface()</code></a> function.</p>
 <p>Each new DynamicSprite is assigned an arbitrary ID, which may be read with <a href="DynamicSprite.html#dynamicspritegraphic"><code>Graphic</code></a> property. This ID lets you assign DynamicSprite to any property that normally accepts a sprite number, or pass into any function that accepts a sprite number as a parameter.</p>
 <p><strong>IMPORTANT:</strong> DynamicSprite exist so long as it is assigned to at least one <code>DynamicSprite*</code> variable in your script. As soon as there's no variable that has a reference to it, the sprite is disposed. This also means that if you only have a local <code>DynamicSprite*</code> variable, then the sprite will be disposed when the function ends. If you want to keep the sprite, then you should store it in a global variable for as long as you need it.</p>
 <p>You may also call <a href="DynamicSprite.html#dynamicspritedelete"><code>Delete</code></a> function anytime to explicitly remove the sprite's image from memory.</p>
-<p><strong>IMPORTANT:</strong> Assigning DynamicSprite's ID to another object (such as <code>Button.NormalGraphic</code>, for example) does not count as a reference. If DynamicSprite is deleted while its ID is assigned to another object's property, that property will be reset to 0 for safety reasons.</p>
+<p><strong>IMPORTANT:</strong> Assigning DynamicSprite's ID to another object (such as <code>Button.NormalGraphic</code>, for example) does not count as a reference. If DynamicSprite is deleted while its ID is assigned to a object's property, that object's property will retain the invalid sprite's number, but the object will be displayed using placeholder sprite 0 for safety reasons.</p>
 <section id="dynamicspritecreate" class="level3">
 <h3><a href="#dynamicspritecreate"><code>DynamicSprite.Create</code></a></h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode ags"><code class="sourceCode ags"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">static</span> <span class="bu">DynamicSprite</span><span class="op">*</span> <span class="bu">DynamicSprite</span><span class="op">.</span><span class="at">Create</span><span class="op">(</span><span class="dt">int</span> width<span class="op">,</span> <span class="dt">int</span> height<span class="op">,</span></span>
@@ -260,8 +210,9 @@
 <section id="dynamicspritecreatefromscreenshot" class="level3">
 <h3><a href="#dynamicspritecreatefromscreenshot"><code>DynamicSprite.CreateFromScreenShot</code></a></h3>
 <div class="sourceCode" id="cb13"><pre class="sourceCode ags"><code class="sourceCode ags"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">static</span> <span class="bu">DynamicSprite</span><span class="op">*</span> <span class="bu">DynamicSprite</span><span class="op">.</span><span class="at">CreateFromScreenShot</span><span class="op">(</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    optional <span class="dt">int</span> width<span class="op">,</span> optional <span class="dt">int</span> height<span class="op">)</span></span></code></pre></div>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    optional <span class="dt">int</span> width<span class="op">,</span> optional <span class="dt">int</span> height<span class="op">,</span> optional RenderLayer layer<span class="op">)</span></span></code></pre></div>
 <p>Creates a new DynamicSprite instance with a copy of the current screen in it, resized to WIDTH x HEIGHT. If you do not supply the width or height, then a full screen sized sprite will be created.</p>
+<p>You can optionally pass a layer parameter that is a flag parameter that can take any bitwise combination of RenderLayer type. You can use this parameter to do a screenshot without include GUIs or mouse cursor.</p>
 <p>This command can be useful if you're creating a save game screenshots GUI, in order to display the current game position as well as the saved slot positions.</p>
 <p><strong>NOTE:</strong> This command can be slow when using the Direct3D graphics driver.</p>
 <p>Use the <a href="DynamicSprite.html#dynamicspritegraphic"><code>Graphic</code></a> property of the DynamicSprite to interface with other commands and to use the new sprite in the game.</p>
@@ -272,7 +223,8 @@
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>surface<span class="op">.</span><span class="at">Release</span><span class="op">();</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>ds<span class="op">.</span><span class="at">Delete</span><span class="op">();</span></span></code></pre></div>
 <p>takes a screen shot, and draws it onto the background scene at (100,100).</p>
-<p><em>See also:</em> <a href="DynamicSprite.html#dynamicspritedelete"><code>DynamicSprite.Delete</code></a>, <a href="Game.html#gamegetsaveslotdescription"><code>Game.GetSaveSlotDescription</code></a>, <a href="DynamicSprite.html#dynamicspritecreatefromexistingsprite"><code>DynamicSprite.CreateFromExistingSprite</code></a> <a href="DynamicSprite.html#dynamicspritecreatefromfile"><code>DynamicSprite.CreateFromFile</code></a>, <a href="DynamicSprite.html#dynamicspritecreatefromsavegame"><code>DynamicSprite.CreateFromSaveGame</code></a></p>
+<p><em>Compatibility:</em> Optional <code>layer</code> parameter is supported only by <strong>AGS 3.6.2</strong> and later versions.</p>
+<p><em>See also:</em> <a href="StandardEnums.html#renderlayer"><code>RenderLayer</code></a>, <a href="DynamicSprite.html#dynamicspritedelete"><code>DynamicSprite.Delete</code></a>, <a href="Game.html#gamegetsaveslotdescription"><code>Game.GetSaveSlotDescription</code></a>, <a href="DynamicSprite.html#dynamicspritecreatefromexistingsprite"><code>DynamicSprite.CreateFromExistingSprite</code></a> <a href="DynamicSprite.html#dynamicspritecreatefromfile"><code>DynamicSprite.CreateFromFile</code></a>, <a href="DynamicSprite.html#dynamicspritecreatefromsavegame"><code>DynamicSprite.CreateFromSaveGame</code></a></p>
 <hr />
 </section>
 <section id="dynamicspritechangecanvassize" class="level3">
@@ -422,13 +374,14 @@ surface.DrawImage(x, y, sprite.Graphic);</code></pre>
 <p>Saves the dynamic sprite to the specified file.</p>
 <p>The filename you supply must have a .PCX or .BMP extension; they are the only two file types that the engine supports.</p>
 <p>Returns 1 if the sprite was saved successfully, or 0 if it failed.</p>
-<p><strong>NOTE:</strong> Since AGS 3.4.1 you can use location tokens in filename, like with <a href="File.html#fileopen"><code>File.Open</code></a> and similar commands.</p>
+<p><strong>NOTE:</strong> Since AGS 3.4.1 you can (and should!) use location tokens in filename, like with <a href="File.html#fileopen"><code>File.Open</code></a> and similar commands.</p>
 <p>Example:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode ags"><code class="sourceCode ags"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">DynamicSprite</span><span class="op">*</span> sprite = <span class="bu">DynamicSprite</span><span class="op">.</span><span class="at">CreateFromFile</span><span class="op">(</span><span class="st">&quot;CustomAvatar.bmp&quot;</span><span class="op">);</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>sprite<span class="op">.</span><span class="at">Rotate</span><span class="op">(</span><span class="dv">90</span><span class="op">);</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>sprite<span class="op">.</span><span class="at">SaveToFile</span><span class="op">(</span><span class="st">&quot;RotatedAvatar.bmp&quot;</span><span class="op">);</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>sprite<span class="op">.</span><span class="at">SaveToFile</span><span class="op">(</span><span class="st">&quot;$SAVEGAMEDIR$/RotatedAvatar.bmp&quot;</span><span class="op">);</span></span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>sprite<span class="op">.</span><span class="at">Delete</span><span class="op">();</span></span></code></pre></div>
-<p>will load the CustomAvatar.bmp image, rotate it 90 degrees clockwise, then save the result back to the disk.</p>
+<p>will load the CustomAvatar.bmp image, rotate it 90 degrees clockwise, then save the result back to the disk to the game saves folder.</p>
+<p><em>Compatibility:</em> location tokens in path are supported since AGS 3.4.1.</p>
 <p><em>See also:</em> <a href="DynamicSprite.html#dynamicspritecreatefromfile"><code>DynamicSprite.CreateFromFile</code></a>, <a href="Globalfunctions_General.html#savescreenshot"><code>SaveScreenShot</code></a></p>
 <hr />
 </section>
@@ -509,17 +462,52 @@ surface.DrawImage(x, y, sprite.Graphic);</code></pre>
 <p><em>See also:</em> <a href="DynamicSprite.html#dynamicspriteheight"><code>DynamicSprite.Height</code></a>, <a href="DynamicSprite.html#dynamicspriteresize"><code>DynamicSprite.Resize</code></a></p>
 </section>
 </section>
-  </main>
-
-
-  <footer>
-    <p>
-      <a href="jslicensing.html" data-jslicense="1">Third-party JavaScript licensing</a><br>
-      Build: feeb81b0e78f9acbe84b8696babae870a6284b5b
-    </p>
-  </footer>
-
-  <script src="js/search.js"></script>
+      <a class="edit-link" href="https://github.com/adventuregamestudio/ags-manual-source/blob/master/DynamicSprite.md" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg> Edit this page</a>
+      </main>
+      <footer>
+        <p>
+          <a href="jslicensing.html" data-jslicense="1">Third-party JavaScript licensing</a><br>
+          Build: ed75ea05a92de6b9ff5582c5376524816e60c494
+        </p>
+      </footer>
+    </article>
+    
+    <aside>
+<ul>
+<li><a href="#dynamicsprite-functions-and-properties" id="toc-dynamicsprite-functions-and-properties"><code>DynamicSprite</code> functions and properties</a>
+<ul>
+<li><a href="#dynamicspritecreate" id="toc-dynamicspritecreate"><code>DynamicSprite.Create</code></a></li>
+<li><a href="#dynamicspritecreatefrombackground" id="toc-dynamicspritecreatefrombackground"><code>DynamicSprite.CreateFromBackground</code></a></li>
+<li><a href="#dynamicspritecreatefromdrawingsurface" id="toc-dynamicspritecreatefromdrawingsurface"><code>DynamicSprite.CreateFromDrawingSurface</code></a></li>
+<li><a href="#dynamicspritecreatefromexistingsprite" id="toc-dynamicspritecreatefromexistingsprite"><code>DynamicSprite.CreateFromExistingSprite</code></a></li>
+<li><a href="#dynamicspritecreatefromfile" id="toc-dynamicspritecreatefromfile"><code>DynamicSprite.CreateFromFile</code></a></li>
+<li><a href="#dynamicspritecreatefromsavegame" id="toc-dynamicspritecreatefromsavegame"><code>DynamicSprite.CreateFromSaveGame</code></a></li>
+<li><a href="#dynamicspritecreatefromscreenshot" id="toc-dynamicspritecreatefromscreenshot"><code>DynamicSprite.CreateFromScreenShot</code></a></li>
+<li><a href="#dynamicspritechangecanvassize" id="toc-dynamicspritechangecanvassize"><code>DynamicSprite.ChangeCanvasSize</code></a></li>
+<li><a href="#dynamicspritecopytransparencymask" id="toc-dynamicspritecopytransparencymask"><code>DynamicSprite.CopyTransparencyMask</code></a></li>
+<li><a href="#dynamicspritecrop" id="toc-dynamicspritecrop"><code>DynamicSprite.Crop</code></a></li>
+<li><a href="#dynamicspritedelete" id="toc-dynamicspritedelete"><code>DynamicSprite.Delete</code></a></li>
+<li><a href="#dynamicspriteflip" id="toc-dynamicspriteflip"><code>DynamicSprite.Flip</code></a></li>
+<li><a href="#dynamicspritegetdrawingsurface" id="toc-dynamicspritegetdrawingsurface"><code>DynamicSprite.GetDrawingSurface</code></a></li>
+<li><a href="#dynamicspriteresize" id="toc-dynamicspriteresize"><code>DynamicSprite.Resize</code></a></li>
+<li><a href="#dynamicspriterotate" id="toc-dynamicspriterotate"><code>DynamicSprite.Rotate</code></a></li>
+<li><a href="#dynamicspritesavetofile" id="toc-dynamicspritesavetofile"><code>DynamicSprite.SaveToFile</code></a></li>
+<li><a href="#dynamicspritetint" id="toc-dynamicspritetint"><code>DynamicSprite.Tint</code></a></li>
+<li><a href="#dynamicspritecolordepth" id="toc-dynamicspritecolordepth"><code>DynamicSprite.ColorDepth</code></a></li>
+<li><a href="#dynamicspritegraphic" id="toc-dynamicspritegraphic"><code>DynamicSprite.Graphic</code></a></li>
+<li><a href="#dynamicspriteheight" id="toc-dynamicspriteheight"><code>DynamicSprite.Height</code></a></li>
+<li><a href="#dynamicspritewidth" id="toc-dynamicspritewidth"><code>DynamicSprite.Width</code></a></li>
+</ul></li>
+</ul>
+    </aside>
   </div>
+
+
+
+
+  </div>
+  <script src="js/navigation.js"></script>
+  <script src="js/search.js"></script>
+  
 </body>
 </html>
